@@ -99,6 +99,9 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmProfesor.resx">
+      <DependentUpon>FrmProfesor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -124,7 +127,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\Medium_228_16x.png" />
+    <None Include="images\Add_8x_16x.png" />
     <Content Include="images\bg_Login.png" />
+    <None Include="images\Document_16x.png" />
     <Content Include="images\logo_IES_Miguel_Herrero.png" />
     <Content Include="images\logo_IES_Miguel_Herrero_Icon.ico" />
   </ItemGroup>

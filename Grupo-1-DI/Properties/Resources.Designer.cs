@@ -63,6 +63,16 @@ namespace Grupo_1_DI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_8x_16x {
+            get {
+                object obj = ResourceManager.GetObject("Add_8x_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_Login {
             get {
                 object obj = ResourceManager.GetObject("bg_Login", resourceCulture);
@@ -73,9 +83,29 @@ namespace Grupo_1_DI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Document_16x {
+            get {
+                object obj = ResourceManager.GetObject("Document_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_IES_Miguel_Herrero {
             get {
                 object obj = ResourceManager.GetObject("logo_IES_Miguel_Herrero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Medium_228_16x {
+            get {
+                object obj = ResourceManager.GetObject("Medium_228_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

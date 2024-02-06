@@ -22,6 +22,27 @@ namespace Grupo_1_DI
 
         //METODOS DE OBTENCION DE DATOS POR API
 
+        // LOGIN
+        public async static Task<int> IniciarSesion(string user, string passwd)
+        {
+            int id = await consumer.PostAsync<int>("/login", new Dictionary<string, string>() { { "user", user }, { "passwd", passwd } });
+            userId = id;
+
+            return id;
+        }
+
+        // OBTENCION DE INCIDENCIAS
+
+        public async static Task<List<Incidencias>> ObtenerIncidencias()
+        {
+            return await consumer.GetAsync<List<Incidencias>>("/incidencias");
+        }
+
+        // OBTENCION DE INCIDENCIAS POR PROFESOR
+        public async static Task<List<Incidencias>> ObtenerIncidenciasProfesor(string id)
+        {
+            return await consumer.GetAsync<List<Incidencias>>("/incidencias");
+        }
 
     }
 }

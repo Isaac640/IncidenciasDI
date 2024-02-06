@@ -37,16 +37,24 @@ namespace Grupo_1_DI
             *dependiendo del usuario, irá a una ventana a otra
             */
 
-            // AVISO
-            // HAY QUE MODIFICAR DEPENDIENDO DE QUE TIPO DE USUARIO ENTRARÁ
 
+            //Dependiendo del usuario, se le redigirirá a su formulario
+            //NO TERMINADO
             /*
-            if (await Negocio.IniciarSesion(txtUsuario.Text, contraEncr) != 0)
+            if (await Administracion.IniciarSesion(txtUsuario.Text, contraEncr) != 0)
             {
-                //Abrimos el formulario de mantenimiento de guardias y cerramos esta ventana
-                MantenimientoGuardias mGuardias = new MantenimientoGuardias();
-                mGuardias.Show();
-                this.Close();
+                if (Perfiles.Perfil.Profesor)
+                {
+                    FrmProfesor fProfesor = new FrmProfesor();
+                    fProfesor.Show();
+                    this.Close();
+                }else if (Perfiles.Perfil.Administrador)
+                {
+                    FrmAdmin fAdmin = new FrmAdmin();
+                    fAdmin.Show();
+                    this.Close();
+                }
+                
             }
             else
             {
