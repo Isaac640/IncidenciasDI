@@ -75,6 +75,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administracion.cs" />
+    <Compile Include="Base_Datos\Aulas.cs" />
+    <Compile Include="Base_Datos\Comentarios.cs" />
+    <Compile Include="Base_Datos\Departamentos.cs" />
+    <Compile Include="Base_Datos\Equipos.cs" />
+    <Compile Include="Base_Datos\Incidencias_Subtipos.cs" />
+    <Compile Include="Base_Datos\Perfiles.cs" />
+    <Compile Include="Base_Datos\Personal.cs" />
     <Compile Include="FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,9 +100,13 @@
     <Compile Include="FrmProfesor.Designer.cs">
       <DependentUpon>FrmProfesor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Base_Datos\Incidencias.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebConsumer.cs" />
+    <EmbeddedResource Include="FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,5 +145,6 @@
     <Content Include="images\logo_IES_Miguel_Herrero.png" />
     <Content Include="images\logo_IES_Miguel_Herrero_Icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,11 +16,15 @@ namespace Grupo_1_DI
         /// Formulario para el usuario Profesor
         /// </summary>
         Administracion datos = new Administracion();
-        //static private string CadenaConexion = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=Neumaticos;Integrated Security=True";
+        Personal p = null;
 
-        public FrmProfesor()
+        private FrmProfesor()
         {
             InitializeComponent();
+        }
+        public FrmProfesor(Perfiles p) : this()
+        {
+            Personal p = datos.ObtenerPersonalPerfil(p.ID);
         }
 
         private void FrmProfesor_Load(object sender, EventArgs e)
@@ -31,17 +35,34 @@ namespace Grupo_1_DI
 
         private void cargarInformesProfesor()
         {
-            var lst = datos.ObtenerIncidenciasProfesor();
+            var lst = datos.ObtenerIncidenciasProfesor(Personal.id);
             dgvIncidencias.DataSource = lst;
             tsslRegistros.Text = "Numero de Registros: " + dgvIncidencias.RowCount.ToString();
         }
+
+
 
         private void btnNuevaIncidencia_Click(object sender, EventArgs e)
         {
 
         }
 
+        // Filtrado de Incidencias
+        // Se filtrarán por: Subtipo incidencia, Fecha Creación y Estado
         private void btnFiltro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        // ContextMenuStrips
+
+        private void tsmiModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiEliminar_Click(object sender, EventArgs e)
         {
 
         }

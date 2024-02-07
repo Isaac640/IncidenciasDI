@@ -38,9 +38,9 @@
             this.btnFiltro = new System.Windows.Forms.Button();
             this.btnNuevaIncidencia = new System.Windows.Forms.Button();
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.modificarIncidenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarIncidenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearIncidenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCrear = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiModificar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEliminar = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).BeginInit();
             this.statusStrip.SuspendLayout();
             this.cmsMenu.SuspendLayout();
@@ -49,6 +49,7 @@
             // dgvIncidencias
             // 
             this.dgvIncidencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIncidencias.ContextMenuStrip = this.cmsMenu;
             this.dgvIncidencias.Location = new System.Drawing.Point(12, 39);
             this.dgvIncidencias.Name = "dgvIncidencias";
             this.dgvIncidencias.Size = new System.Drawing.Size(460, 178);
@@ -107,32 +108,35 @@
             // cmsMenu
             // 
             this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearIncidenciaToolStripMenuItem,
-            this.modificarIncidenciaToolStripMenuItem,
-            this.eliminarIncidenciaToolStripMenuItem});
+            this.tsmiCrear,
+            this.tsmiModificar,
+            this.tsmiEliminar});
             this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(183, 70);
+            this.cmsMenu.Size = new System.Drawing.Size(183, 92);
             // 
-            // modificarIncidenciaToolStripMenuItem
+            // tsmiCrear
             // 
-            this.modificarIncidenciaToolStripMenuItem.Image = global::Grupo_1_DI.Properties.Resources.Document_16x;
-            this.modificarIncidenciaToolStripMenuItem.Name = "modificarIncidenciaToolStripMenuItem";
-            this.modificarIncidenciaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.modificarIncidenciaToolStripMenuItem.Text = "Modificar Incidencia";
+            this.tsmiCrear.Image = global::Grupo_1_DI.Properties.Resources.Add_8x_16x;
+            this.tsmiCrear.Name = "tsmiCrear";
+            this.tsmiCrear.Size = new System.Drawing.Size(182, 22);
+            this.tsmiCrear.Text = "Crear Incidencia";
+            this.tsmiCrear.Click += new System.EventHandler(this.btnNuevaIncidencia_Click);
             // 
-            // eliminarIncidenciaToolStripMenuItem
+            // tsmiModificar
             // 
-            this.eliminarIncidenciaToolStripMenuItem.Image = global::Grupo_1_DI.Properties.Resources.Medium_228_16x;
-            this.eliminarIncidenciaToolStripMenuItem.Name = "eliminarIncidenciaToolStripMenuItem";
-            this.eliminarIncidenciaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.eliminarIncidenciaToolStripMenuItem.Text = "Eliminar Incidencia";
+            this.tsmiModificar.Image = global::Grupo_1_DI.Properties.Resources.Document_16x;
+            this.tsmiModificar.Name = "tsmiModificar";
+            this.tsmiModificar.Size = new System.Drawing.Size(182, 22);
+            this.tsmiModificar.Text = "Modificar Incidencia";
+            this.tsmiModificar.Click += new System.EventHandler(this.tsmiModificar_Click);
             // 
-            // crearIncidenciaToolStripMenuItem
+            // tsmiEliminar
             // 
-            this.crearIncidenciaToolStripMenuItem.Image = global::Grupo_1_DI.Properties.Resources.Add_8x_16x;
-            this.crearIncidenciaToolStripMenuItem.Name = "crearIncidenciaToolStripMenuItem";
-            this.crearIncidenciaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.crearIncidenciaToolStripMenuItem.Text = "Crear Incidencia";
+            this.tsmiEliminar.Image = global::Grupo_1_DI.Properties.Resources.Medium_228_16x;
+            this.tsmiEliminar.Name = "tsmiEliminar";
+            this.tsmiEliminar.Size = new System.Drawing.Size(182, 22);
+            this.tsmiEliminar.Text = "Eliminar Incidencia";
+            this.tsmiEliminar.Click += new System.EventHandler(this.tsmiEliminar_Click);
             // 
             // FrmProfesor
             // 
@@ -167,8 +171,8 @@
         private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.Button btnNuevaIncidencia;
         private System.Windows.Forms.ContextMenuStrip cmsMenu;
-        private System.Windows.Forms.ToolStripMenuItem crearIncidenciaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarIncidenciaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarIncidenciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCrear;
+        private System.Windows.Forms.ToolStripMenuItem tsmiModificar;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEliminar;
     }
 }

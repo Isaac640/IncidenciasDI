@@ -16,6 +16,7 @@ namespace Grupo_1_DI
         /// <summary>
         /// Inicio de sesión de administrador o profesor
         /// </summary>
+        Perfiles p = new Perfiles();
         public FrmLogin()
         {
             InitializeComponent();
@@ -40,15 +41,17 @@ namespace Grupo_1_DI
 
             //Dependiendo del usuario, se le redigirirá a su formulario
             //NO TERMINADO
-            /*
+            
             if (await Administracion.IniciarSesion(txtUsuario.Text, contraEncr) != 0)
             {
-                if (Perfiles.Perfil.Profesor)
+                p = ObtenerPerfilDominio(txtUsuario.Text);
+
+                if (p.Perfil.Profesor)
                 {
-                    FrmProfesor fProfesor = new FrmProfesor();
+                    FrmProfesor fProfesor = new FrmProfesor(p);
                     fProfesor.Show();
                     this.Close();
-                }else if (Perfiles.Perfil.Administrador)
+                }else if (p.Perfil.Administrador)
                 {
                     FrmAdmin fAdmin = new FrmAdmin();
                     fAdmin.Show();
@@ -60,7 +63,7 @@ namespace Grupo_1_DI
             {
                 MessageBox.Show("Usuario o contraseña incorrectos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            */
+            
 
 
         }

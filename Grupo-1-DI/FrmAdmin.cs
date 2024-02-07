@@ -16,5 +16,10 @@ namespace Grupo_1_DI
         {
             InitializeComponent();
         }
+
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+            tsslFecha.Text = DateTime.UtcNow.ToString();
+        }
     }
 }
