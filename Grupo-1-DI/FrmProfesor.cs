@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grupo_1_DI.Base_Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +16,7 @@ namespace Grupo_1_DI
         /// <summary>
         /// Formulario para el usuario Profesor
         /// </summary>
-        Administracion datos = new Administracion();
-        Personal p = null;
+        Personal per = null;
 
         private FrmProfesor()
         {
@@ -24,18 +24,18 @@ namespace Grupo_1_DI
         }
         public FrmProfesor(Perfiles p) : this()
         {
-            Personal p = datos.ObtenerPersonalPerfil(p.ID);
+            per = Administracion.ObtenerPersonalByPerfil(per.id);
         }
 
         private void FrmProfesor_Load(object sender, EventArgs e)
         {
             cargarInformesProfesor();
-            tsslFecha.Text = "Fecha: " + DateTime.UtcNow.ToString();
+            tsslFecha.Text = "Fecha: " + DateTime.UtcNow.ToShortDateString();
         }
 
         private void cargarInformesProfesor()
         {
-            var lst = datos.ObtenerIncidenciasProfesor(Personal.id);
+            var lst = Administracion.ObtenerIncidenciasByProfesor(per.id);
             dgvIncidencias.DataSource = lst;
             tsslRegistros.Text = "Numero de Registros: " + dgvIncidencias.RowCount.ToString();
         }

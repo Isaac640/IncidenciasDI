@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Grupo_1_DI.Base_Datos;
+using Grupo_1_DI.Enumerados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,32 +43,36 @@ namespace Grupo_1_DI
 
             //Dependiendo del usuario, se le redigirirá a su formulario
             //NO TERMINADO
-            
+
             if (await Administracion.IniciarSesion(txtUsuario.Text, contraEncr) != 0)
             {
-                p = ObtenerPerfilDominio(txtUsuario.Text);
+                p = Administracion.ObtenerPerfilByDominio(txtUsuario.Text);
 
-                if (p.Perfil.Profesor)
+                // ACCESO PROFESOR
+                if (p.perfil == Perfil.PROFESOR)
                 {
                     FrmProfesor fProfesor = new FrmProfesor(p);
                     fProfesor.Show();
                     this.Close();
-                }else if (p.Perfil.Administrador)
+                }
+                // ACCESO ADMINISTRADOR
+                else if (p.perfil == Perfil.ADMINISTRADOR)
                 {
                     FrmAdmin fAdmin = new FrmAdmin();
                     fAdmin.Show();
                     this.Close();
                 }
-                
+
             }
+            // CREDENCIALES INCORRECTAS
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrectos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
-
 
         }
+
+        // Encriptador de contraseña
         public static string EncriptadorMD5(string contraseña)
         {
             MD5 md5 = new MD5CryptoServiceProvider();

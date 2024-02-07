@@ -1,4 +1,5 @@
-﻿using Grupo_3_Intermodular;
+﻿using Grupo_1_DI.Base_Datos;
+using Grupo_3_Intermodular;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Grupo_1_DI
     {
         private static int userId;
         private static WebConsumer consumer;
-    
+
         static Administracion()
         {
             consumer = new WebConsumer("http://IP:PORT");
@@ -31,18 +32,30 @@ namespace Grupo_1_DI
             return id;
         }
 
-        // OBTENCION DE INCIDENCIAS
+        // OBTENCION DE TODAS LAS INCIDENCIAS
 
         public async static Task<List<Incidencias>> ObtenerIncidencias()
         {
             return await consumer.GetAsync<List<Incidencias>>("/incidencias");
         }
 
-        // OBTENCION DE INCIDENCIAS POR PROFESOR
-        public async static Task<List<Incidencias>> ObtenerIncidenciasProfesor(string id)
+        // OBTENCION DE INCIDENCIAS POR ID PROFESOR
+        public async static Task<List<Incidencias>> ObtenerIncidenciasByProfesor(int id)
         {
             return await consumer.GetAsync<List<Incidencias>>("/incidencias");
         }
 
+        // OBTENER PERSONAL POR ID DE PERFIL 
+
+        public async static Task<Personal> ObtenerPersonalByPerfil(int id)
+        {
+            return await consumer.GetAsync<Personal>("/personal");
+        }
+
+        // OBTENER EL PERFIL DEL USUARIO POR NOMBRE DE DOMINIO
+        public async static Task<Perfiles> ObtenerPerfilByDominio(string dominio)
+        {
+            return await consumer.GetAsync<Perfiles>("/perfil");
+        }
     }
 }
