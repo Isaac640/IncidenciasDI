@@ -142,6 +142,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\menuIcon.png" />
     <None Include="images\Medium_228_16x.png" />
     <None Include="images\Add_8x_16x.png" />
     <Content Include="images\bg_Login.png" />

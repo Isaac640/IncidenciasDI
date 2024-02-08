@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Grupo_1_DI
 {
@@ -19,79 +20,40 @@ namespace Grupo_1_DI
         /// Inicio de sesión de administrador o profesor
         /// </summary>
         Perfiles p = new Perfiles();
+        string userName;
         public FrmLogin()
         {
             InitializeComponent();
+            userName = Environment.UserName;
+            lblUser.Text = "Accediendo a las incidencias de " + userName;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void FrmLogin_Load(object sender, EventArgs e)
         {
-            // Si alguno del los campos estan vacios, se mostrara un MensajeBox Alertando al usuario
-            if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasenia.Text))
-            {
-                MessageBox.Show("Uno de los campos esta vacío", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            // encriptacion de contraseña a MD5
-            string contraEncr = EncriptadorMD5(txtContrasenia.Text);
-            /*Si funciona, verifica que los campos esten rellenados y que el usuario exista
-            *Usa la API, avanza al siguiente formulario y cierra la ventana de login.
-            *El metodo que hay en Program.cs hace que si hay mas ventanas por aparecer, cierra la ventana y sigue a la siguiente
-            *dependiendo del usuario, irá a una ventana a otra
-            */
-
-
-            //Dependiendo del usuario, se le redigirirá a su formulario
-            //NO TERMINADO
-
-            if (await Administracion.IniciarSesion(txtUsuario.Text, contraEncr) != 0)
-            {
-                p = Administracion.ObtenerPerfilByDominio(txtUsuario.Text);
-
-                // ACCESO PROFESOR
-                if (p.perfil == Perfil.PROFESOR)
-                {
-                    FrmProfesor fProfesor = new FrmProfesor(p);
-                    fProfesor.Show();
-                    this.Close();
-                }
-                // ACCESO ADMINISTRADOR
-                else if (p.perfil == Perfil.ADMINISTRADOR)
-                {
-                    FrmAdmin fAdmin = new FrmAdmin();
-                    fAdmin.Show();
-                    this.Close();
-                }
-
-            }
-            // CREDENCIALES INCORRECTAS
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
+            InicioSesionAsync(userName, p);
         }
 
-        // Encriptador de contraseña
-        public static string EncriptadorMD5(string contraseña)
+        private static async Task InicioSesionAsync(string userName, Perfiles p)
         {
-            MD5 md5 = new MD5CryptoServiceProvider();
 
-            //calcular hash a partir de los bytes de texto
-            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(contraseña));
+            p = await Administracion.ObtenerPerfilByDominio(userName);
 
-            //obtiene el resultado de hash despues de calcularlo
-            byte[] result = md5.Hash;
-
-            StringBuilder strBuilder = new StringBuilder();
-            for (int i = 0; i < result.Length; i++)
+            // ACCESO PROFESOR
+            if (p.perfil == Perfil.PROFESOR)
             {
-                //cambiarlo a 2 digitos hexadecimales por cada byte
-                strBuilder.Append(result[i].ToString("x2"));
+                FrmProfesor fProfesor = new FrmProfesor(p);
+                fProfesor.Show();
+            }
+            // ACCESO ADMINISTRADOR
+            else if (p.perfil == Perfil.ADMINISTRADOR)
+            {
+                FrmAdmin fAdmin = new FrmAdmin();
+                fAdmin.Show();
             }
 
-            return strBuilder.ToString();
         }
+
+
     }
 
 }

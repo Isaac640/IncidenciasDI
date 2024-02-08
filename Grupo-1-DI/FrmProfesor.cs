@@ -16,7 +16,8 @@ namespace Grupo_1_DI
         /// <summary>
         /// Formulario para el usuario Profesor
         /// </summary>
-        Personal per = null;
+        Personal per;
+        private Timer timer;
 
         private FrmProfesor()
         {
@@ -24,20 +25,25 @@ namespace Grupo_1_DI
         }
         public FrmProfesor(Perfiles p) : this()
         {
-            per = Administracion.ObtenerPersonalByPerfil(per.id);
+            //this.per = Administracion.ObtenerPersonalByPerfil(p.personal_id);
+
+            timer = new Timer();
+            timer.Interval = 1000; // 1 segundo
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
         private void FrmProfesor_Load(object sender, EventArgs e)
         {
             cargarInformesProfesor();
-            tsslFecha.Text = "Fecha: " + DateTime.UtcNow.ToShortDateString();
+            lblFecha.Text = "Fecha: " + DateTime.UtcNow.ToLongDateString();
         }
 
         private void cargarInformesProfesor()
         {
             var lst = Administracion.ObtenerIncidenciasByProfesor(per.id);
             dgvIncidencias.DataSource = lst;
-            tsslRegistros.Text = "Numero de Registros: " + dgvIncidencias.RowCount.ToString();
+            lblRegistros.Text = "Numero de Registros: " + dgvIncidencias.RowCount.ToString();
         }
 
 
@@ -65,6 +71,13 @@ namespace Grupo_1_DI
         private void tsmiEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        // Para mostrar la hora actual
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Actualizar la celda de la barra de estado con la fecha y hora actual
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }

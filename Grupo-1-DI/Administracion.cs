@@ -18,19 +18,12 @@ namespace Grupo_1_DI
 
         static Administracion()
         {
-            consumer = new WebConsumer("http://IP:PORT");
+            consumer = new WebConsumer("http://localhost:8089");
         }
 
-        //METODOS DE OBTENCION DE DATOS POR API
+        // METODOS DE OBTENCION DE DATOS POR API
 
-        // LOGIN
-        public async static Task<int> IniciarSesion(string user, string passwd)
-        {
-            int id = await consumer.PostAsync<int>("/login", new Dictionary<string, string>() { { "user", user }, { "passwd", passwd } });
-            userId = id;
-
-            return id;
-        }
+        
 
         // OBTENCION DE TODAS LAS INCIDENCIAS
 
@@ -55,7 +48,7 @@ namespace Grupo_1_DI
         // OBTENER EL PERFIL DEL USUARIO POR NOMBRE DE DOMINIO
         public async static Task<Perfiles> ObtenerPerfilByDominio(string dominio)
         {
-            return await consumer.GetAsync<Perfiles>("/perfil");
+            return await consumer.GetAsync<Perfiles>("/dominio");
         }
     }
 }
