@@ -31,7 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.pbImageLogin = new System.Windows.Forms.PictureBox();
             this.lblUser = new System.Windows.Forms.Label();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // pbImageLogin
@@ -50,11 +52,22 @@
             this.lblUser.AutoSize = true;
             this.lblUser.BackColor = System.Drawing.Color.Transparent;
             this.lblUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(59, 185);
+            this.lblUser.Location = new System.Drawing.Point(33, 157);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(94, 19);
             this.lblUser.TabIndex = 4;
             this.lblUser.Text = "texto carga";
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.BackColor = System.Drawing.Color.Transparent;
+            this.pbLoading.Image = global::Grupo_1_DI.Properties.Resources.loading_circle;
+            this.pbLoading.Location = new System.Drawing.Point(171, 194);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(73, 67);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 5;
+            this.pbLoading.TabStop = false;
             // 
             // FrmLogin
             // 
@@ -62,6 +75,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Grupo_1_DI.Properties.Resources.bg_Login;
             this.ClientSize = new System.Drawing.Size(404, 273);
+            this.Controls.Add(this.pbLoading);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.pbImageLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -71,6 +85,7 @@
             this.Text = "Iniciar Sesión";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImageLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,6 +95,7 @@
 
         private System.Windows.Forms.PictureBox pbImageLogin;
         private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.PictureBox pbLoading;
     }
 }
 

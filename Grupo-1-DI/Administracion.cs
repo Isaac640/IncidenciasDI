@@ -13,7 +13,6 @@ namespace Grupo_1_DI
     /// </summary>
     public class Administracion
     {
-        private static int userId;
         private static WebConsumer consumer;
 
         static Administracion()
@@ -23,7 +22,6 @@ namespace Grupo_1_DI
 
         // METODOS DE OBTENCION DE DATOS POR API
 
-        
 
         // OBTENCION DE TODAS LAS INCIDENCIAS
 
@@ -35,20 +33,20 @@ namespace Grupo_1_DI
         // OBTENCION DE INCIDENCIAS POR ID PROFESOR
         public async static Task<List<Incidencias>> ObtenerIncidenciasByProfesor(int id)
         {
-            return await consumer.GetAsync<List<Incidencias>>("/incidencias");
+            return await consumer.GetAsyncIncidencias<List<Incidencias>>("/incidencias", id);
         }
 
         // OBTENER PERSONAL POR ID DE PERFIL 
 
         public async static Task<Personal> ObtenerPersonalByPerfil(int id)
         {
-            return await consumer.GetAsync<Personal>("/personal");
+            return await consumer.GetAsyncPersonal<Personal>("/personal?id=" + id);
         }
 
         // OBTENER EL PERFIL DEL USUARIO POR NOMBRE DE DOMINIO
         public async static Task<Perfiles> ObtenerPerfilByDominio(string dominio)
         {
-            return await consumer.GetAsync<Perfiles>("/dominio");
+            return await consumer.GetAsyncPerfil<Perfiles>("/api/perfiles/dominio", dominio);
         }
     }
 }

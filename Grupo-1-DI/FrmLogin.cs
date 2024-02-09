@@ -19,7 +19,6 @@ namespace Grupo_1_DI
         /// <summary>
         /// Inicio de sesión de administrador o profesor
         /// </summary>
-        Perfiles p = new Perfiles();
         string userName;
         public FrmLogin()
         {
@@ -30,29 +29,34 @@ namespace Grupo_1_DI
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            InicioSesionAsync(userName, p);
+            InicioSesion(userName);
         }
 
-        private static async Task InicioSesionAsync(string userName, Perfiles p)
+        private async Task InicioSesion(string userName)
         {
-
-            p = await Administracion.ObtenerPerfilByDominio(userName);
+            Perfiles perfil = await Administracion.ObtenerPerfilByDominio(userName);
 
             // ACCESO PROFESOR
-            if (p.perfil == Perfil.PROFESOR)
+            if (perfil.perfil.Equals("profesor"))
             {
-                FrmProfesor fProfesor = new FrmProfesor(p);
+                FrmProfesor fProfesor = new FrmProfesor(perfil);
                 fProfesor.Show();
+                this.Close();
             }
             // ACCESO ADMINISTRADOR
-            else if (p.perfil == Perfil.ADMINISTRADOR)
+            else if (perfil.perfil.Equals("administrador"))
             {
                 FrmAdmin fAdmin = new FrmAdmin();
                 fAdmin.Show();
             }
+            else
+            {
+                MessageBox.Show("Este usuario de dominio no esta registrado en la base de datos por favor" +
+                    " contacte con el administrador de dominio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
 
         }
-
 
     }
 

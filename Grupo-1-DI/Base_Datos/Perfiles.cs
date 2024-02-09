@@ -12,7 +12,7 @@ namespace Grupo_1_DI.Base_Datos
         public int personal_id {  get; set; }
         public string dominio {  get; set; }
         public string educantabria { get; set; }
-        public char password { get; set; }
-        public Perfil perfil { get; set; }
+        public string password { get; set; }
+        public string perfil { get; set; }
     }
 }

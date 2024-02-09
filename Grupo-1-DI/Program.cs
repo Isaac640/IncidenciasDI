@@ -17,14 +17,10 @@ namespace Grupo_1_DI
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run();
             FrmLogin login = new FrmLogin();
-            login.Show();
-           
-            
             login.FormClosed += FrmLogin_Closed;
-            
-            
+            login.Show();
+            Application.Run();
         }
         //Aquí si no encuentra forms abiertos, cierra las ventanas
         private static void FrmLogin_Closed(object sender, FormClosedEventArgs e)

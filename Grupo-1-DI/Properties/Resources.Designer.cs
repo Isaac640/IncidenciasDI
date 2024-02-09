@@ -93,6 +93,16 @@ namespace Grupo_1_DI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loading_circle {
+            get {
+                object obj = ResourceManager.GetObject("loading_circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_IES_Miguel_Herrero {
             get {
                 object obj = ResourceManager.GetObject("logo_IES_Miguel_Herrero", resourceCulture);

@@ -32,19 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfesor));
             this.dgvIncidencias = new System.Windows.Forms.DataGridView();
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnFiltro = new System.Windows.Forms.Button();
-            this.btnNuevaIncidencia = new System.Windows.Forms.Button();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.lblHora = new System.Windows.Forms.Label();
-            this.panelDatos = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tsmiCrear = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiModificar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEliminar = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.btnFiltro = new System.Windows.Forms.Button();
+            this.btnNuevaIncidencia = new System.Windows.Forms.Button();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.panelDatos = new System.Windows.Forms.Panel();
             this.lblRegistros = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblFecha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).BeginInit();
             this.cmsMenu.SuspendLayout();
             this.panelDatos.SuspendLayout();
@@ -72,6 +72,31 @@
             this.cmsMenu.Name = "cmsMenu";
             this.cmsMenu.Size = new System.Drawing.Size(183, 70);
             // 
+            // tsmiCrear
+            // 
+            this.tsmiCrear.BackColor = System.Drawing.SystemColors.Control;
+            this.tsmiCrear.Image = global::Grupo_1_DI.Properties.Resources.Add_8x_16x;
+            this.tsmiCrear.Name = "tsmiCrear";
+            this.tsmiCrear.Size = new System.Drawing.Size(182, 22);
+            this.tsmiCrear.Text = "Crear Incidencia";
+            this.tsmiCrear.Click += new System.EventHandler(this.btnNuevaIncidencia_Click);
+            // 
+            // tsmiModificar
+            // 
+            this.tsmiModificar.Image = global::Grupo_1_DI.Properties.Resources.Document_16x;
+            this.tsmiModificar.Name = "tsmiModificar";
+            this.tsmiModificar.Size = new System.Drawing.Size(182, 22);
+            this.tsmiModificar.Text = "Modificar Incidencia";
+            this.tsmiModificar.Click += new System.EventHandler(this.tsmiModificar_Click);
+            // 
+            // tsmiEliminar
+            // 
+            this.tsmiEliminar.Image = global::Grupo_1_DI.Properties.Resources.Medium_228_16x;
+            this.tsmiEliminar.Name = "tsmiEliminar";
+            this.tsmiEliminar.Size = new System.Drawing.Size(182, 22);
+            this.tsmiEliminar.Text = "Eliminar Incidencia";
+            this.tsmiEliminar.Click += new System.EventHandler(this.tsmiEliminar_Click);
+            // 
             // btnFiltro
             // 
             this.btnFiltro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,18 +118,6 @@
             this.btnNuevaIncidencia.Text = "Nueva Incidencia";
             this.btnNuevaIncidencia.UseVisualStyleBackColor = true;
             this.btnNuevaIncidencia.Click += new System.EventHandler(this.btnNuevaIncidencia_Click);
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(334, 56);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(224, 20);
-            this.lblFecha.TabIndex = 8;
-            this.lblFecha.Text = "Lunes, 26 de septiembre 2018";
             // 
             // lblHora
             // 
@@ -131,6 +144,25 @@
             this.panelDatos.Size = new System.Drawing.Size(684, 380);
             this.panelDatos.TabIndex = 9;
             // 
+            // lblRegistros
+            // 
+            this.lblRegistros.AutoSize = true;
+            this.lblRegistros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistros.ForeColor = System.Drawing.Color.White;
+            this.lblRegistros.Location = new System.Drawing.Point(42, 337);
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(89, 19);
+            this.lblRegistros.TabIndex = 8;
+            this.lblRegistros.Text = "Registros:";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Font = new System.Drawing.Font("Arial", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(42, 38);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(420, 24);
+            this.txtUsuario.TabIndex = 7;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(34)))), ((int)(((byte)(39)))));
@@ -150,31 +182,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // tsmiCrear
-            // 
-            this.tsmiCrear.BackColor = System.Drawing.SystemColors.Control;
-            this.tsmiCrear.Image = global::Grupo_1_DI.Properties.Resources.Add_8x_16x;
-            this.tsmiCrear.Name = "tsmiCrear";
-            this.tsmiCrear.Size = new System.Drawing.Size(182, 22);
-            this.tsmiCrear.Text = "Crear Incidencia";
-            this.tsmiCrear.Click += new System.EventHandler(this.btnNuevaIncidencia_Click);
-            // 
-            // tsmiModificar
-            // 
-            this.tsmiModificar.Image = global::Grupo_1_DI.Properties.Resources.Document_16x;
-            this.tsmiModificar.Name = "tsmiModificar";
-            this.tsmiModificar.Size = new System.Drawing.Size(182, 22);
-            this.tsmiModificar.Text = "Modificar Incidencia";
-            this.tsmiModificar.Click += new System.EventHandler(this.tsmiModificar_Click);
-            // 
-            // tsmiEliminar
-            // 
-            this.tsmiEliminar.Image = global::Grupo_1_DI.Properties.Resources.Medium_228_16x;
-            this.tsmiEliminar.Name = "tsmiEliminar";
-            this.tsmiEliminar.Size = new System.Drawing.Size(182, 22);
-            this.tsmiEliminar.Text = "Eliminar Incidencia";
-            this.tsmiEliminar.Click += new System.EventHandler(this.tsmiEliminar_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
@@ -185,24 +192,17 @@
             this.panel2.Size = new System.Drawing.Size(684, 95);
             this.panel2.TabIndex = 11;
             // 
-            // txtUsuario
+            // lblFecha
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Arial", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(42, 38);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(420, 24);
-            this.txtUsuario.TabIndex = 7;
-            // 
-            // lblRegistros
-            // 
-            this.lblRegistros.AutoSize = true;
-            this.lblRegistros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistros.ForeColor = System.Drawing.Color.White;
-            this.lblRegistros.Location = new System.Drawing.Point(42, 337);
-            this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(89, 19);
-            this.lblRegistros.TabIndex = 8;
-            this.lblRegistros.Text = "Registros:";
+            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblFecha.ForeColor = System.Drawing.Color.White;
+            this.lblFecha.Location = new System.Drawing.Point(334, 56);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(224, 20);
+            this.lblFecha.TabIndex = 8;
+            this.lblFecha.Text = "Lunes, 26 de septiembre 2018";
             // 
             // FrmProfesor
             // 
@@ -237,7 +237,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCrear;
         private System.Windows.Forms.ToolStripMenuItem tsmiModificar;
         private System.Windows.Forms.ToolStripMenuItem tsmiEliminar;
-        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Panel panelDatos;
         private System.Windows.Forms.Panel panel1;
@@ -245,5 +244,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblRegistros;
+        private System.Windows.Forms.Label lblFecha;
     }
 }

@@ -25,7 +25,7 @@ namespace Grupo_1_DI
         }
         public FrmProfesor(Perfiles p) : this()
         {
-            //this.per = Administracion.ObtenerPersonalByPerfil(p.personal_id);
+            this.per = Administracion.ObtenerPersonalByPerfil(p.personal_id);
 
             timer = new Timer();
             timer.Interval = 1000; // 1 segundo
@@ -35,8 +35,8 @@ namespace Grupo_1_DI
 
         private void FrmProfesor_Load(object sender, EventArgs e)
         {
-            cargarInformesProfesor();
-            lblFecha.Text = "Fecha: " + DateTime.UtcNow.ToLongDateString();
+            //cargarInformesProfesor();
+            lblFecha.Text = DateTime.UtcNow.ToLongDateString();
         }
 
         private void cargarInformesProfesor()

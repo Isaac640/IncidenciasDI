@@ -16,7 +16,7 @@ namespace Grupo_1_DI.Base_Datos
         public Tipo_equipo tipo_equipo { get; set; }
         // FORMATEAR CON SOLO LA FECHA AL SUBIR EL EQUIPO
         public DateTime fecha_adquisicion { get; set; }
-        public char etiqueta {  get; set; }
+        public string etiqueta {  get; set; }
         public string marca {  get; set; }
         public string modelo {  get; set; }
         public string descripcion { get; set; }
