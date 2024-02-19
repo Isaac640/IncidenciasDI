@@ -37,12 +37,33 @@ En proceso
 ## Contribución
 En proceso
 ## Miembros
-* [Tania105 ](https://github.com/Tania105) - **Tania Chocán Alexandre** <<tania.chocanalexandre@iesmiguelherrero.com>> 
-* [RaulKas07](https://github.com/RaulKas07) - **Raúl Casas Gómez** <<raul.casasgomez@iesmiguelherrero.com>> 
-* [miguelangelcalderon3](https://github.com/miguelangelcalderon3 ) - **Miguel Ángel Calderón** <<miguelangel.calderonzuleta@iesmiguelherrero.com>> 
-* [Ignaciosgh ](https://github.com/Ignaciosgh) - **Ignacio Sáez González** <<ignacio.saezgonzalez@iesmiguelherrero.com>>
-* [naego-sarophiel](https://github.com/naego-sarophiel) - **Diego Sañudo Rodríguez** <<diego.sanudorodriguez@iesmiguelherrero.com>> 
-* [isaac640 ](https://github.com/isaac640) - **Isaac Cabria Díez** <<isaac.cabriadiez@iesmiguelherrero.com>>
+
+- Tania Chocán (Desarrollador principal)
+  - GitHub: [Tania105](https://github.com/Tania105)
+  - Correo de contacto: [tania.chocanalexandre@iesmiguelherrero.com](mailto:tania.chocanalexandre@iesmiguelherrero.com)
+
+- Raúl Casas Gómez (Desarrollador principal)
+  - GitHub: [RaulKas07](https://github.com/RaulKas07)
+  - Correo de contacto: [raul.casasgomez@iesmiguelherrero.com](mailto:raul.casasgomez@iesmiguelherrero.com)
+
+- Miguel Ángel Calderón (Desarrollador principal)
+  - GitHub: [miguelangelcalderon3](https://github.com/miguelangelcalderon3)
+  - Correo de contacto: [miguelangel.calderonzuleta@iesmiguelherrero.com](mailto:miguelangel.calderonzuleta@iesmiguelherrero.com)
+
+- Ignacio Sáez González (Desarrollador principal)
+  - GitHub: [Ignaciosgh](https://github.com/Ignaciosgh)
+  - Correo de contacto: [ignacio.saezgonzalez@iesmiguelherrero.com](mailto:ignacio.saezgonzalez@iesmiguelherrero.com)  
+
+- Diego Sañudo Rodríguez (Desarrollador principal)
+  - GitHub: [naego-sarophiel](https://github.com/naego-sarophiel)
+  - Correo de contacto: [diego.sanudorodriguez@iesmiguelherrero.com](mailto:diego.sanudorodriguez@iesmiguelherrero.com) 
+
+- Isaac Cabria Díez (Desarrollador principal)
+  - GitHub: [isaac640](https://github.com/isaac640)
+  - Correo de contacto: [isaac.cabriadiez@iesmiguelherrero.com](mailto:isaac.cabriadiez@iesmiguelherrero.com) 
+
+Agradecemos a todos los miembros del equipo por su arduo trabajo y dedicación en el desarrollo y mantenimiento de este proyecto.
+
 ## Contacto
 En proceso
 ## Licencia
