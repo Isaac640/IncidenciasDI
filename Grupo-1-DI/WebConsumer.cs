@@ -85,7 +85,7 @@ namespace Grupo_3_Intermodular
 
             public async Task<List<Incidencias>> GetAsyncIncidencias<T>(string endpoint)
         {
-            string url = $"{endpoint}/";
+            string url = $"{endpoint}";
             HttpResponseMessage response = await client.GetAsync(host + url);
 
             if (response.IsSuccessStatusCode)

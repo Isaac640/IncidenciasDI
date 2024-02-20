@@ -13,14 +13,14 @@ namespace Grupo_1_DI
     {
         public long num { get; set; }
         public Tipo tipo { get; set; }
-        public long subtipo_id { get; set; }
+        public Incidencias_Subtipos subtipo_id { get; set; }
         public DateTime fecha_creacion { get; set; }
         public DateTime? fecha_cierre { get; set; }
         public string descripcion { get; set; }
         public string estado { get; set; }
         public string adjunto_url { get; set; }
-        public long creador_id { get; set; }
-        public long responsable_id { get; set; }
-        public long equipo_id { get; set; }
+        public Personal creador_id { get; set; }
+        public Personal responsable_id { get; set; }
+        public Equipos equipo_id { get; set; }
     }
 }

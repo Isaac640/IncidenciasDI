@@ -27,7 +27,7 @@ namespace Grupo_1_DI
 
         public async static Task<List<Incidencias>> ObtenerIncidencias()
         {
-            return await consumer.GetAsync<List<Incidencias>>("/incidencias");
+            return await consumer.GetAsyncIncidencias<List<Incidencias>>("/api/incidencias");
         }
 
         // OBTENCION DE INCIDENCIAS POR ID PROFESOR

@@ -21,17 +21,29 @@ namespace Grupo_1_DI
             InitializeComponent();
         }
 
-        public FrmAdmin(Perfiles p)
+        public FrmAdmin(Perfiles p) : this()
         {
             this.perfil = p;
-            
-            cargarInformes();
+
+            ObtenerPersonalAsync(perfil.personal_id);
             // Tiempo y dia
             timer = new Timer();
             timer.Interval = 1000; // 1 segundo
             timer.Tick += Timer_Tick;
             timer.Start();
             lblFecha.Text = DateTime.UtcNow.ToLongDateString();
+        }
+
+        private async void ObtenerPersonalAsync(long personalId)
+        {
+            this.personal = await Administracion.ObtenerPersonalByPerfil(personalId);
+
+            if (personal != null)
+            {
+                lblNombre.Text = this.personal.nombre;
+                lblApellidos.Text = this.personal.apellido1 + " " + this.personal.apellido2;
+                cargarInformes();
+            }
         }
 
         private async void cargarInformes()
@@ -42,8 +54,8 @@ namespace Grupo_1_DI
             {
                 lblNombre.Text = personal.nombre;
                 lblApellidos.Text = this.personal.apellido1 + " " + this.personal.apellido2;
-                lblRegistros.Text = "Registros: " + dgvIncidencias.RowCount.ToString();
                 modelarTabla(lst);
+                lblRegistros.Text = "Registros: " + dgvIncidencias.RowCount.ToString();
             }
         }
 
@@ -110,14 +122,32 @@ namespace Grupo_1_DI
 
         private void btbEditarIncidencia_Click(object sender, EventArgs e)
         {
-            // Comprobacion de que este seleccionado
-            // Ir al formulario para modificarlo
+            if (dgvIncidencias.SelectedCells.Count > 0)
+            {
+                // Ir al formulario para modificarlo
+                // Administracion.BorrarIncidencia(inc);
+                // Actualizar la tabla
+                cargarInformes();
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ninguna fila para modificar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnBorrarIncidencia_Click(object sender, EventArgs e)
         {
-            // Comprobacion de que este seleccionado
-            // Preguntar si quiere borrar la incidencia
+            if (dgvIncidencias.SelectedCells.Count > 0)
+            {
+                DialogResult dr = MessageBox.Show("¿Seguro que quiere Eliminar esta incidencia?", "Aviso", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    // Administracion.BorrarIncidencia(inc);
+                    // Actualizar la tabla
+
+                    cargarInformes();
+                }
+            }
         }
 
         // Filtrado de Incidencias

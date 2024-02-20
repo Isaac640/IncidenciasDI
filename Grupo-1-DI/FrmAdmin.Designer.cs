@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblAdmin = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
@@ -39,17 +40,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvIncidencias = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblApellidos = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.pbUser = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
@@ -181,7 +182,7 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.btnFiltrar);
             this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dgvIncidencias);
             this.panel3.Location = new System.Drawing.Point(211, -4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(679, 353);
@@ -227,21 +228,21 @@
             this.textBox1.Size = new System.Drawing.Size(535, 24);
             this.textBox1.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvIncidencias
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(626, 260);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvIncidencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIncidencias.Location = new System.Drawing.Point(36, 46);
+            this.dgvIncidencias.Name = "dgvIncidencias";
+            this.dgvIncidencias.Size = new System.Drawing.Size(626, 260);
+            this.dgvIncidencias.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
             this.panel4.Controls.Add(this.lblFecha);
             this.panel4.Controls.Add(this.lblHora);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.lblApellidos);
+            this.panel4.Controls.Add(this.lblNombre);
             this.panel4.Controls.Add(this.pbUser);
             this.panel4.Location = new System.Drawing.Point(211, 349);
             this.panel4.Name = "panel4";
@@ -270,27 +271,27 @@
             this.lblHora.TabIndex = 35;
             this.lblHora.Text = "21:49:45";
             // 
-            // label2
+            // lblApellidos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(132, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 19);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Cabria Diez";
+            this.lblApellidos.AutoSize = true;
+            this.lblApellidos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidos.ForeColor = System.Drawing.Color.White;
+            this.lblApellidos.Location = new System.Drawing.Point(132, 41);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.Size = new System.Drawing.Size(97, 19);
+            this.lblApellidos.TabIndex = 34;
+            this.lblApellidos.Text = "Cabria Diez";
             // 
-            // label1
+            // lblNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(132, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 19);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Isaac";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
+            this.lblNombre.Location = new System.Drawing.Point(132, 19);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(49, 19);
+            this.lblNombre.TabIndex = 33;
+            this.lblNombre.Text = "Isaac";
             // 
             // pbUser
             // 
@@ -308,6 +309,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAdmin";
             this.Text = "Incidencias (Administrador)";
             this.panel1.ResumeLayout(false);
@@ -315,7 +317,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
@@ -329,11 +331,8 @@
         private System.Windows.Forms.Panel panelDatos;
         private System.Windows.Forms.Label lblRegistros;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.DataGridView dgvIncidencias;
         private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblApellidos;
-        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
@@ -346,13 +345,13 @@
         private System.Windows.Forms.Button btnBorrarIncidencia;
         private System.Windows.Forms.Button btbEditarIncidencia;
         private System.Windows.Forms.Button btnRegIncidencia;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvIncidencias;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pbUser;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblApellidos;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Label lblFecha;
         public System.Windows.Forms.Label lblHora;
