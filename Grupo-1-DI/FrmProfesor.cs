@@ -29,7 +29,7 @@ namespace Grupo_1_DI
         {
             this.perfil = p;
             //Obtiene el personal por id de perfil
-            ObtenerPersonalAsync(p.personal_id);
+            ObtenerPersonalAsync(perfil.personal_id);
 
             // Tiempo y dia
             timer = new Timer();

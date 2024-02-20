@@ -13,12 +13,19 @@ namespace Grupo_1_DI
 {
     public partial class FrmAdmin : Form
     {
+        Personal personal;
+        Perfiles perfil;
         private Timer timer;
         public FrmAdmin()
         {
             InitializeComponent();
-            cargarInformes();
+        }
 
+        public FrmAdmin(Perfiles p)
+        {
+            this.perfil = p;
+            
+            cargarInformes();
             // Tiempo y dia
             timer = new Timer();
             timer.Interval = 1000; // 1 segundo
@@ -33,6 +40,8 @@ namespace Grupo_1_DI
 
             if (lst != null)
             {
+                lblNombre.Text = personal.nombre;
+                lblApellidos.Text = this.personal.apellido1 + " " + this.personal.apellido2;
                 lblRegistros.Text = "Registros: " + dgvIncidencias.RowCount.ToString();
             }
         }

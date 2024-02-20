@@ -46,8 +46,9 @@ namespace Grupo_1_DI
             // ACCESO ADMINISTRADOR
             else if (perfil.perfil.Equals("administrador"))
             {
-                FrmAdmin fAdmin = new FrmAdmin();
+                FrmAdmin fAdmin = new FrmAdmin(perfil);
                 fAdmin.Show();
+                this.Close();
             }
             else
             {
