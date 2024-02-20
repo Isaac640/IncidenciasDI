@@ -252,9 +252,9 @@
             this.lblApellidos.ForeColor = System.Drawing.Color.White;
             this.lblApellidos.Location = new System.Drawing.Point(132, 41);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(97, 19);
+            this.lblApellidos.Size = new System.Drawing.Size(163, 19);
             this.lblApellidos.TabIndex = 11;
-            this.lblApellidos.Text = "Cabria Diez";
+            this.lblApellidos.Text = "apellido 1, apellido 2";
             // 
             // lblNombre
             // 

@@ -48,8 +48,13 @@ namespace Grupo_1_DI
         // Botones principales
         private void btnRegIncidencia_Click(object sender, EventArgs e)
         {
-            
-            
+            // Nuevo Formulario
+            Incidencias inc = new Incidencias();
+            FrmIncidencia formIncidencia = new FrmIncidencia(inc);
+            if (formIncidencia.ShowDialog() == DialogResult.OK)
+            {
+                //Administracion.SubirIncidencia(inc);
+            }
         }
 
         private void btbEditarIncidencia_Click(object sender, EventArgs e)
