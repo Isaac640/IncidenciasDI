@@ -9,7 +9,7 @@ namespace Grupo_1_DI.Base_Datos
 {
     public class Perfiles
     {
-        public int personal_id {  get; set; }
+        public long personal_id {  get; set; }
         public string dominio {  get; set; }
         public string educantabria { get; set; }
         public string password { get; set; }

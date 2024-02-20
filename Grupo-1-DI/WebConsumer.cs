@@ -51,7 +51,7 @@ namespace Grupo_3_Intermodular
 
         public async Task<Perfiles> GetAsyncPerfil<T>(string endpoint, string username)
         {
-            string url = $"{endpoint}?dominio={username}"; ; // Ajusta endpoint_perfil al verdadero endpoint para obtener perfiles
+            string url = $"{endpoint}?dominio={username}"; // Ajusta endpoint_perfil al verdadero endpoint para obtener perfiles
             HttpResponseMessage response = await client.GetAsync(host + url);
 
             if (response.IsSuccessStatusCode)
@@ -66,11 +66,10 @@ namespace Grupo_3_Intermodular
                 return null;
             }
         }
-        public async Task<Personal> GetAsyncPersonal<T>(string endpoint, string username)
+        public async Task<Personal> GetAsyncPersonal<T>(string endpoint, long id)
         {
-            string url = $"{endpoint}?dominio={username}"; ; // Ajusta endpoint_perfil al verdadero endpoint para obtener perfiles
+            string url = $"{endpoint}/{id}";
             HttpResponseMessage response = await client.GetAsync(host + url);
-
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
@@ -83,11 +82,10 @@ namespace Grupo_3_Intermodular
                 return null;
             }
         }
-        
 
-        public async Task<List<Incidencias>> GetAsyncIncidencias<T>(string endpoint, int id)
+        public async Task<List<Incidencias>> GetAsyncIncidencias<T>(string endpoint, long id)
         {
-            string url = $"{endpoint}?incidencias={id}"; ; // Ajusta endpoint_perfil al verdadero endpoint para obtener perfiles
+            string url = $"{endpoint}/creadorId/{id}";
             HttpResponseMessage response = await client.GetAsync(host + url);
 
             if (response.IsSuccessStatusCode)
@@ -98,48 +96,10 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener las incidencias del usuario","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al obtener las incidencias del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
-
-        /*
-        public async Task<T> GetAsync<T>(string endpoint, string domain)
-        {
-            // Combinar el nombre de usuario y la contraseña en un formato "nombreDeUsuario:contraseña"
-            string url = $"{endpoint}?dominio={domain}";
-            // Codificar las credenciales en base64
-
-            using (client)
-            {
-                try
-                {
-                    // Realizar una solicitud GET a la API
-                    HttpResponseMessage response = await client.GetAsync(url);
-                    // Verificar si la solicitud fue exitosa (código de estado 200)
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // Leer y deserializar la respuesta en el tipo T
-                        string responseBody = await response.Content.ReadAsStringAsync();
-                        T result = JsonConvert.DeserializeObject<T>(responseBody);
-                        return result;
-                    }
-                    else
-                    {
-                        // Si la solicitud no fue exitosa, mostrar el código de estado
-                        Console.WriteLine($"Error: {response.StatusCode}");
-                        return default(T);
-                    }
-                }
-                catch (HttpRequestException e)
-                {
-                    // Si ocurre un error al realizar la solicitud, mostrar el mensaje de error
-                    Console.WriteLine($"Error: {e.Message}");
-                    return default(T);
-                }
-            }
-        }*/
-
 
         public async Task<T> PostAsync<T>(string endpoint, object data)
         {

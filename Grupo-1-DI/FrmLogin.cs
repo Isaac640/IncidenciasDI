@@ -53,6 +53,7 @@ namespace Grupo_1_DI
             {
                 MessageBox.Show("Este usuario de dominio no esta registrado en la base de datos por favor" +
                     " contacte con el administrador de dominio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.Exit();
             }
 
 

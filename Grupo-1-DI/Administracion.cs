@@ -31,16 +31,17 @@ namespace Grupo_1_DI
         }
 
         // OBTENCION DE INCIDENCIAS POR ID PROFESOR
-        public async static Task<List<Incidencias>> ObtenerIncidenciasByProfesor(int id)
+        public async static Task<List<Incidencias>> ObtenerIncidenciasByProfesor(long id)
         {
-            return await consumer.GetAsyncIncidencias<List<Incidencias>>("/incidencias", id);
+            return await consumer.GetAsyncIncidencias<List<Incidencias>>("/api/incidencias", id);
+
         }
 
         // OBTENER PERSONAL POR ID DE PERFIL 
 
-        public async static Task<Personal> ObtenerPersonalByPerfil(int id)
+        public async static Task<Personal> ObtenerPersonalByPerfil(long id)
         {
-            return await consumer.GetAsyncPersonal<Personal>("/personal?id=" + id);
+            return await consumer.GetAsyncPersonal<Personal>("/api/personal",  id);
         }
 
         // OBTENER EL PERFIL DEL USUARIO POR NOMBRE DE DOMINIO

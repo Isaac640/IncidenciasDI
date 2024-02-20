@@ -8,7 +8,7 @@ namespace Grupo_1_DI.Base_Datos
 {
     public class Personal
     {
-        public int id {  get; set; }
+        public long id {  get; set; }
         public string dni {  get; set; }
         public string nombre { get; set; }
         public string apellido1 { get; set; }
@@ -17,7 +17,7 @@ namespace Grupo_1_DI.Base_Datos
         public string localidad { get; set; }
         public string cp {  get; set; }
         public string tlf { get; set; }
-        public bool activo { get; set; }
-        public int departamento_id { get; set; }
+        public int activo { get; set; }
+        public long departamento_id { get; set; }
     }
 }

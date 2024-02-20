@@ -34,3 +34,4 @@ C:\Users\Alumno\Desktop\Grupo-1-DI\IncidenciasDI\IncidenciasDI\Grupo-1-DI\obj\De
 C:\Users\Alumno\Desktop\Grupo-1-DI\IncidenciasDI\IncidenciasDI\Grupo-1-DI\obj\Debug\Grupo-1-DI.csproj.CopyComplete
 C:\Users\Alumno\Desktop\Grupo-1-DI\IncidenciasDI\IncidenciasDI\Grupo-1-DI\obj\Debug\Grupo-1-DI.exe
 C:\Users\Alumno\Desktop\Grupo-1-DI\IncidenciasDI\IncidenciasDI\Grupo-1-DI\obj\Debug\Grupo-1-DI.pdb
+C:\Users\Alumno\Desktop\Grupo-1-DI\IncidenciasDI\IncidenciasDI\Grupo-1-DI\obj\Debug\Grupo_1_DI.FrmIncidencia.resources
