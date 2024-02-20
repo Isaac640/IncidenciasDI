@@ -43,7 +43,49 @@ namespace Grupo_1_DI
                 lblNombre.Text = personal.nombre;
                 lblApellidos.Text = this.personal.apellido1 + " " + this.personal.apellido2;
                 lblRegistros.Text = "Registros: " + dgvIncidencias.RowCount.ToString();
+                modelarTabla(lst);
             }
+        }
+
+        private void modelarTabla(List<Incidencias> lst)
+        {
+            dgvIncidencias.AutoGenerateColumns = false;
+
+            // Crear columnas manualmente para el DataGridView
+
+            DataGridViewTextBoxColumn columnaTipo = new DataGridViewTextBoxColumn();
+            columnaTipo.DataPropertyName = "tipo";
+            columnaTipo.HeaderText = "Tipo";
+
+            DataGridViewTextBoxColumn columnaFecha = new DataGridViewTextBoxColumn();
+            columnaFecha.DataPropertyName = "fecha_creacion";
+            columnaFecha.HeaderText = "Fecha creacion";
+
+            DataGridViewTextBoxColumn columnaDesc = new DataGridViewTextBoxColumn();
+            columnaDesc.DataPropertyName = "descripcion";
+            columnaDesc.HeaderText = "Descripcion";
+
+            DataGridViewTextBoxColumn columnaEstado = new DataGridViewTextBoxColumn();
+            columnaEstado.DataPropertyName = "estado";
+            columnaEstado.HeaderText = "Estado";
+
+            DataGridViewTextBoxColumn columnaAdjunto = new DataGridViewTextBoxColumn();
+            columnaAdjunto.DataPropertyName = "adjunto_url";
+            columnaAdjunto.HeaderText = "Adjunto";
+
+            // Agregar las columnas al DataGridView
+
+            if (dgvIncidencias.Columns.Count < 5)
+            {
+                dgvIncidencias.Columns.Add(columnaTipo);
+                dgvIncidencias.Columns.Add(columnaFecha);
+                dgvIncidencias.Columns.Add(columnaDesc);
+                dgvIncidencias.Columns.Add(columnaEstado);
+                dgvIncidencias.Columns.Add(columnaAdjunto);
+            }
+
+            // Asignar la lista de personas al origen de datos del DataGridView
+            dgvIncidencias.DataSource = lst;
         }
 
 

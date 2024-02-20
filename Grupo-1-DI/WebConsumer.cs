@@ -83,7 +83,25 @@ namespace Grupo_3_Intermodular
             }
         }
 
-        public async Task<List<Incidencias>> GetAsyncIncidencias<T>(string endpoint, long id)
+            public async Task<List<Incidencias>> GetAsyncIncidencias<T>(string endpoint)
+        {
+            string url = $"{endpoint}/";
+            HttpResponseMessage response = await client.GetAsync(host + url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                List<Incidencias> incidencias = System.Text.Json.JsonSerializer.Deserialize<List<Incidencias>>(content, serializerOptions);
+                return incidencias;
+            }
+            else
+            {
+                MessageBox.Show("Error al obtener las incidencias del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        public async Task<List<Incidencias>> GetAsyncIncidenciasID<T>(string endpoint, long id)
         {
             string url = $"{endpoint}/creadorId/{id}";
             HttpResponseMessage response = await client.GetAsync(host + url);
