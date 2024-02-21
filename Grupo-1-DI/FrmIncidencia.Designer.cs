@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
             this.lblNombre = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbIncidencia = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAula = new System.Windows.Forms.TextBox();
+            this.cmbTipoIncidencia = new System.Windows.Forms.ComboBox();
+            this.txtPuesto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEtiqueta = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.btnRegIncidencia = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAdjunto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -50,54 +51,55 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(22, 20);
+            this.lblNombre.Location = new System.Drawing.Point(8, 13);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(93, 19);
             this.lblNombre.TabIndex = 11;
             this.lblNombre.Text = "Incidencia:";
             // 
-            // comboBox1
+            // cmbIncidencia
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbIncidencia.FormattingEnabled = true;
+            this.cmbIncidencia.Items.AddRange(new object[] {
             "Equipos",
             "Cuentas",
             "WiFi",
             "Internet",
             "Software"});
-            this.comboBox1.Location = new System.Drawing.Point(121, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(136, 21);
-            this.comboBox1.TabIndex = 12;
+            this.cmbIncidencia.Location = new System.Drawing.Point(107, 11);
+            this.cmbIncidencia.Name = "cmbIncidencia";
+            this.cmbIncidencia.Size = new System.Drawing.Size(200, 21);
+            this.cmbIncidencia.TabIndex = 12;
+            this.cmbIncidencia.SelectedIndexChanged += new System.EventHandler(this.cmbIncidencia_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(287, 20);
+            this.label1.Location = new System.Drawing.Point(8, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 19);
+            this.label1.Size = new System.Drawing.Size(49, 19);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Tipo de incidencia:";
+            this.label1.Text = "Tipo:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 57);
+            this.label2.Location = new System.Drawing.Point(8, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 19);
+            this.label2.Size = new System.Drawing.Size(78, 19);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Etiqueta";
+            this.label2.Text = "Etiqueta:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(22, 95);
+            this.label3.Location = new System.Drawing.Point(8, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 19);
             this.label3.TabIndex = 15;
@@ -108,7 +110,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(22, 166);
+            this.label4.Location = new System.Drawing.Point(8, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 19);
             this.label4.TabIndex = 16;
@@ -119,59 +121,59 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(412, 166);
+            this.label5.Location = new System.Drawing.Point(8, 291);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 19);
             this.label5.TabIndex = 17;
             this.label5.Text = "Adjunto";
             // 
-            // textBox1
+            // txtAula
             // 
-            this.textBox1.Location = new System.Drawing.Point(121, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 20);
-            this.textBox1.TabIndex = 18;
+            this.txtAula.Location = new System.Drawing.Point(107, 65);
+            this.txtAula.Name = "txtAula";
+            this.txtAula.Size = new System.Drawing.Size(200, 20);
+            this.txtAula.TabIndex = 18;
             // 
-            // comboBox2
+            // cmbTipoIncidencia
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(459, 18);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 19;
+            this.cmbTipoIncidencia.FormattingEnabled = true;
+            this.cmbTipoIncidencia.Location = new System.Drawing.Point(107, 38);
+            this.cmbTipoIncidencia.Name = "cmbTipoIncidencia";
+            this.cmbTipoIncidencia.Size = new System.Drawing.Size(200, 21);
+            this.cmbTipoIncidencia.TabIndex = 19;
             // 
-            // textBox2
+            // txtPuesto
             // 
-            this.textBox2.Location = new System.Drawing.Point(295, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 20;
+            this.txtPuesto.Location = new System.Drawing.Point(107, 117);
+            this.txtPuesto.Name = "txtPuesto";
+            this.txtPuesto.Size = new System.Drawing.Size(200, 20);
+            this.txtPuesto.TabIndex = 20;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(220, 95);
+            this.label6.Location = new System.Drawing.Point(8, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 19);
             this.label6.TabIndex = 21;
             this.label6.Text = "Puesto:";
             // 
-            // textBox3
+            // txtEtiqueta
             // 
-            this.textBox3.Location = new System.Drawing.Point(77, 96);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 22;
+            this.txtEtiqueta.Location = new System.Drawing.Point(107, 91);
+            this.txtEtiqueta.Name = "txtEtiqueta";
+            this.txtEtiqueta.Size = new System.Drawing.Size(200, 20);
+            this.txtEtiqueta.TabIndex = 22;
             // 
-            // textBox4
+            // txtDesc
             // 
-            this.textBox4.Location = new System.Drawing.Point(26, 188);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(369, 112);
-            this.textBox4.TabIndex = 23;
+            this.txtDesc.Location = new System.Drawing.Point(12, 173);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(295, 112);
+            this.txtDesc.TabIndex = 23;
             // 
             // btnRegIncidencia
             // 
@@ -185,7 +187,7 @@
             this.btnRegIncidencia.ForeColor = System.Drawing.Color.Silver;
             this.btnRegIncidencia.Image = global::Grupo_1_DI.Properties.Resources.register_icon;
             this.btnRegIncidencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegIncidencia.Location = new System.Drawing.Point(571, 306);
+            this.btnRegIncidencia.Location = new System.Drawing.Point(189, 404);
             this.btnRegIncidencia.Name = "btnRegIncidencia";
             this.btnRegIncidencia.Size = new System.Drawing.Size(118, 43);
             this.btnRegIncidencia.TabIndex = 26;
@@ -207,7 +209,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.Silver;
             this.btnCancelar.Image = global::Grupo_1_DI.Properties.Resources.cancel_Icon;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(458, 306);
+            this.btnCancelar.Location = new System.Drawing.Point(76, 404);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(107, 43);
             this.btnCancelar.TabIndex = 27;
@@ -216,6 +218,29 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnAdjunto
+            // 
+            this.btnAdjunto.BackColor = System.Drawing.Color.White;
+            this.btnAdjunto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdjunto.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAdjunto.FlatAppearance.BorderSize = 5;
+            this.btnAdjunto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAdjunto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnAdjunto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdjunto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnAdjunto.ForeColor = System.Drawing.Color.DimGray;
+            this.btnAdjunto.Image = global::Grupo_1_DI.Properties.Resources.file_Icon;
+            this.btnAdjunto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdjunto.Location = new System.Drawing.Point(43, 312);
+            this.btnAdjunto.Name = "btnAdjunto";
+            this.btnAdjunto.Size = new System.Drawing.Size(236, 53);
+            this.btnAdjunto.TabIndex = 28;
+            this.btnAdjunto.Text = "           Subir Archivo";
+            this.btnAdjunto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdjunto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdjunto.UseVisualStyleBackColor = false;
+            this.btnAdjunto.Click += new System.EventHandler(this.btnAdjunto_Click);
+            // 
             // FrmIncidencia
             // 
             this.AcceptButton = this.btnRegIncidencia;
@@ -223,21 +248,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(698, 361);
+            this.ClientSize = new System.Drawing.Size(316, 454);
+            this.Controls.Add(this.btnAdjunto);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnRegIncidencia);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDesc);
+            this.Controls.Add(this.txtEtiqueta);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPuesto);
+            this.Controls.Add(this.cmbTipoIncidencia);
+            this.Controls.Add(this.txtAula);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbIncidencia);
             this.Controls.Add(this.lblNombre);
             this.Name = "FrmIncidencia";
             this.Text = "Incidencia";
@@ -249,19 +275,20 @@
         #endregion
 
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbIncidencia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAula;
+        private System.Windows.Forms.ComboBox cmbTipoIncidencia;
+        private System.Windows.Forms.TextBox txtPuesto;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEtiqueta;
+        private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Button btnRegIncidencia;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAdjunto;
     }
 }

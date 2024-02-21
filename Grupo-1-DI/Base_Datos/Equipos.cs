@@ -21,6 +21,8 @@ namespace Grupo_1_DI.Base_Datos
         public string modelo {  get; set; }
         public string descripcion { get; set; }
         public bool baja { get; set; }
+        public Aulas aula_num { get; set; }
+        public int puesto { get; set; }
 
     }
 }
