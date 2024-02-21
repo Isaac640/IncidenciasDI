@@ -59,28 +59,5 @@ namespace Grupo_1_DI
             }
         }
 
-        private void btnAdjunto_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Title = "Seleccionar archivo";
-                openFileDialog.Filter = "Libros de Excel (*.xlsx)|*.xlsx|Documentos de Word (*.docx; *.doc)|*.docx;*.doc|Archivos PDF (*.pdf)|*.pdf|Imágenes JPG (*.jpg)|*.jpg|Todos los archivos (*.*)|*.*";
-                openFileDialog.Multiselect = false;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string archivoSeleccionado = openFileDialog.FileName;
-                    try
-                    {
-                        //await Administracion.SubirArchivoAPI(archivoSeleccionado);
-                        btnAdjunto.Text = openFileDialog.FileName;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al subir archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-        }
     }
 }

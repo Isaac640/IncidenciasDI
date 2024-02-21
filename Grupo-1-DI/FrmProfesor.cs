@@ -66,7 +66,7 @@ namespace Grupo_1_DI
         }
 
         // Modelar Tabla de dataGridView (Advertencia, Muy largo)
-        private void modelarTabla(List<Incidencias> lst)
+        private void modelarTabla(List<Incidencias_Sin> lst)
         {
             dgvIncidencias.AutoGenerateColumns = false;
 
@@ -122,18 +122,21 @@ namespace Grupo_1_DI
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (dgvIncidencias.SelectedCells.Count > 0)
+            /*if (dgvIncidencias.SelectedCells.Count > 0)
             {
-                // Ir al formulario para modificarlo
-                // Administracion.BorrarIncidencia(inc);
-                // Actualizar la tabla
-                dgvIncidencias.Rows.Clear();
+                int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
+                Incidencias_Sin inc = Administracion.ObtenerIncidenciaByID(id).Result;
+                FrmIncidencia frmInc = new FrmIncidencia(inc);
+                if (frmInc.ShowDialog() == DialogResult.OK)
+                {
+                    Administracion.ModificarIncidencia(inc);
+                }
                 cargarInformesProfesor();
             }
             else
             {
                 MessageBox.Show("No ha seleccionado ninguna fila para modificar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            }*/
 
         }
 
@@ -144,9 +147,8 @@ namespace Grupo_1_DI
                 DialogResult dr = MessageBox.Show("¿Seguro que quiere Eliminar esta incidencia?", "Aviso", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
-                    // Administracion.BorrarIncidencia(inc);
-                    // Actualizar la tabla
-
+                    int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
+                    Administracion.BorrarIncidencia(id);
                     cargarInformesProfesor();
                 }
             }
@@ -160,7 +162,7 @@ namespace Grupo_1_DI
         // Se filtrarán por: Subtipo incidencia, Fecha Creación y Estado
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         // Salir de la aplicacion
@@ -180,5 +182,23 @@ namespace Grupo_1_DI
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
+        private void btnComentar_Click(object sender, EventArgs e)
+        {
+            if (dgvIncidencias.SelectedCells.Count > 0)
+            {
+                
+                int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
+                FrmComentario formComent = new FrmComentario(id);
+                if (formComent.DialogResult == DialogResult.OK)
+                {
+                    // Añadir comentario
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ninguna fila para ver los comentarios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

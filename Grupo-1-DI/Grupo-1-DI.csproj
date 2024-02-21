@@ -85,6 +85,7 @@
     <Compile Include="Base_Datos\Comentarios.cs" />
     <Compile Include="Base_Datos\Departamentos.cs" />
     <Compile Include="Base_Datos\Equipos.cs" />
+    <Compile Include="Base_Datos\Incidencias_Sin.cs" />
     <Compile Include="Enumerados\Estado.cs" />
     <Compile Include="Base_Datos\Incidencias_Subtipos.cs" />
     <Compile Include="Base_Datos\Perfiles.cs" />
@@ -97,6 +98,12 @@
     </Compile>
     <Compile Include="FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmComentario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmComentario.Designer.cs">
+      <DependentUpon>FrmComentario.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmIncidencia.cs">
       <SubType>Form</SubType>
@@ -127,6 +134,9 @@
     <Compile Include="WebConsumer.cs" />
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmComentario.resx">
+      <DependentUpon>FrmComentario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIncidencia.resx">
       <DependentUpon>FrmIncidencia.cs</DependentUpon>
@@ -183,6 +193,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\file_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\comments_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\exit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\upload_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

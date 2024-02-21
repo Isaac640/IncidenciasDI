@@ -124,8 +124,8 @@
   <data name="Medium_228_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\Medium_228_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="filter_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\filter_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancel_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\cancel_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IRIS_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\IRIS_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +142,8 @@
   <data name="user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Add_8x_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\Add_8x_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="comments_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\comments_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add_Incindent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\add_Incindent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,11 +154,17 @@
   <data name="loading_circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\loading_circle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="filter_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\filter_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add_8x_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\Add_8x_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\file_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="delete_Incindent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\delete_Incindent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cancel_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\cancel_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="register_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\register_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,7 +172,10 @@
   <data name="edit_Incindent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\edit_Incindent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="file_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\file_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exit_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\exit_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="upload_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\upload_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

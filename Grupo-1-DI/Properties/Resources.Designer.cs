@@ -103,6 +103,16 @@ namespace Grupo_1_DI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap comments_icon {
+            get {
+                object obj = ResourceManager.GetObject("comments_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_Incindent {
             get {
                 object obj = ResourceManager.GetObject("delete_Incindent", resourceCulture);
@@ -126,6 +136,16 @@ namespace Grupo_1_DI.Properties {
         internal static System.Drawing.Bitmap edit_Incindent {
             get {
                 object obj = ResourceManager.GetObject("edit_Incindent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit_icon {
+            get {
+                object obj = ResourceManager.GetObject("exit_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +236,16 @@ namespace Grupo_1_DI.Properties {
         internal static System.Drawing.Bitmap shut_down2 {
             get {
                 object obj = ResourceManager.GetObject("shut-down2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap upload_icon {
+            get {
+                object obj = ResourceManager.GetObject("upload_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -78,7 +78,7 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener el perfil para el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al obtener el personal del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -96,12 +96,12 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener las incidencias del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al obtener las incidencias", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
 
-        public async Task<List<Incidencias>> GetAsyncIncidenciasID<T>(string endpoint, long id)
+        public async Task<List<Incidencias_Sin>> GetAsyncIncidenciasIDProf<T>(string endpoint, long id)
         {
             string url = $"{endpoint}/creadorId/{id}";
             HttpResponseMessage response = await client.GetAsync(host + url);
@@ -109,7 +109,7 @@ namespace Grupo_3_Intermodular
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
-                List<Incidencias> incidencias = System.Text.Json.JsonSerializer.Deserialize<List<Incidencias>>(content, serializerOptions);
+                List<Incidencias_Sin> incidencias = System.Text.Json.JsonSerializer.Deserialize<List<Incidencias_Sin>>(content, serializerOptions);
                 return incidencias;
             }
             else
@@ -118,6 +118,45 @@ namespace Grupo_3_Intermodular
                 return null;
             }
         }
+
+        public async Task<Incidencias> GetAsyncIncidenciaByID<T>(string endpoint, long id)
+        {
+            string url = $"{endpoint}/{id}";
+            HttpResponseMessage response = await client.GetAsync(host + url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                Incidencias incidencia = System.Text.Json.JsonSerializer.Deserialize<Incidencias>(content, serializerOptions);
+                return incidencia;
+            }
+            else
+            {
+                MessageBox.Show("Error al obtener las incidencias por su ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        public async Task<List<Comentarios>> GetAsyncComentariosList<T>(string endpoint, long id)
+        {
+            string url = $"{endpoint}/{id}";
+            HttpResponseMessage response = await client.GetAsync(host + url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+
+                List<Comentarios> comentarios = System.Text.Json.JsonSerializer.Deserialize<List<Comentarios>>(content, serializerOptions);
+                return comentarios;
+            }
+            else
+            {
+                MessageBox.Show("Error al obtener los comentarios de la incidencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        
 
         public async Task<T> PostAsync<T>(string endpoint, object data)
         {
@@ -137,21 +176,26 @@ namespace Grupo_3_Intermodular
             }
         }
 
-        public async Task<T> DeleteAsync<T>(string endpoint, int id)
+        public async Task<bool> DeleteAsyncIncidencia(string endpoint, long id)
         {
-            StringContent stringContent = new StringContent("");
-            stringContent.Headers.Add("id", id.ToString());
-
-            HttpResponseMessage response = await client.PostAsync(host + endpoint, stringContent);
-            if (response.IsSuccessStatusCode)
+            try
             {
-                string content = await response.Content.ReadAsStringAsync();
-                T result = System.Text.Json.JsonSerializer.Deserialize<T>(content, serializerOptions);
-                return result;
+                string url = $"{endpoint}/{id}";
+                HttpResponseMessage response = await client.DeleteAsync(host + url);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true; 
+                }
+                else
+                {
+                    Console.WriteLine($"Error al eliminar la incidencia. Código de estado: {response.StatusCode}");
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                throw new ApplicationException($"Error al obtener el recurso: {response.StatusCode}");
+                Console.WriteLine($"Error al eliminar la incidencia: {ex.Message}");
+                return false;
             }
         }
 

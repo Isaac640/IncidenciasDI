@@ -17,7 +17,7 @@ namespace Grupo_1_DI
 
         static Administracion()
         {
-            consumer = new WebConsumer("http://localhost:8089");
+            consumer = new WebConsumer("http://localhost:8089/api");
         }
 
         // METODOS DE OBTENCION DE DATOS POR API
@@ -27,27 +27,45 @@ namespace Grupo_1_DI
 
         public async static Task<List<Incidencias>> ObtenerIncidencias()
         {
-            return await consumer.GetAsyncIncidencias<List<Incidencias>>("/api/incidencias");
+            return await consumer.GetAsyncIncidencias<List<Incidencias>>("/incidencias");
         }
 
         // OBTENCION DE INCIDENCIAS POR ID PROFESOR
-        public async static Task<List<Incidencias>> ObtenerIncidenciasByProfesor(long id)
+        public async static Task<List<Incidencias_Sin>> ObtenerIncidenciasByProfesor(long id)
         {
-            return await consumer.GetAsyncIncidenciasID<List<Incidencias>>("/api/incidencias", id);
+            return await consumer.GetAsyncIncidenciasIDProf<List<Incidencias_Sin>>("/incidencias", id);
+        }
 
+        // OBTENER INCIDENCIAS POR ID DE INCIDENCIA
+        public async static Task<Incidencias> ObtenerIncidenciaByID(long id)
+        {
+            return await consumer.GetAsyncIncidenciaByID<Incidencias>("/incidencias", id);
         }
 
         // OBTENER PERSONAL POR ID DE PERFIL 
 
         public async static Task<Personal> ObtenerPersonalByPerfil(long id)
         {
-            return await consumer.GetAsyncPersonal<Personal>("/api/personal",  id);
+            return await consumer.GetAsyncPersonal<Personal>("/personal",  id);
         }
 
         // OBTENER EL PERFIL DEL USUARIO POR NOMBRE DE DOMINIO
         public async static Task<Perfiles> ObtenerPerfilByDominio(string dominio)
         {
-            return await consumer.GetAsyncPerfil<Perfiles>("/api/perfiles/dominio", dominio);
+            return await consumer.GetAsyncPerfil<Perfiles>("/perfiles/dominio", dominio);
+        }
+
+        // OBTENER COMENTARIOS POR ID INCIDENCIAS
+        public async static Task<List<Comentarios>> ObtenerComentariosByIncidenciasId(int id)
+        {
+            return await consumer.GetAsyncComentariosList<Comentarios>("/comentarios", id);
+        }
+
+        // BORRAR INCIDENCIA POR ID
+        public async static Task<bool> BorrarIncidencia(int id)
+        {
+            bool resultado = await consumer.DeleteAsyncIncidencia("/incidencias", id);
+            return resultado;
         }
     }
 }

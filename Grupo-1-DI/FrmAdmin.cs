@@ -15,7 +15,8 @@ namespace Grupo_1_DI
     {
         Personal personal;
         Perfiles perfil;
-        private Timer timer;
+        Timer timer;
+
         public FrmAdmin()
         {
             InitializeComponent();
@@ -142,9 +143,8 @@ namespace Grupo_1_DI
                 DialogResult dr = MessageBox.Show("¿Seguro que quiere Eliminar esta incidencia?", "Aviso", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
-                    // Administracion.BorrarIncidencia(inc);
-                    // Actualizar la tabla
-
+                    int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
+                    Administracion.BorrarIncidencia(id);
                     cargarInformes();
                 }
             }
@@ -154,7 +154,7 @@ namespace Grupo_1_DI
         // Se filtrarán por: Subtipo incidencia, Fecha Creación y Estado
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         //Salir
@@ -165,6 +165,24 @@ namespace Grupo_1_DI
             if (dr == DialogResult.Yes)
             {
                 Application.Exit();
+            }
+        }
+
+        private void btnComentar_Click(object sender, EventArgs e)
+        {
+            if (dgvIncidencias.SelectedCells.Count > 0)
+            {
+                int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
+                FrmComentario formComent = new FrmComentario(id);
+                if (formComent.DialogResult == DialogResult.OK)
+                {
+                    // Añadir comentario
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado ninguna fila para ver los comentarios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

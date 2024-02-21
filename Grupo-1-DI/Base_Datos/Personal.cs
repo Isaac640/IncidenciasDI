@@ -18,6 +18,6 @@ namespace Grupo_1_DI.Base_Datos
         public string cp {  get; set; }
         public string tlf { get; set; }
         public int activo { get; set; }
-        public long departamento_id { get; set; }
+        public Departamentos departamento_id { get; set; }
     }
 }
