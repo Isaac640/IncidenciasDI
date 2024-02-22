@@ -82,10 +82,6 @@ namespace Grupo_1_DI
             columnaEstado.DataPropertyName = "estado";
             columnaEstado.HeaderText = "Estado";
 
-            DataGridViewTextBoxColumn columnaAdjunto = new DataGridViewTextBoxColumn();
-            columnaAdjunto.DataPropertyName = "adjunto_url";
-            columnaAdjunto.HeaderText = "Adjunto";
-
             // Agregar las columnas al DataGridView
 
             if (dgvIncidencias.Columns.Count < 5)
@@ -94,7 +90,6 @@ namespace Grupo_1_DI
                 dgvIncidencias.Columns.Add(columnaFecha);
                 dgvIncidencias.Columns.Add(columnaDesc);
                 dgvIncidencias.Columns.Add(columnaEstado);
-                dgvIncidencias.Columns.Add(columnaAdjunto);
             }
 
             // Asignar la lista de personas al origen de datos del DataGridView
@@ -152,9 +147,20 @@ namespace Grupo_1_DI
 
         // Filtrado de Incidencias
         // Se filtrarán por: Subtipo incidencia, Fecha Creación y Estado
-        private void btnFiltrar_Click(object sender, EventArgs e)
+        private async void btnFiltrar_Click(object sender, EventArgs e)
         {
-            
+            var listaInc = await Administracion.ObtenerIncidencias();
+            List<Incidencias> listaAux = new List<Incidencias>();
+            foreach (Incidencias inc in listaInc)
+            {
+                if (cmbEstadoFiltro.Text.Equals(inc.estado) || dtpFechaFiltro.Value.Equals(inc.fecha_creacion) ||
+                    (cmbEstadoFiltro.Text.Equals(inc.estado) && dtpFechaFiltro.Value.Equals(inc.fecha_creacion)))
+                {
+                    listaAux.Add(inc);
+                }
+            }
+
+            modelarTabla(listaAux);
         }
 
         //Salir
@@ -174,16 +180,17 @@ namespace Grupo_1_DI
             {
                 int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
                 FrmComentario formComent = new FrmComentario(id);
-                if (formComent.DialogResult == DialogResult.OK)
-                {
-                    // Añadir comentario
-                }
-
             }
             else
             {
                 MessageBox.Show("No ha seleccionado ninguna fila para ver los comentarios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        // Resetear filtro
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            cargarInformes();
         }
     }
 }

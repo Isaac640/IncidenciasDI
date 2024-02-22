@@ -32,33 +32,34 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfesor));
             this.lblHora = new System.Windows.Forms.Label();
             this.panelDatos = new System.Windows.Forms.Panel();
+            this.cmbEstadoFiltro = new System.Windows.Forms.ComboBox();
+            this.dtpFechaFiltro = new System.Windows.Forms.DateTimePicker();
+            this.dgvIncidencias = new System.Windows.Forms.DataGridView();
             this.lblRegistros = new System.Windows.Forms.Label();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblApellidos = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.dgvIncidencias = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_Creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adjunto_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnComentar = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnBorrarIncidencia = new System.Windows.Forms.Button();
             this.btnEditarIncidencia = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnNuevaIncidencia2 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.btnFiltro = new System.Windows.Forms.Button();
             this.pbUser = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_Creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
@@ -78,33 +79,69 @@
             // panelDatos
             // 
             this.panelDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.panelDatos.Controls.Add(this.dgvIncidencias);
-            this.panelDatos.Controls.Add(this.btnFiltro);
+            this.panelDatos.Controls.Add(this.btnReset);
             this.panelDatos.Controls.Add(this.lblRegistros);
-            this.panelDatos.Controls.Add(this.txtFiltro);
+            this.panelDatos.Controls.Add(this.dtpFechaFiltro);
+            this.panelDatos.Controls.Add(this.dgvIncidencias);
+            this.panelDatos.Controls.Add(this.cmbEstadoFiltro);
+            this.panelDatos.Controls.Add(this.btnFiltro);
             this.panelDatos.Location = new System.Drawing.Point(211, -4);
             this.panelDatos.Name = "panelDatos";
             this.panelDatos.Size = new System.Drawing.Size(679, 353);
             this.panelDatos.TabIndex = 9;
+            // 
+            // cmbEstadoFiltro
+            // 
+            this.cmbEstadoFiltro.FormattingEnabled = true;
+            this.cmbEstadoFiltro.Items.AddRange(new object[] {
+            "abierta",
+            "asignada",
+            "en proceso",
+            "enviado a infortec",
+            "resuelta",
+            "cerrada"});
+            this.cmbEstadoFiltro.Location = new System.Drawing.Point(350, 15);
+            this.cmbEstadoFiltro.Name = "cmbEstadoFiltro";
+            this.cmbEstadoFiltro.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstadoFiltro.TabIndex = 26;
+            this.cmbEstadoFiltro.Text = "abierta";
+            // 
+            // dtpFechaFiltro
+            // 
+            this.dtpFechaFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFiltro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFiltro.Location = new System.Drawing.Point(219, 15);
+            this.dtpFechaFiltro.Name = "dtpFechaFiltro";
+            this.dtpFechaFiltro.Size = new System.Drawing.Size(106, 21);
+            this.dtpFechaFiltro.TabIndex = 25;
+            // 
+            // dgvIncidencias
+            // 
+            this.dgvIncidencias.AllowUserToAddRows = false;
+            this.dgvIncidencias.AllowUserToDeleteRows = false;
+            this.dgvIncidencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIncidencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Tipo,
+            this.Fecha_Creacion,
+            this.descripcion,
+            this.estado});
+            this.dgvIncidencias.Location = new System.Drawing.Point(36, 46);
+            this.dgvIncidencias.Name = "dgvIncidencias";
+            this.dgvIncidencias.ReadOnly = true;
+            this.dgvIncidencias.Size = new System.Drawing.Size(626, 288);
+            this.dgvIncidencias.TabIndex = 24;
             // 
             // lblRegistros
             // 
             this.lblRegistros.AutoSize = true;
             this.lblRegistros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistros.ForeColor = System.Drawing.Color.White;
-            this.lblRegistros.Location = new System.Drawing.Point(32, 320);
+            this.lblRegistros.Location = new System.Drawing.Point(37, 17);
             this.lblRegistros.Name = "lblRegistros";
             this.lblRegistros.Size = new System.Drawing.Size(89, 19);
             this.lblRegistros.TabIndex = 8;
             this.lblRegistros.Text = "Registros:";
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Font = new System.Drawing.Font("Arial", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltro.Location = new System.Drawing.Point(36, 16);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(532, 24);
-            this.txtFiltro.TabIndex = 7;
             // 
             // panelMenu
             // 
@@ -166,66 +203,6 @@
             this.lblFecha.Size = new System.Drawing.Size(224, 20);
             this.lblFecha.TabIndex = 8;
             this.lblFecha.Text = "Lunes, 26 de septiembre 2018";
-            // 
-            // dgvIncidencias
-            // 
-            this.dgvIncidencias.AllowUserToAddRows = false;
-            this.dgvIncidencias.AllowUserToDeleteRows = false;
-            this.dgvIncidencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIncidencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Tipo,
-            this.Fecha_Creacion,
-            this.descripcion,
-            this.estado,
-            this.adjunto_url});
-            this.dgvIncidencias.Location = new System.Drawing.Point(36, 46);
-            this.dgvIncidencias.Name = "dgvIncidencias";
-            this.dgvIncidencias.ReadOnly = true;
-            this.dgvIncidencias.Size = new System.Drawing.Size(626, 260);
-            this.dgvIncidencias.TabIndex = 24;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "num";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.DataPropertyName = "tipo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Fecha_Creacion
-            // 
-            this.Fecha_Creacion.DataPropertyName = "fecha_creacion";
-            this.Fecha_Creacion.HeaderText = "Fecha Creacion";
-            this.Fecha_Creacion.Name = "Fecha_Creacion";
-            this.Fecha_Creacion.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
-            // adjunto_url
-            // 
-            this.adjunto_url.DataPropertyName = "adjunto_url";
-            this.adjunto_url.HeaderText = "Adjunto";
-            this.adjunto_url.Name = "adjunto_url";
-            this.adjunto_url.ReadOnly = true;
             // 
             // btnComentar
             // 
@@ -347,6 +324,28 @@
             this.btnNuevaIncidencia2.UseVisualStyleBackColor = false;
             this.btnNuevaIncidencia2.Click += new System.EventHandler(this.btnNuevaIncidencia_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReset.Image = global::Grupo_1_DI.Properties.Resources.reset_Icon;
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(575, 6);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(88, 36);
+            this.btnReset.TabIndex = 27;
+            this.btnReset.Text = " Reset";
+            this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnReset, "Carga todas las incidencias de nuevo");
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // btnFiltro
             // 
             this.btnFiltro.BackColor = System.Drawing.Color.Transparent;
@@ -359,12 +358,13 @@
             this.btnFiltro.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnFiltro.Image = global::Grupo_1_DI.Properties.Resources.filter_icon;
             this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltro.Location = new System.Drawing.Point(574, 9);
+            this.btnFiltro.Location = new System.Drawing.Point(477, 6);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(88, 36);
             this.btnFiltro.TabIndex = 23;
             this.btnFiltro.Text = " Filtrar";
             this.btnFiltro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnFiltro, "Filtra por la fecha y estado indicados");
             this.btnFiltro.UseVisualStyleBackColor = false;
             this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
@@ -377,6 +377,44 @@
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUser.TabIndex = 9;
             this.pbUser.TabStop = false;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "num";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 25;
+            // 
+            // Tipo
+            // 
+            this.Tipo.DataPropertyName = "tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // Fecha_Creacion
+            // 
+            this.Fecha_Creacion.DataPropertyName = "fecha_creacion";
+            this.Fecha_Creacion.HeaderText = "Fecha Creacion";
+            this.Fecha_Creacion.Name = "Fecha_Creacion";
+            this.Fecha_Creacion.ReadOnly = true;
+            this.Fecha_Creacion.Width = 95;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 220;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             // 
             // FrmProfesor
             // 
@@ -393,10 +431,10 @@
             this.Text = "Incidencias";
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.ResumeLayout(false);
@@ -408,7 +446,6 @@
         private System.Windows.Forms.Panel panelDatos;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label lblRegistros;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.PictureBox pbUser;
@@ -421,13 +458,15 @@
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.DataGridView dgvIncidencias;
+        private System.Windows.Forms.Button btnComentar;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ComboBox cmbEstadoFiltro;
+        private System.Windows.Forms.DateTimePicker dtpFechaFiltro;
+        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Creacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adjunto_url;
-        private System.Windows.Forms.Button btnComentar;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

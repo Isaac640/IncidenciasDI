@@ -101,7 +101,7 @@ namespace Grupo_3_Intermodular
             }
         }
 
-        public async Task<List<Incidencias_Sin>> GetAsyncIncidenciasIDProf<T>(string endpoint, long id)
+        public async Task<List<Incidencias>> GetAsyncIncidenciasIDProf<T>(string endpoint, long id)
         {
             string url = $"{endpoint}/creadorId/{id}";
             HttpResponseMessage response = await client.GetAsync(host + url);
@@ -109,7 +109,7 @@ namespace Grupo_3_Intermodular
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
-                List<Incidencias_Sin> incidencias = System.Text.Json.JsonSerializer.Deserialize<List<Incidencias_Sin>>(content, serializerOptions);
+                List<Incidencias> incidencias = System.Text.Json.JsonSerializer.Deserialize<List<Incidencias>>(content, serializerOptions);
                 return incidencias;
             }
             else

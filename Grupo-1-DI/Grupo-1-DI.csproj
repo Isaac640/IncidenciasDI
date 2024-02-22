@@ -203,5 +203,8 @@
   <ItemGroup>
     <None Include="images\upload_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="images\reset_Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

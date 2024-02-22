@@ -233,6 +233,16 @@ namespace Grupo_1_DI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap reset_Icon {
+            get {
+                object obj = ResourceManager.GetObject("reset_Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shut_down2 {
             get {
                 object obj = ResourceManager.GetObject("shut-down2", resourceCulture);

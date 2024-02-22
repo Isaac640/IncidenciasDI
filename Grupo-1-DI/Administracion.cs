@@ -31,9 +31,9 @@ namespace Grupo_1_DI
         }
 
         // OBTENCION DE INCIDENCIAS POR ID PROFESOR
-        public async static Task<List<Incidencias_Sin>> ObtenerIncidenciasByProfesor(long id)
+        public async static Task<List<Incidencias>> ObtenerIncidenciasByProfesor(long id)
         {
-            return await consumer.GetAsyncIncidenciasIDProf<List<Incidencias_Sin>>("/incidencias", id);
+            return await consumer.GetAsyncIncidenciasIDProf<List<Incidencias>>("/incidencias", id);
         }
 
         // OBTENER INCIDENCIAS POR ID DE INCIDENCIA
