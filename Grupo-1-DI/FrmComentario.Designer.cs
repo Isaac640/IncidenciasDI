@@ -38,11 +38,11 @@
             this.btnSubir = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAdjunto = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.personal_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechahora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adjunto_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComentarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.dgvComentarios.Location = new System.Drawing.Point(16, 31);
             this.dgvComentarios.Name = "dgvComentarios";
             this.dgvComentarios.ReadOnly = true;
-            this.dgvComentarios.Size = new System.Drawing.Size(526, 202);
+            this.dgvComentarios.Size = new System.Drawing.Size(526, 210);
             this.dgvComentarios.TabIndex = 0;
             // 
             // lblComentarios
@@ -116,9 +116,9 @@
             this.btnSubir.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSubir.Image = global::Grupo_1_DI.Properties.Resources.upload_icon;
             this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubir.Location = new System.Drawing.Point(418, 418);
+            this.btnSubir.Location = new System.Drawing.Point(378, 431);
             this.btnSubir.Name = "btnSubir";
-            this.btnSubir.Size = new System.Drawing.Size(124, 43);
+            this.btnSubir.Size = new System.Drawing.Size(164, 43);
             this.btnSubir.TabIndex = 29;
             this.btnSubir.Text = "Subir Comentario";
             this.btnSubir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -138,7 +138,7 @@
             this.btnSalir.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSalir.Image = global::Grupo_1_DI.Properties.Resources.exit_icon;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(305, 418);
+            this.btnSalir.Location = new System.Drawing.Point(273, 431);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(107, 43);
             this.btnSalir.TabIndex = 28;
@@ -161,7 +161,7 @@
             this.btnAdjunto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAdjunto.Image = global::Grupo_1_DI.Properties.Resources.file_Icon;
             this.btnAdjunto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdjunto.Location = new System.Drawing.Point(338, 306);
+            this.btnAdjunto.Location = new System.Drawing.Point(349, 305);
             this.btnAdjunto.Name = "btnAdjunto";
             this.btnAdjunto.Size = new System.Drawing.Size(163, 75);
             this.btnAdjunto.TabIndex = 30;
@@ -172,9 +172,11 @@
             // 
             // personal_id
             // 
+            this.personal_id.DataPropertyName = "personal_id";
             this.personal_id.HeaderText = "Persona";
             this.personal_id.Name = "personal_id";
             this.personal_id.ReadOnly = true;
+            this.personal_id.Width = 50;
             // 
             // texto
             // 
@@ -182,15 +184,18 @@
             this.texto.HeaderText = "Comentarios";
             this.texto.Name = "texto";
             this.texto.ReadOnly = true;
+            this.texto.Width = 250;
             // 
             // fechahora
             // 
+            this.fechahora.DataPropertyName = "fechahora";
             this.fechahora.HeaderText = "Fecha";
             this.fechahora.Name = "fechahora";
             this.fechahora.ReadOnly = true;
             // 
             // adjunto_url
             // 
+            this.adjunto_url.DataPropertyName = "adjunto_url";
             this.adjunto_url.HeaderText = "Adjunto";
             this.adjunto_url.Name = "adjunto_url";
             this.adjunto_url.ReadOnly = true;
@@ -200,7 +205,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(554, 473);
+            this.ClientSize = new System.Drawing.Size(554, 486);
             this.Controls.Add(this.btnAdjunto);
             this.Controls.Add(this.btnSubir);
             this.Controls.Add(this.btnSalir);
@@ -211,6 +216,7 @@
             this.Controls.Add(this.dgvComentarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmComentario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comentarios";
             ((System.ComponentModel.ISupportInitialize)(this.dgvComentarios)).EndInit();
             this.ResumeLayout(false);
@@ -228,10 +234,10 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnSubir;
         private System.Windows.Forms.Button btnAdjunto;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn personal_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn texto;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechahora;
         private System.Windows.Forms.DataGridViewTextBoxColumn adjunto_url;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

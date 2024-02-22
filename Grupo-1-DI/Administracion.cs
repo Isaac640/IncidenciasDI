@@ -58,7 +58,7 @@ namespace Grupo_1_DI
         // OBTENER COMENTARIOS POR ID INCIDENCIAS
         public async static Task<List<Comentarios>> ObtenerComentariosByIncidenciasId(int id)
         {
-            return await consumer.GetAsyncComentariosList<Comentarios>("/comentarios", id);
+            return await consumer.GetAsyncComentariosList<List<Comentarios>>("/comentarios/incidencia", id);
         }
 
         // BORRAR INCIDENCIA POR ID

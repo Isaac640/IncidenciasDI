@@ -136,7 +136,7 @@ namespace Grupo_1_DI
 
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private async void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvIncidencias.SelectedCells.Count > 0)
             {
@@ -145,6 +145,7 @@ namespace Grupo_1_DI
                 {
                     int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
                     Administracion.BorrarIncidencia(id);
+                    await Task.Delay(500);
                     cargarInformesProfesor();
                 }
             }
@@ -196,6 +197,7 @@ namespace Grupo_1_DI
             {
                 int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
                 FrmComentario formComent = new FrmComentario(id);
+                formComent.Show();
             }
             else
             {

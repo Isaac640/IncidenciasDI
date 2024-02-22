@@ -59,7 +59,7 @@ namespace Grupo_1_DI
 
             // Agregar las columnas al DataGridView
 
-            if (dgvComentarios.Columns.Count < 5)
+            if (dgvComentarios.Columns.Count < 4)
             {
                 dgvComentarios.Columns.Add(columnaPersona);
                 dgvComentarios.Columns.Add(columnaComentario);
@@ -90,7 +90,7 @@ namespace Grupo_1_DI
                     string archivoSeleccionado = openFileDialog.FileName;
                     try
                     {
-                        //await SubirArchivoAPI(archivoSeleccionado);
+                        
                         btnAdjunto.Text = openFileDialog.FileName;
                     }
                     catch (Exception ex)

@@ -131,7 +131,7 @@ namespace Grupo_1_DI
             }
         }
 
-        private void btnBorrarIncidencia_Click(object sender, EventArgs e)
+        private async void btnBorrarIncidencia_Click(object sender, EventArgs e)
         {
             if (dgvIncidencias.SelectedCells.Count > 0)
             {
@@ -140,6 +140,7 @@ namespace Grupo_1_DI
                 {
                     int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
                     Administracion.BorrarIncidencia(id);
+                    await Task.Delay(500);
                     cargarInformes();
                 }
             }
