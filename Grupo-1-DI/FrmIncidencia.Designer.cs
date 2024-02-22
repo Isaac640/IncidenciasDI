@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIncidencia));
             this.lblNombre = new System.Windows.Forms.Label();
             this.cmbIncidencia = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,7 +67,7 @@
             "Software"});
             this.cmbIncidencia.Location = new System.Drawing.Point(107, 11);
             this.cmbIncidencia.Name = "cmbIncidencia";
-            this.cmbIncidencia.Size = new System.Drawing.Size(200, 21);
+            this.cmbIncidencia.Size = new System.Drawing.Size(210, 21);
             this.cmbIncidencia.TabIndex = 12;
             this.cmbIncidencia.SelectedIndexChanged += new System.EventHandler(this.cmbIncidencia_SelectedIndexChanged);
             // 
@@ -118,7 +119,7 @@
             // 
             this.txtAula.Location = new System.Drawing.Point(107, 65);
             this.txtAula.Name = "txtAula";
-            this.txtAula.Size = new System.Drawing.Size(200, 20);
+            this.txtAula.Size = new System.Drawing.Size(210, 20);
             this.txtAula.TabIndex = 18;
             // 
             // cmbTipoIncidencia
@@ -126,14 +127,14 @@
             this.cmbTipoIncidencia.FormattingEnabled = true;
             this.cmbTipoIncidencia.Location = new System.Drawing.Point(107, 38);
             this.cmbTipoIncidencia.Name = "cmbTipoIncidencia";
-            this.cmbTipoIncidencia.Size = new System.Drawing.Size(200, 21);
+            this.cmbTipoIncidencia.Size = new System.Drawing.Size(210, 21);
             this.cmbTipoIncidencia.TabIndex = 19;
             // 
             // txtPuesto
             // 
             this.txtPuesto.Location = new System.Drawing.Point(107, 117);
             this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(200, 20);
+            this.txtPuesto.Size = new System.Drawing.Size(210, 20);
             this.txtPuesto.TabIndex = 20;
             // 
             // label6
@@ -151,7 +152,7 @@
             // 
             this.txtEtiqueta.Location = new System.Drawing.Point(107, 91);
             this.txtEtiqueta.Name = "txtEtiqueta";
-            this.txtEtiqueta.Size = new System.Drawing.Size(200, 20);
+            this.txtEtiqueta.Size = new System.Drawing.Size(210, 20);
             this.txtEtiqueta.TabIndex = 22;
             // 
             // txtDesc
@@ -159,7 +160,7 @@
             this.txtDesc.Location = new System.Drawing.Point(12, 173);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(295, 112);
+            this.txtDesc.Size = new System.Drawing.Size(305, 112);
             this.txtDesc.TabIndex = 23;
             // 
             // btnRegIncidencia
@@ -174,7 +175,7 @@
             this.btnRegIncidencia.ForeColor = System.Drawing.Color.Silver;
             this.btnRegIncidencia.Image = global::Grupo_1_DI.Properties.Resources.register_icon;
             this.btnRegIncidencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegIncidencia.Location = new System.Drawing.Point(189, 291);
+            this.btnRegIncidencia.Location = new System.Drawing.Point(199, 301);
             this.btnRegIncidencia.Name = "btnRegIncidencia";
             this.btnRegIncidencia.Size = new System.Drawing.Size(118, 43);
             this.btnRegIncidencia.TabIndex = 26;
@@ -196,9 +197,9 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.Silver;
             this.btnCancelar.Image = global::Grupo_1_DI.Properties.Resources.cancel_Icon;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(76, 291);
+            this.btnCancelar.Location = new System.Drawing.Point(78, 301);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(107, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(115, 43);
             this.btnCancelar.TabIndex = 27;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -212,7 +213,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(316, 345);
+            this.ClientSize = new System.Drawing.Size(329, 356);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnRegIncidencia);
             this.Controls.Add(this.txtDesc);
@@ -227,6 +228,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbIncidencia);
             this.Controls.Add(this.lblNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmIncidencia";
             this.Text = "Incidencia";
             this.ResumeLayout(false);

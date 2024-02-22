@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmComentario));
             this.dgvComentarios = new System.Windows.Forms.DataGridView();
+            this.personal_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechahora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adjunto_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblComentarios = new System.Windows.Forms.Label();
             this.lblAgregar = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -39,10 +43,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAdjunto = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.personal_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechahora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adjunto_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComentarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,36 @@
             this.dgvComentarios.ReadOnly = true;
             this.dgvComentarios.Size = new System.Drawing.Size(526, 210);
             this.dgvComentarios.TabIndex = 0;
+            // 
+            // personal_id
+            // 
+            this.personal_id.DataPropertyName = "personal_id";
+            this.personal_id.HeaderText = "Persona";
+            this.personal_id.Name = "personal_id";
+            this.personal_id.ReadOnly = true;
+            this.personal_id.Width = 50;
+            // 
+            // texto
+            // 
+            this.texto.DataPropertyName = "texto";
+            this.texto.HeaderText = "Comentarios";
+            this.texto.Name = "texto";
+            this.texto.ReadOnly = true;
+            this.texto.Width = 250;
+            // 
+            // fechahora
+            // 
+            this.fechahora.DataPropertyName = "fechahora";
+            this.fechahora.HeaderText = "Fecha";
+            this.fechahora.Name = "fechahora";
+            this.fechahora.ReadOnly = true;
+            // 
+            // adjunto_url
+            // 
+            this.adjunto_url.DataPropertyName = "adjunto_url";
+            this.adjunto_url.HeaderText = "Adjunto";
+            this.adjunto_url.Name = "adjunto_url";
+            this.adjunto_url.ReadOnly = true;
             // 
             // lblComentarios
             // 
@@ -170,36 +200,6 @@
             this.btnAdjunto.UseVisualStyleBackColor = false;
             this.btnAdjunto.Click += new System.EventHandler(this.btnAdjunto_Click);
             // 
-            // personal_id
-            // 
-            this.personal_id.DataPropertyName = "personal_id";
-            this.personal_id.HeaderText = "Persona";
-            this.personal_id.Name = "personal_id";
-            this.personal_id.ReadOnly = true;
-            this.personal_id.Width = 50;
-            // 
-            // texto
-            // 
-            this.texto.DataPropertyName = "texto";
-            this.texto.HeaderText = "Comentarios";
-            this.texto.Name = "texto";
-            this.texto.ReadOnly = true;
-            this.texto.Width = 250;
-            // 
-            // fechahora
-            // 
-            this.fechahora.DataPropertyName = "fechahora";
-            this.fechahora.HeaderText = "Fecha";
-            this.fechahora.Name = "fechahora";
-            this.fechahora.ReadOnly = true;
-            // 
-            // adjunto_url
-            // 
-            this.adjunto_url.DataPropertyName = "adjunto_url";
-            this.adjunto_url.HeaderText = "Adjunto";
-            this.adjunto_url.Name = "adjunto_url";
-            this.adjunto_url.ReadOnly = true;
-            // 
             // FrmComentario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +214,7 @@
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.lblComentarios);
             this.Controls.Add(this.dgvComentarios);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmComentario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
