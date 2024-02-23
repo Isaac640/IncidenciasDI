@@ -223,6 +223,16 @@ namespace Grupo_1_DI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap profile_icon {
+            get {
+                object obj = ResourceManager.GetObject("profile_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap register_icon {
             get {
                 object obj = ResourceManager.GetObject("register_icon", resourceCulture);
@@ -246,6 +256,16 @@ namespace Grupo_1_DI.Properties {
         internal static System.Drawing.Bitmap shut_down2 {
             get {
                 object obj = ResourceManager.GetObject("shut-down2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unsubscribe_icon {
+            get {
+                object obj = ResourceManager.GetObject("unsubscribe_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

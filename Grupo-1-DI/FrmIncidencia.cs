@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Grupo_1_DI
 {
@@ -76,7 +79,9 @@ namespace Grupo_1_DI
                     try
                     {
                         btnAdjunto.Text = openFileDialog.FileName;
-
+                        string extension = Path.GetExtension(openFileDialog.FileName);
+                        string rutaArchivo = openFileDialog.FileName;
+                        incidencias.adjunto_url = base64(extension, rutaArchivo);
                     }
                     catch (Exception ex)
                     {
@@ -86,8 +91,20 @@ namespace Grupo_1_DI
             }
         }
 
-        private void base64()
+        private string base64(string ext, string ruta)
         {
+            // Datos del archivo a enviar
+            string extension = ext; // Extensión del archivo
+            string direccionDirectorio = ruta; // Directorio donde se guardará el archivo
+
+            // Leer el archivo y convertirlo a Base64
+            string rutaArchivo = "ruta/del/archivo.pdf"; // Ruta del archivo a enviar
+            byte[] archivoBytes = File.ReadAllBytes(rutaArchivo);
+            string cuerpoBase64 = Convert.ToBase64String(archivoBytes);
+
+            var contenido = new StringContent($"extension={extension}&cuerpoBase64={cuerpoBase64}&direccionDirectorio={ruta}", Encoding.UTF8, "application/x-www-form-urlencoded");
+
+            return contenido.ReadAsStringAsync().Result;
 
         }
     }

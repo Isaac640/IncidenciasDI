@@ -66,7 +66,7 @@ namespace Grupo_3_Intermodular
                 return null;
             }
         }
-        public async Task<Personal> GetAsyncPersonal<T>(string endpoint, long id)
+        public async Task<Personal> GetAsyncPersonalByPerfil<T>(string endpoint, long id)
         {
             string url = $"{endpoint}/{id}";
             HttpResponseMessage response = await client.GetAsync(host + url);
@@ -74,6 +74,23 @@ namespace Grupo_3_Intermodular
             {
                 string content = await response.Content.ReadAsStringAsync();
                 Personal personal = System.Text.Json.JsonSerializer.Deserialize<Personal>(content, serializerOptions);
+                return personal;
+            }
+            else
+            {
+                MessageBox.Show("Error al obtener el personal del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        public async Task<List<Personal>> GetAsyncPersonal<T>(string endpoint)
+        {
+            string url = $"{endpoint}";
+            HttpResponseMessage response = await client.GetAsync(host + url);
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                List<Personal> personal = System.Text.Json.JsonSerializer.Deserialize<List<Personal>>(content, serializerOptions);
                 return personal;
             }
             else
@@ -156,7 +173,7 @@ namespace Grupo_3_Intermodular
             }
         }
 
-        
+
 
         public async Task<T> PostAsync<T>(string endpoint, object data)
         {
@@ -223,7 +240,7 @@ namespace Grupo_3_Intermodular
                 HttpResponseMessage response = await client.DeleteAsync(host + url);
                 if (response.IsSuccessStatusCode)
                 {
-                    return true; 
+                    return true;
                 }
                 else
                 {

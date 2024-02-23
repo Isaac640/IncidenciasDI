@@ -218,6 +218,7 @@ namespace Grupo_1_DI
             {
                 int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
                 FrmComentario formComent = new FrmComentario(id, personal);
+                formComent.Show();
             }
             else
             {
@@ -229,6 +230,12 @@ namespace Grupo_1_DI
         private void btnReset_Click(object sender, EventArgs e)
         {
             cargarInformes();
+        }
+
+        private void btnPersonal_Click(object sender, EventArgs e)
+        {
+            FrmPersonal formPersonal = new FrmPersonal();
+            formPersonal.ShowDialog();
         }
     }
 }
