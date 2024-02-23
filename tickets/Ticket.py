@@ -16,6 +16,7 @@ class Ticket:
         self.end_time = None
         self.total_time =  0.0
         self.current_session_start = None
+        self.responsable_id = None
 
     def start(self):
         if self.status == 'not-started':
