@@ -49,6 +49,7 @@ namespace Grupo_1_DI
             return await consumer.GetAsyncPersonal<Personal>("/personal",  id);
         }
 
+
         // OBTENER EL PERFIL DEL USUARIO POR NOMBRE DE DOMINIO
         public async static Task<Perfiles> ObtenerPerfilByDominio(string dominio)
         {
@@ -59,6 +60,12 @@ namespace Grupo_1_DI
         public async static Task<List<Comentarios>> ObtenerComentariosByIncidenciasId(int id)
         {
             return await consumer.GetAsyncComentariosList<List<Comentarios>>("/comentarios/incidencia", id);
+        }
+
+        // PUBLICAR COMENTARIO
+        public async static Task<bool> PublicarComentario(Comentarios com)
+        {
+            return await consumer.PostAsyncComentario(com);
         }
 
         // BORRAR INCIDENCIA POR ID

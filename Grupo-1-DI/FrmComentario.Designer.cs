@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmComentario));
             this.dgvComentarios = new System.Windows.Forms.DataGridView();
-            this.personal_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechahora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adjunto_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblComentarios = new System.Windows.Forms.Label();
             this.lblAgregar = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtComentario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSubir = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAdjunto = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechahora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adjunto_url = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComentarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.dgvComentarios.AllowUserToDeleteRows = false;
             this.dgvComentarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComentarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.personal_id,
+            this.persona,
             this.texto,
             this.fechahora,
             this.adjunto_url});
@@ -61,36 +61,6 @@
             this.dgvComentarios.ReadOnly = true;
             this.dgvComentarios.Size = new System.Drawing.Size(526, 210);
             this.dgvComentarios.TabIndex = 0;
-            // 
-            // personal_id
-            // 
-            this.personal_id.DataPropertyName = "personal_id";
-            this.personal_id.HeaderText = "Persona";
-            this.personal_id.Name = "personal_id";
-            this.personal_id.ReadOnly = true;
-            this.personal_id.Width = 50;
-            // 
-            // texto
-            // 
-            this.texto.DataPropertyName = "texto";
-            this.texto.HeaderText = "Comentarios";
-            this.texto.Name = "texto";
-            this.texto.ReadOnly = true;
-            this.texto.Width = 250;
-            // 
-            // fechahora
-            // 
-            this.fechahora.DataPropertyName = "fechahora";
-            this.fechahora.HeaderText = "Fecha";
-            this.fechahora.Name = "fechahora";
-            this.fechahora.ReadOnly = true;
-            // 
-            // adjunto_url
-            // 
-            this.adjunto_url.DataPropertyName = "adjunto_url";
-            this.adjunto_url.HeaderText = "Adjunto";
-            this.adjunto_url.Name = "adjunto_url";
-            this.adjunto_url.ReadOnly = true;
             // 
             // lblComentarios
             // 
@@ -114,13 +84,13 @@
             this.lblAgregar.TabIndex = 13;
             this.lblAgregar.Text = "Añadir un comentario:";
             // 
-            // textBox1
+            // txtComentario
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 279);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(289, 126);
-            this.textBox1.TabIndex = 14;
+            this.txtComentario.Location = new System.Drawing.Point(16, 279);
+            this.txtComentario.Multiline = true;
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.Size = new System.Drawing.Size(289, 126);
+            this.txtComentario.TabIndex = 14;
             // 
             // label1
             // 
@@ -200,6 +170,36 @@
             this.btnAdjunto.UseVisualStyleBackColor = false;
             this.btnAdjunto.Click += new System.EventHandler(this.btnAdjunto_Click);
             // 
+            // persona
+            // 
+            this.persona.HeaderText = "Persona";
+            this.persona.Name = "persona";
+            this.persona.ReadOnly = true;
+            // 
+            // texto
+            // 
+            this.texto.DataPropertyName = "texto";
+            this.texto.HeaderText = "Comentarios";
+            this.texto.Name = "texto";
+            this.texto.ReadOnly = true;
+            this.texto.Width = 250;
+            // 
+            // fechahora
+            // 
+            this.fechahora.DataPropertyName = "fechahora";
+            this.fechahora.HeaderText = "Fecha";
+            this.fechahora.Name = "fechahora";
+            this.fechahora.ReadOnly = true;
+            // 
+            // adjunto_url
+            // 
+            this.adjunto_url.DataPropertyName = "adjunto_url";
+            this.adjunto_url.HeaderText = "Adjunto";
+            this.adjunto_url.Name = "adjunto_url";
+            this.adjunto_url.ReadOnly = true;
+            this.adjunto_url.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.adjunto_url.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // FrmComentario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,7 +210,7 @@
             this.Controls.Add(this.btnSubir);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.lblComentarios);
             this.Controls.Add(this.dgvComentarios);
@@ -230,15 +230,15 @@
         private System.Windows.Forms.DataGridView dgvComentarios;
         private System.Windows.Forms.Label lblComentarios;
         private System.Windows.Forms.Label lblAgregar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtComentario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnSubir;
         private System.Windows.Forms.Button btnAdjunto;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personal_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn persona;
         private System.Windows.Forms.DataGridViewTextBoxColumn texto;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechahora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adjunto_url;
+        private System.Windows.Forms.DataGridViewLinkColumn adjunto_url;
     }
 }

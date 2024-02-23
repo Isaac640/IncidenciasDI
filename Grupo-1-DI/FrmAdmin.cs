@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Grupo_1_DI
 {
+    /// <summary>
+    /// Formulario para uso del administrador
+    /// </summary>
     public partial class FrmAdmin : Form
     {
         Personal personal;
@@ -60,11 +63,15 @@ namespace Grupo_1_DI
             }
         }
 
-        private void modelarTabla(List<Incidencias> lst)
+        private async void modelarTabla(List<Incidencias> lst)
         {
             dgvIncidencias.AutoGenerateColumns = false;
 
             // Crear columnas manualmente para el DataGridView
+
+            DataGridViewTextBoxColumn columnaID = new DataGridViewTextBoxColumn();
+            columnaID.DataPropertyName = "id";
+            columnaID.HeaderText = "ID";
 
             DataGridViewTextBoxColumn columnaTipo = new DataGridViewTextBoxColumn();
             columnaTipo.DataPropertyName = "tipo";
@@ -82,20 +89,50 @@ namespace Grupo_1_DI
             columnaEstado.DataPropertyName = "estado";
             columnaEstado.HeaderText = "Estado";
 
+            DataGridViewTextBoxColumn columnaAdjunto = new DataGridViewTextBoxColumn();
+            columnaAdjunto.DataPropertyName = "adjunto_url"; // Corregido aquí
+            columnaAdjunto.HeaderText = "Adjunto";
+
+            DataGridViewTextBoxColumn columnaResponsable = new DataGridViewTextBoxColumn();
+            columnaResponsable.HeaderText = "Responsable";
             // Agregar las columnas al DataGridView
 
             if (dgvIncidencias.Columns.Count < 5)
             {
+                dgvIncidencias.Columns.Add(columnaID);
                 dgvIncidencias.Columns.Add(columnaTipo);
                 dgvIncidencias.Columns.Add(columnaFecha);
                 dgvIncidencias.Columns.Add(columnaDesc);
                 dgvIncidencias.Columns.Add(columnaEstado);
+                dgvIncidencias.Columns.Add(columnaAdjunto);
+                dgvIncidencias.Columns.Add(columnaResponsable);
             }
+            // Asignar los datos a cada fila
+            foreach (var responsable in lst)
+            {
+                if (responsable.responsable_id != null) // Verificar si responsable_id no es null
+                {
+                    // Obtener los detalles del personal por su ID
+                    var personal = await Administracion.ObtenerPersonalByPerfil(responsable.responsable_id.id);
 
-            // Asignar la lista de personas al origen de datos del DataGridView
-            dgvIncidencias.DataSource = lst;
+                    if (personal != null)
+                    {
+                        dgvIncidencias.Rows.Add(responsable.num, responsable.tipo, responsable.fecha_creacion, responsable.descripcion, responsable.estado, responsable.adjunto_url, $"{personal.nombre} {personal.apellido1} {personal.apellido2}");
+                    }
+                    else
+                    {
+                        // Manejar el caso donde no se puede encontrar el personal
+                        dgvIncidencias.Rows.Add(responsable.num, responsable.tipo, responsable.fecha_creacion, responsable.descripcion, responsable.estado, responsable.adjunto_url, "Personal no encontrado");
+                    }
+                }
+                else
+                {
+                    // Manejar el caso donde responsable_id es null
+                    dgvIncidencias.Rows.Add(responsable.num, responsable.tipo, responsable.fecha_creacion, responsable.descripcion, responsable.estado, responsable.adjunto_url, "Sin Responsable");
+                }
+            }
+            lblRegistros.Text = "Registros: " + dgvIncidencias.RowCount.ToString();
         }
-
 
         // Para mostrar la hora actual
         private void Timer_Tick(object sender, EventArgs e)
@@ -139,7 +176,7 @@ namespace Grupo_1_DI
                 if (dr == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
-                    Administracion.BorrarIncidencia(id);
+                    await Administracion.BorrarIncidencia(id);
                     await Task.Delay(500);
                     cargarInformes();
                 }
@@ -180,7 +217,7 @@ namespace Grupo_1_DI
             if (dgvIncidencias.SelectedCells.Count > 0)
             {
                 int id = Convert.ToInt32(dgvIncidencias.CurrentRow.Cells[0].Value);
-                FrmComentario formComent = new FrmComentario(id);
+                FrmComentario formComent = new FrmComentario(id, personal);
             }
             else
             {

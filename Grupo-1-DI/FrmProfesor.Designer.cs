@@ -32,35 +32,37 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfesor));
             this.lblHora = new System.Windows.Forms.Label();
             this.panelDatos = new System.Windows.Forms.Panel();
-            this.cmbEstadoFiltro = new System.Windows.Forms.ComboBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.lblRegistros = new System.Windows.Forms.Label();
             this.dtpFechaFiltro = new System.Windows.Forms.DateTimePicker();
             this.dgvIncidencias = new System.Windows.Forms.DataGridView();
-            this.lblRegistros = new System.Windows.Forms.Label();
+            this.cmbEstadoFiltro = new System.Windows.Forms.ComboBox();
+            this.btnFiltro = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblApellidos = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnComentar = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnBorrarIncidencia = new System.Windows.Forms.Button();
             this.btnEditarIncidencia = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnNuevaIncidencia2 = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnFiltro = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblApellidos = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.pbUser = new System.Windows.Forms.PictureBox();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_Creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adjunto_url = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.responsable_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).BeginInit();
             this.panelMenu.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,21 +92,38 @@
             this.panelDatos.Size = new System.Drawing.Size(679, 353);
             this.panelDatos.TabIndex = 9;
             // 
-            // cmbEstadoFiltro
+            // btnReset
             // 
-            this.cmbEstadoFiltro.FormattingEnabled = true;
-            this.cmbEstadoFiltro.Items.AddRange(new object[] {
-            "abierta",
-            "asignada",
-            "en proceso",
-            "enviado a infortec",
-            "resuelta",
-            "cerrada"});
-            this.cmbEstadoFiltro.Location = new System.Drawing.Point(350, 15);
-            this.cmbEstadoFiltro.Name = "cmbEstadoFiltro";
-            this.cmbEstadoFiltro.Size = new System.Drawing.Size(121, 21);
-            this.cmbEstadoFiltro.TabIndex = 26;
-            this.cmbEstadoFiltro.Text = "abierta";
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReset.Image = global::Grupo_1_DI.Properties.Resources.reset_Icon;
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(575, 6);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(88, 36);
+            this.btnReset.TabIndex = 27;
+            this.btnReset.Text = " Reset";
+            this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnReset, "Carga todas las incidencias de nuevo");
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // lblRegistros
+            // 
+            this.lblRegistros.AutoSize = true;
+            this.lblRegistros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistros.ForeColor = System.Drawing.Color.White;
+            this.lblRegistros.Location = new System.Drawing.Point(37, 17);
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(89, 19);
+            this.lblRegistros.TabIndex = 8;
+            this.lblRegistros.Text = "Registros:";
             // 
             // dtpFechaFiltro
             // 
@@ -125,23 +144,52 @@
             this.Tipo,
             this.Fecha_Creacion,
             this.descripcion,
-            this.estado});
+            this.estado,
+            this.adjunto_url,
+            this.responsable_id});
             this.dgvIncidencias.Location = new System.Drawing.Point(36, 46);
             this.dgvIncidencias.Name = "dgvIncidencias";
             this.dgvIncidencias.ReadOnly = true;
             this.dgvIncidencias.Size = new System.Drawing.Size(626, 288);
             this.dgvIncidencias.TabIndex = 24;
             // 
-            // lblRegistros
+            // cmbEstadoFiltro
             // 
-            this.lblRegistros.AutoSize = true;
-            this.lblRegistros.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistros.ForeColor = System.Drawing.Color.White;
-            this.lblRegistros.Location = new System.Drawing.Point(37, 17);
-            this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(89, 19);
-            this.lblRegistros.TabIndex = 8;
-            this.lblRegistros.Text = "Registros:";
+            this.cmbEstadoFiltro.FormattingEnabled = true;
+            this.cmbEstadoFiltro.Items.AddRange(new object[] {
+            "abierta",
+            "asignada",
+            "en proceso",
+            "enviado a infortec",
+            "resuelta",
+            "cerrada"});
+            this.cmbEstadoFiltro.Location = new System.Drawing.Point(350, 15);
+            this.cmbEstadoFiltro.Name = "cmbEstadoFiltro";
+            this.cmbEstadoFiltro.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstadoFiltro.TabIndex = 26;
+            this.cmbEstadoFiltro.Text = "abierta";
+            // 
+            // btnFiltro
+            // 
+            this.btnFiltro.BackColor = System.Drawing.Color.Transparent;
+            this.btnFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltro.FlatAppearance.BorderSize = 0;
+            this.btnFiltro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltro.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFiltro.Image = global::Grupo_1_DI.Properties.Resources.filter_icon;
+            this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltro.Location = new System.Drawing.Point(477, 6);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(88, 36);
+            this.btnFiltro.TabIndex = 23;
+            this.btnFiltro.Text = " Filtrar";
+            this.btnFiltro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnFiltro, "Filtra por la fecha y estado indicados");
+            this.btnFiltro.UseVisualStyleBackColor = false;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
             // panelMenu
             // 
@@ -156,53 +204,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(217, 465);
             this.panelMenu.TabIndex = 10;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
-            this.panel2.Controls.Add(this.lblApellidos);
-            this.panel2.Controls.Add(this.lblNombre);
-            this.panel2.Controls.Add(this.pbUser);
-            this.panel2.Controls.Add(this.lblFecha);
-            this.panel2.Controls.Add(this.lblHora);
-            this.panel2.Location = new System.Drawing.Point(211, 349);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(679, 115);
-            this.panel2.TabIndex = 11;
-            // 
-            // lblApellidos
-            // 
-            this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidos.ForeColor = System.Drawing.Color.White;
-            this.lblApellidos.Location = new System.Drawing.Point(132, 41);
-            this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(163, 19);
-            this.lblApellidos.TabIndex = 11;
-            this.lblApellidos.Text = "apellido 1, apellido 2";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(132, 19);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(49, 19);
-            this.lblNombre.TabIndex = 10;
-            this.lblNombre.Text = "Isaac";
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(407, 60);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(224, 20);
-            this.lblFecha.TabIndex = 8;
-            this.lblFecha.Text = "Lunes, 26 de septiembre 2018";
             // 
             // btnComentar
             // 
@@ -324,49 +325,40 @@
             this.btnNuevaIncidencia2.UseVisualStyleBackColor = false;
             this.btnNuevaIncidencia2.Click += new System.EventHandler(this.btnNuevaIncidencia_Click);
             // 
-            // btnReset
+            // panel2
             // 
-            this.btnReset.BackColor = System.Drawing.Color.Transparent;
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.FlatAppearance.BorderSize = 0;
-            this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReset.Image = global::Grupo_1_DI.Properties.Resources.reset_Icon;
-            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(575, 6);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(88, 36);
-            this.btnReset.TabIndex = 27;
-            this.btnReset.Text = " Reset";
-            this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnReset, "Carga todas las incidencias de nuevo");
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
+            this.panel2.Controls.Add(this.lblApellidos);
+            this.panel2.Controls.Add(this.lblNombre);
+            this.panel2.Controls.Add(this.pbUser);
+            this.panel2.Controls.Add(this.lblFecha);
+            this.panel2.Controls.Add(this.lblHora);
+            this.panel2.Location = new System.Drawing.Point(211, 349);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(679, 115);
+            this.panel2.TabIndex = 11;
             // 
-            // btnFiltro
+            // lblApellidos
             // 
-            this.btnFiltro.BackColor = System.Drawing.Color.Transparent;
-            this.btnFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltro.FlatAppearance.BorderSize = 0;
-            this.btnFiltro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.btnFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltro.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnFiltro.Image = global::Grupo_1_DI.Properties.Resources.filter_icon;
-            this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltro.Location = new System.Drawing.Point(477, 6);
-            this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Size = new System.Drawing.Size(88, 36);
-            this.btnFiltro.TabIndex = 23;
-            this.btnFiltro.Text = " Filtrar";
-            this.btnFiltro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnFiltro, "Filtra por la fecha y estado indicados");
-            this.btnFiltro.UseVisualStyleBackColor = false;
-            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            this.lblApellidos.AutoSize = true;
+            this.lblApellidos.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidos.ForeColor = System.Drawing.Color.White;
+            this.lblApellidos.Location = new System.Drawing.Point(132, 41);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.Size = new System.Drawing.Size(163, 19);
+            this.lblApellidos.TabIndex = 11;
+            this.lblApellidos.Text = "apellido 1, apellido 2";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
+            this.lblNombre.Location = new System.Drawing.Point(132, 19);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(49, 19);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "Isaac";
             // 
             // pbUser
             // 
@@ -377,6 +369,18 @@
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUser.TabIndex = 9;
             this.pbUser.TabStop = false;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblFecha.ForeColor = System.Drawing.Color.White;
+            this.lblFecha.Location = new System.Drawing.Point(407, 60);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(224, 20);
+            this.lblFecha.TabIndex = 8;
+            this.lblFecha.Text = "Lunes, 26 de septiembre 2018";
             // 
             // ID
             // 
@@ -416,6 +420,18 @@
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
             // 
+            // adjunto_url
+            // 
+            this.adjunto_url.HeaderText = "Adjunto";
+            this.adjunto_url.Name = "adjunto_url";
+            this.adjunto_url.ReadOnly = true;
+            // 
+            // responsable_id
+            // 
+            this.responsable_id.HeaderText = "Responsable";
+            this.responsable_id.Name = "responsable_id";
+            this.responsable_id.ReadOnly = true;
+            // 
             // FrmProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,9 +449,9 @@
             this.panelDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).EndInit();
             this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.ResumeLayout(false);
 
@@ -468,5 +484,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Creacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewLinkColumn adjunto_url;
+        private System.Windows.Forms.DataGridViewTextBoxColumn responsable_id;
     }
 }

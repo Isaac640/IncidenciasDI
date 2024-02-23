@@ -83,7 +83,7 @@ namespace Grupo_3_Intermodular
             }
         }
 
-            public async Task<List<Incidencias>> GetAsyncIncidencias<T>(string endpoint)
+        public async Task<List<Incidencias>> GetAsyncIncidencias<T>(string endpoint)
         {
             string url = $"{endpoint}";
             HttpResponseMessage response = await client.GetAsync(host + url);
@@ -173,6 +173,45 @@ namespace Grupo_3_Intermodular
             else
             {
                 throw new ApplicationException($"Error al obtener el recurso: {response.StatusCode}");
+            }
+        }
+
+        public async Task<bool> PostAsyncComentario(Comentarios comentario)
+        {
+            try
+            {
+                // Serializar el objeto a JSON
+                string json = JsonConvert.SerializeObject(comentario);
+
+                // Crear un HttpClient
+                using (HttpClient client = new HttpClient())
+                {
+                    // URL de tu API
+                    string url = "/comentarios";
+
+                    // Convertir el objeto JSON en un StringContent
+                    StringContent content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = await client.PostAsync(host + url, content);
+
+                    // Verificar si la solicitud fue exitosa
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // La solicitud fue exitosa
+                        return true;
+                    }
+                    else
+                    {
+                        // La solicitud falló
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
             }
         }
 

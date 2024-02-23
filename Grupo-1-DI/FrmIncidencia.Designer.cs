@@ -43,6 +43,8 @@
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.btnRegIncidencia = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnAdjunto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -175,7 +177,7 @@
             this.btnRegIncidencia.ForeColor = System.Drawing.Color.Silver;
             this.btnRegIncidencia.Image = global::Grupo_1_DI.Properties.Resources.register_icon;
             this.btnRegIncidencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegIncidencia.Location = new System.Drawing.Point(199, 301);
+            this.btnRegIncidencia.Location = new System.Drawing.Point(199, 381);
             this.btnRegIncidencia.Name = "btnRegIncidencia";
             this.btnRegIncidencia.Size = new System.Drawing.Size(118, 43);
             this.btnRegIncidencia.TabIndex = 26;
@@ -197,7 +199,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.Silver;
             this.btnCancelar.Image = global::Grupo_1_DI.Properties.Resources.cancel_Icon;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(78, 301);
+            this.btnCancelar.Location = new System.Drawing.Point(78, 381);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(115, 43);
             this.btnCancelar.TabIndex = 27;
@@ -206,6 +208,39 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(8, 317);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 19);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Adjunto:";
+            // 
+            // btnAdjunto
+            // 
+            this.btnAdjunto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdjunto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdjunto.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAdjunto.FlatAppearance.BorderSize = 3;
+            this.btnAdjunto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnAdjunto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnAdjunto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdjunto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnAdjunto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAdjunto.Image = global::Grupo_1_DI.Properties.Resources.file_Icon;
+            this.btnAdjunto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdjunto.Location = new System.Drawing.Point(121, 305);
+            this.btnAdjunto.Name = "btnAdjunto";
+            this.btnAdjunto.Size = new System.Drawing.Size(163, 45);
+            this.btnAdjunto.TabIndex = 31;
+            this.btnAdjunto.Text = "  Subir Archivo";
+            this.btnAdjunto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdjunto.UseVisualStyleBackColor = false;
+            this.btnAdjunto.Click += new System.EventHandler(this.btnAdjunto_Click);
+            // 
             // FrmIncidencia
             // 
             this.AcceptButton = this.btnRegIncidencia;
@@ -213,7 +248,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(329, 356);
+            this.ClientSize = new System.Drawing.Size(329, 436);
+            this.Controls.Add(this.btnAdjunto);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnRegIncidencia);
             this.Controls.Add(this.txtDesc);
@@ -253,5 +290,7 @@
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Button btnRegIncidencia;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnAdjunto;
     }
 }

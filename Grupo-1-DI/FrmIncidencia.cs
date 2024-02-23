@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Grupo_1_DI
 {
+    /// <summary>
+    /// Formulario de creacion de incidencia
+    /// </summary>
     public partial class FrmIncidencia : Form
     {
         Incidencias incidencias;
@@ -59,5 +62,33 @@ namespace Grupo_1_DI
             }
         }
 
+        private void btnAdjunto_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Title = "Seleccionar archivo";
+                openFileDialog.Filter = "Libros de Excel (*.xlsx)|*.xlsx|Documentos de Word (*.docx; *.doc)|*.docx;*.doc|Archivos PDF (*.pdf)|*.pdf|Imágenes JPG (*.jpg)|*.jpg";
+                openFileDialog.Multiselect = false;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string archivoSeleccionado = openFileDialog.FileName;
+                    try
+                    {
+                        btnAdjunto.Text = openFileDialog.FileName;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al subir archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void base64()
+        {
+
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Grupo_1_DI.Base_Datos
         public DateTime fechahora {  get; set; }
         public long incidencia_num {  get; set; }
         public string adjunto_url { get; set; }
-        public long personal_id { get; set; }
+        public long personal { get; set; }
         
     }
 }

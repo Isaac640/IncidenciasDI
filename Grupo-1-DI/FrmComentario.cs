@@ -11,18 +11,24 @@ using System.Windows.Forms;
 
 namespace Grupo_1_DI
 {
+    /// <summary>
+    /// Formulario para CRear y mirar los comentarios de una incidencia en particular
+    /// </summary>
     public partial class FrmComentario : Form
     {
-        Comentarios comentario;
+        private Comentarios comentario;
+        private int num_Inc;
+        private Personal personal;
         private FrmComentario()
         {
             InitializeComponent();
         }
-        public FrmComentario(int idInc) : this()
+        public FrmComentario(int idInc, Personal per) : this()
         {
             cargarComentariosInforme(idInc);
             comentario = new Comentarios();
-            this.DialogResult = DialogResult.Cancel;
+            this.num_Inc = idInc;
+            this.personal = per;
         }
 
         private async void cargarComentariosInforme(int id)
@@ -32,23 +38,21 @@ namespace Grupo_1_DI
             if (lst != null)
             {
                 modelarTabla(lst);
-                lblComentarios.Text = "Comentarios: " + dgvComentarios.RowCount.ToString();
             }
         }
 
-        private void modelarTabla(List<Comentarios> lst)
+        private async void modelarTabla(List<Comentarios> lst)
         {
             dgvComentarios.AutoGenerateColumns = false;
 
             // Crear columnas manualmente para el DataGridView
-
             DataGridViewTextBoxColumn columnaPersona = new DataGridViewTextBoxColumn();
-            columnaPersona.DataPropertyName = "personal_id";
             columnaPersona.HeaderText = "Persona";
 
             DataGridViewTextBoxColumn columnaComentario = new DataGridViewTextBoxColumn();
             columnaComentario.DataPropertyName = "texto";
             columnaComentario.HeaderText = "Comentario";
+
             DataGridViewTextBoxColumn columnaFecha = new DataGridViewTextBoxColumn();
             columnaFecha.DataPropertyName = "fechahora";
             columnaFecha.HeaderText = "Fecha";
@@ -58,23 +62,47 @@ namespace Grupo_1_DI
             columnaAdjunto.HeaderText = "Adjunto";
 
             // Agregar las columnas al DataGridView
+            dgvComentarios.Columns.Clear();
+            dgvComentarios.Columns.Add(columnaPersona);
+            dgvComentarios.Columns.Add(columnaComentario);
+            dgvComentarios.Columns.Add(columnaFecha);
+            dgvComentarios.Columns.Add(columnaAdjunto);
 
-            if (dgvComentarios.Columns.Count < 4)
+            // Asignar los datos a cada fila
+            foreach (var comentario in lst)
             {
-                dgvComentarios.Columns.Add(columnaPersona);
-                dgvComentarios.Columns.Add(columnaComentario);
-                dgvComentarios.Columns.Add(columnaFecha);
-                dgvComentarios.Columns.Add(columnaAdjunto);
-            }
+                // Obtener los detalles del personal por su ID
+                var personal = await Administracion.ObtenerPersonalByPerfil(comentario.personal);
 
-            // Asignar la lista de personas al origen de datos del DataGridView
-            dgvComentarios.DataSource = lst;
+                // Si se encontraron los detalles del personal, mostrar nombre y apellidos
+                if (personal != null)
+                {
+                    dgvComentarios.Rows.Add($"{personal.nombre} {personal.apellido1} {personal.apellido2}", comentario.texto, comentario.fechahora, comentario.adjunto_url);
+                }
+                else
+                {
+                    // Si no se encontraron los detalles del personal, mostrar el ID
+                    dgvComentarios.Rows.Add(comentario.personal, comentario.texto, comentario.fechahora, comentario.adjunto_url);
+                }
+            }
+            lblComentarios.Text = "Comentarios: " + dgvComentarios.RowCount.ToString();
         }
 
         private void btnSubir_Click(object sender, EventArgs e)
         {
             //Administracion.SubirComentario(Comentario)
             this.DialogResult = DialogResult.OK;
+
+            comentario.fechahora = DateTime.Now;
+            comentario.personal = personal.id;
+            comentario.texto = txtComentario.Text;
+            comentario.incidencia_num = this.num_Inc;
+            //comentario.adjunto_url = base64();
+
+            Administracion.PublicarComentario(comentario);
+
+            txtComentario.Text = string.Empty;
+            btnAdjunto.Text = "Subir Archivo";
         }
 
         private void btnAdjunto_Click(object sender, EventArgs e)
@@ -90,8 +118,8 @@ namespace Grupo_1_DI
                     string archivoSeleccionado = openFileDialog.FileName;
                     try
                     {
-                        
                         btnAdjunto.Text = openFileDialog.FileName;
+
                     }
                     catch (Exception ex)
                     {
@@ -99,6 +127,12 @@ namespace Grupo_1_DI
                     }
                 }
             }
+        }
+
+        // CONVERSOR DE ARCHIVO
+        private void base64()
+        {
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

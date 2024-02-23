@@ -21,6 +21,7 @@ namespace Grupo_1_DI
         public long creador_id { get; set; }
         public long responsable_id { get; set; }
         public long subtipo_id { get; set; }
+        public string adjunto_url { get; set; }
         public int? tiempo { get; set; }
     }
 }
