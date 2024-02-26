@@ -14,12 +14,19 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Grupo_1_DI
 {
+    /// <summary>
+    /// Formulario para el inicio de sesión de administradores o profesores.
+    /// </summary>
     public partial class FrmLogin : Form
     {
         /// <summary>
-        /// Inicio de sesión de administrador o profesor
+        /// Nombre de usuario del sistema.
         /// </summary>
         string userName;
+
+        /// <summary>
+        /// Constructor de la clase FrmLogin.
+        /// </summary>
         public FrmLogin()
         {
             InitializeComponent();
@@ -27,11 +34,20 @@ namespace Grupo_1_DI
             lblUser.Text = "Accediendo a las incidencias de " + userName;
         }
 
+        /// <summary>
+        /// Método llamado cuando se carga el formulario.
+        /// </summary>
+        /// <param name="sender">El objeto que desencadenó el evento.</param>
+        /// <param name="e">Los datos del evento.</param>
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             InicioSesion(userName);
         }
 
+        /// <summary>
+        /// Inicia sesión en el sistema.
+        /// </summary>
+        /// <param name="userName">El nombre de usuario del sistema.</param>
         private async Task InicioSesion(string userName)
         {
             Perfiles perfil = await Administracion.ObtenerPerfilByDominio(userName);
@@ -52,14 +68,11 @@ namespace Grupo_1_DI
             }
             else
             {
-                MessageBox.Show("Este usuario de dominio no esta registrado en la base de datos por favor" +
+                MessageBox.Show("Este usuario de dominio no está registrado en la base de datos. Por favor" +
                     " contacte con el administrador de dominio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 Application.Exit();
             }
-
-
         }
-
     }
-
 }
+

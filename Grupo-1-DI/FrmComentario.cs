@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,7 @@ namespace Grupo_1_DI
     /// </summary>
     public partial class FrmComentario : Form
     {
-        private Comentarios comentario;
+        private Comentarios_DTO comentario;
         private int num_Inc;
         private Personal personal;
         private FrmComentario()
@@ -26,7 +28,7 @@ namespace Grupo_1_DI
         public FrmComentario(int idInc, Personal per) : this()
         {
             cargarComentariosInforme(idInc);
-            comentario = new Comentarios();
+            comentario = new Comentarios_DTO();
             this.num_Inc = idInc;
             this.personal = per;
         }
@@ -43,6 +45,7 @@ namespace Grupo_1_DI
 
         private async void modelarTabla(List<Comentarios> lst)
         {
+            dgvComentarios.Rows.Clear();
             dgvComentarios.AutoGenerateColumns = false;
 
             // Crear columnas manualmente para el DataGridView
@@ -72,7 +75,7 @@ namespace Grupo_1_DI
             foreach (var comentario in lst)
             {
                 // Obtener los detalles del personal por su ID
-                var personal = await Administracion.ObtenerPersonalByPerfil(comentario.personal);
+                var personal = await Administracion.ObtenerPersonalByID(comentario.personal);
 
                 // Si se encontraron los detalles del personal, mostrar nombre y apellidos
                 if (personal != null)
@@ -88,21 +91,26 @@ namespace Grupo_1_DI
             lblComentarios.Text = "Comentarios: " + dgvComentarios.RowCount.ToString();
         }
 
-        private void btnSubir_Click(object sender, EventArgs e)
+        private async void btnSubir_ClickAsync(object sender, EventArgs e)
         {
-            //Administracion.SubirComentario(Comentario)
-            this.DialogResult = DialogResult.OK;
-
             comentario.fechahora = DateTime.Now;
             comentario.personal = personal.id;
             comentario.texto = txtComentario.Text;
             comentario.incidencia_num = this.num_Inc;
-            //comentario.adjunto_url = base64();
 
-            Administracion.PublicarComentario(comentario);
 
-            txtComentario.Text = string.Empty;
-            btnAdjunto.Text = "Subir Archivo";
+            if (await Administracion.PublicarComentario(comentario))
+            {
+                Task.Delay(500);
+                txtComentario.Text = string.Empty;
+                btnAdjunto.Text = "Subir Archivo";
+                cargarComentariosInforme(num_Inc);
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido enviar el comentario", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnAdjunto_Click(object sender, EventArgs e)
@@ -119,7 +127,8 @@ namespace Grupo_1_DI
                     try
                     {
                         btnAdjunto.Text = openFileDialog.FileName;
-
+                        comentario.Extension = Path.GetExtension(archivoSeleccionado);
+                        comentario.CuerpoBase64 = base64(openFileDialog);
                     }
                     catch (Exception ex)
                     {
@@ -129,10 +138,41 @@ namespace Grupo_1_DI
             }
         }
 
-        // CONVERSOR DE ARCHIVO
-        private void base64()
+        /// <summary>
+        /// Convierte el archivo seleccionado a Base64.
+        /// </summary>
+        /// <param name="openFileDialog">El diálogo para seleccionar el archivo.</param>
+        /// <returns>El archivo convertido a Base64.</returns>
+        private string base64(OpenFileDialog openFileDialog)
         {
+            // Verificar si se seleccionó un archivo
+            if (openFileDialog.FileName != "")
+            {
+                try
+                {
+                    // Obtener la extensión del archivo seleccionado
+                    string extension = Path.GetExtension(openFileDialog.FileName);
 
+                    // Leer el archivo y convertirlo a Base64
+                    byte[] archivoBytes = File.ReadAllBytes(openFileDialog.FileName);
+                    string cuerpoBase64 = Convert.ToBase64String(archivoBytes);
+
+                    // Crear el contenido para enviar al servidor
+                    var contenido = new StringContent($"extension={extension}&cuerpoBase64={cuerpoBase64}&direccionDirectorio={openFileDialog.FileName}", Encoding.UTF8, "application/x-www-form-urlencoded");
+
+                    return contenido.ReadAsStringAsync().Result;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al subir archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un archivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

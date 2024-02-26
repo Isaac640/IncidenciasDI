@@ -83,6 +83,7 @@
     <Compile Include="Administracion.cs" />
     <Compile Include="Base_Datos\Aulas.cs" />
     <Compile Include="Base_Datos\Comentarios.cs" />
+    <Compile Include="Base_Datos\Comentarios_DTO.cs" />
     <Compile Include="Base_Datos\Departamentos.cs" />
     <Compile Include="Base_Datos\Equipos.cs" />
     <Compile Include="Base_Datos\Incidencias_Sin.cs" />

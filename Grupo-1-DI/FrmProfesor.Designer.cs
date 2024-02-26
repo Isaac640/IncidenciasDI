@@ -36,6 +36,13 @@
             this.lblRegistros = new System.Windows.Forms.Label();
             this.dtpFechaFiltro = new System.Windows.Forms.DateTimePicker();
             this.dgvIncidencias = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_Creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adjunto_url = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.responsable_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbEstadoFiltro = new System.Windows.Forms.ComboBox();
             this.btnFiltro = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -51,13 +58,7 @@
             this.pbUser = new System.Windows.Forms.PictureBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_Creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adjunto_url = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.responsable_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCorreo = new System.Windows.Forms.Label();
             this.panelDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncidencias)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -152,6 +153,56 @@
             this.dgvIncidencias.ReadOnly = true;
             this.dgvIncidencias.Size = new System.Drawing.Size(626, 288);
             this.dgvIncidencias.TabIndex = 24;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "num";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 25;
+            // 
+            // Tipo
+            // 
+            this.Tipo.DataPropertyName = "tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // Fecha_Creacion
+            // 
+            this.Fecha_Creacion.DataPropertyName = "fecha_creacion";
+            this.Fecha_Creacion.HeaderText = "Fecha Creacion";
+            this.Fecha_Creacion.Name = "Fecha_Creacion";
+            this.Fecha_Creacion.ReadOnly = true;
+            this.Fecha_Creacion.Width = 95;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 220;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            // 
+            // adjunto_url
+            // 
+            this.adjunto_url.HeaderText = "Adjunto";
+            this.adjunto_url.Name = "adjunto_url";
+            this.adjunto_url.ReadOnly = true;
+            // 
+            // responsable_id
+            // 
+            this.responsable_id.HeaderText = "Responsable";
+            this.responsable_id.Name = "responsable_id";
+            this.responsable_id.ReadOnly = true;
             // 
             // cmbEstadoFiltro
             // 
@@ -328,6 +379,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
+            this.panel2.Controls.Add(this.lblCorreo);
             this.panel2.Controls.Add(this.lblApellidos);
             this.panel2.Controls.Add(this.lblNombre);
             this.panel2.Controls.Add(this.pbUser);
@@ -382,55 +434,16 @@
             this.lblFecha.TabIndex = 8;
             this.lblFecha.Text = "Lunes, 26 de septiembre 2018";
             // 
-            // ID
+            // lblCorreo
             // 
-            this.ID.DataPropertyName = "num";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 25;
-            // 
-            // Tipo
-            // 
-            this.Tipo.DataPropertyName = "tipo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Fecha_Creacion
-            // 
-            this.Fecha_Creacion.DataPropertyName = "fecha_creacion";
-            this.Fecha_Creacion.HeaderText = "Fecha Creacion";
-            this.Fecha_Creacion.Name = "Fecha_Creacion";
-            this.Fecha_Creacion.ReadOnly = true;
-            this.Fecha_Creacion.Width = 95;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 220;
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "estado";
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            // 
-            // adjunto_url
-            // 
-            this.adjunto_url.HeaderText = "Adjunto";
-            this.adjunto_url.Name = "adjunto_url";
-            this.adjunto_url.ReadOnly = true;
-            // 
-            // responsable_id
-            // 
-            this.responsable_id.HeaderText = "Responsable";
-            this.responsable_id.Name = "responsable_id";
-            this.responsable_id.ReadOnly = true;
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.ForeColor = System.Drawing.Color.White;
+            this.lblCorreo.Location = new System.Drawing.Point(132, 71);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(187, 19);
+            this.lblCorreo.TabIndex = 39;
+            this.lblCorreo.Text = "isaac@educantabria.es";
             // 
             // FrmProfesor
             // 
@@ -486,5 +499,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewLinkColumn adjunto_url;
         private System.Windows.Forms.DataGridViewTextBoxColumn responsable_id;
+        private System.Windows.Forms.Label lblCorreo;
     }
 }

@@ -20,11 +20,19 @@ namespace Grupo_1_DI
         Perfiles perfil;
         Timer timer;
 
+        /// <summary>
+        /// Constructor de la clase FrmAdmin.
+        /// </summary>
+
         public FrmAdmin()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor adicional de la clase FrmAdmin que recibe un perfil como parámetro.
+        /// </summary>
+        /// <param name="p">El perfil del usuario.</param>
         public FrmAdmin(Perfiles p) : this()
         {
             this.perfil = p;
@@ -38,18 +46,35 @@ namespace Grupo_1_DI
             lblFecha.Text = DateTime.UtcNow.ToLongDateString();
         }
 
+        /// <summary>
+        /// Obtiene los datos del personal de la base de datos de manera asíncrona.
+        /// </summary>
+        /// <param name="personalId">El ID del personal.</param>
         private async void ObtenerPersonalAsync(long personalId)
         {
-            this.personal = await Administracion.ObtenerPersonalByPerfil(personalId);
+            this.personal = await Administracion.ObtenerPersonalByID(personalId);
 
             if (personal != null)
             {
-                lblNombre.Text = this.personal.nombre;
-                lblApellidos.Text = this.personal.apellido1 + " " + this.personal.apellido2;
-                cargarInformes();
+                if (personal.activo == 0)
+                {
+                    MessageBox.Show("Este usuario no esta dado de alta, por favor contacte con el administrador del dominio", "Error de acceso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Application.Exit();
+                }
+                else
+                {
+                    lblNombre.Text = this.personal.nombre;
+                    lblApellidos.Text = this.personal.apellido1 + " " + this.personal.apellido2;
+                    lblCorreo.Text = this.perfil.educantabria;
+                    cargarInformes();
+                }
+
             }
         }
 
+        /// <summary>
+        /// Carga las incidencias desde la base de datos y las muestra en la interfaz gráfica.
+        /// </summary>
         private async void cargarInformes()
         {
             var lst = await Administracion.ObtenerIncidencias();
@@ -62,9 +87,13 @@ namespace Grupo_1_DI
                 lblRegistros.Text = "Registros: " + dgvIncidencias.RowCount.ToString();
             }
         }
-
+        /// <summary>
+        /// Modela la tabla de incidencias con los datos proporcionados.
+        /// </summary>
+        /// <param name="lst">La lista de incidencias a mostrar.</param>
         private async void modelarTabla(List<Incidencias> lst)
         {
+            dgvIncidencias.Rows.Clear();
             dgvIncidencias.AutoGenerateColumns = false;
 
             // Crear columnas manualmente para el DataGridView
@@ -97,7 +126,7 @@ namespace Grupo_1_DI
             columnaResponsable.HeaderText = "Responsable";
             // Agregar las columnas al DataGridView
 
-            if (dgvIncidencias.Columns.Count < 5)
+            if (dgvIncidencias.Columns.Count < 7)
             {
                 dgvIncidencias.Columns.Add(columnaID);
                 dgvIncidencias.Columns.Add(columnaTipo);
@@ -113,7 +142,7 @@ namespace Grupo_1_DI
                 if (responsable.responsable_id != null) // Verificar si responsable_id no es null
                 {
                     // Obtener los detalles del personal por su ID
-                    var personal = await Administracion.ObtenerPersonalByPerfil(responsable.responsable_id.id);
+                    var personal = await Administracion.ObtenerPersonalByID(responsable.responsable_id.id);
 
                     if (personal != null)
                     {
@@ -135,6 +164,9 @@ namespace Grupo_1_DI
         }
 
         // Para mostrar la hora actual
+        /// <summary>
+        /// Maneja el evento de temporizador para actualizar la hora.
+        /// </summary>
         private void Timer_Tick(object sender, EventArgs e)
         {
             // Actualizar la celda de la barra de estado con la fecha y hora actual
@@ -212,6 +244,7 @@ namespace Grupo_1_DI
             }
         }
 
+        // seccion de comentarios
         private void btnComentar_Click(object sender, EventArgs e)
         {
             if (dgvIncidencias.SelectedCells.Count > 0)

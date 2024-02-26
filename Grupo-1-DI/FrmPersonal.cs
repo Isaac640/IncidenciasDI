@@ -11,14 +11,22 @@ using System.Windows.Forms;
 
 namespace Grupo_1_DI
 {
+    /// <summary>
+    /// Formulario para la gestión del personal.
+    /// </summary>
     public partial class FrmPersonal : Form
     {
+        /// <summary>
+        /// Constructor de la clase FrmPersonal.
+        /// </summary>
         public FrmPersonal()
         {
             InitializeComponent();
             cargarPersonal();
         }
-
+        /// <summary>
+        /// Carga los datos del personal desde la base de datos.
+        /// </summary>
         private async void cargarPersonal()
         {
             var lst = await Administracion.ObtenerPersonal();
@@ -31,8 +39,12 @@ namespace Grupo_1_DI
         }
 
         // Modelar Tabla de dataGridView (Advertencia, Muy largo)
+        /// <summary>
+        /// Modela la tabla de personal en el DataGridView.
+        /// </summary>
+        /// <param name="lst">La lista de personal a mostrar.</param>
 
-        private async void modelarTabla(List<Personal> lst)
+        private void modelarTabla(List<Personal> lst)
         {
             dgvPersonal.AutoGenerateColumns = false;
 
@@ -105,23 +117,39 @@ namespace Grupo_1_DI
             }
             lblPersonal.Text = "Personal: " + dgvPersonal.RowCount.ToString();
         }
-
-        private void btnRegIncidencia_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Maneja el evento del botón para dar de baja a una persona.
+        /// </summary>
+        private async void btnRegIncidencia_Click(object sender, EventArgs e)
         {
-            if (dgvPersonal.CurrentRow.Cells[9].Value.ToString().Equals(0))
+            if (dgvPersonal.CurrentRow.Cells[9].Value.ToString().Equals("No"))
             {
                 MessageBox.Show("Este usuario ya esta dado de baja", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                //dar de alta por api
+                DialogResult dr = MessageBox.Show("¿Seguro que quiere dar de baja a esta persona?", "Aviso", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+
+                    long id = Convert.ToInt32(dgvPersonal.CurrentRow.Cells[0].Value);
+                    Personal persona = await Administracion.ObtenerPersonalByID(id);
+                    persona.activo = 0;
+
+                    await Administracion.ActualizarPersonal(persona); 
+                    await Task.Delay(500);
+                    dgvPersonal.Rows.Clear();
+                    cargarPersonal();
+
+                }
             }
         }
-
+        /// <summary>
+        /// Maneja el evento del botón para volver al formulario anterior.
+        /// </summary>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
     }
 }
-

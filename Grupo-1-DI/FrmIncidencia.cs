@@ -19,11 +19,19 @@ namespace Grupo_1_DI
     public partial class FrmIncidencia : Form
     {
         Incidencias incidencias;
+
+        /// <summary>
+        /// Constructor privado de la clase FrmIncidencia.
+        /// </summary>
         private FrmIncidencia()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor público de la clase FrmIncidencia que recibe una incidencia como parámetro.
+        /// </summary>
+        /// <param name="inc">La incidencia a editar.</param>
         public FrmIncidencia(Incidencias inc) : this()
         {
             this.incidencias = inc;
@@ -36,19 +44,25 @@ namespace Grupo_1_DI
             txtPuesto.Text = this.incidencias.equipo_id.puesto.ToString();
             txtDesc.Text = this.incidencias.descripcion.ToString();
         }
-
+        /// <summary>
+        /// Maneja el evento del botón para registrar una incidencia.
+        /// </summary>
         private void btnRegIncidencia_Click(object sender, EventArgs e)
         {
             //Rellenar el resto de campos de la incidencia
 
             this.DialogResult = DialogResult.OK;
         }
-
+        /// <summary>
+        /// Maneja el evento del botón para cancelar la operación.
+        /// </summary>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Maneja el evento de cambio de selección en el ComboBox de tipo de incidencia.
+        /// </summary>
         private void cmbIncidencia_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbIncidencia.SelectedItem.ToString() == "Equipos")
@@ -64,7 +78,9 @@ namespace Grupo_1_DI
                 txtPuesto.Enabled = false;
             }
         }
-
+        /// <summary>
+        /// Maneja el evento del botón para adjuntar un archivo.
+        /// </summary>
         private void btnAdjunto_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -91,21 +107,25 @@ namespace Grupo_1_DI
             }
         }
 
+        /// <summary>
+        /// Convierte el archivo seleccionado a Base64.
+        /// </summary>
+        /// <param name="ext">La extensión del archivo.</param>
+        /// <param name="ruta">La ruta del archivo.</param>
+        /// <returns>El archivo convertido a Base64.</returns>
         private string base64(string ext, string ruta)
         {
-            // Datos del archivo a enviar
             string extension = ext; // Extensión del archivo
             string direccionDirectorio = ruta; // Directorio donde se guardará el archivo
 
             // Leer el archivo y convertirlo a Base64
-            string rutaArchivo = "ruta/del/archivo.pdf"; // Ruta del archivo a enviar
-            byte[] archivoBytes = File.ReadAllBytes(rutaArchivo);
+            byte[] archivoBytes = File.ReadAllBytes(direccionDirectorio);
             string cuerpoBase64 = Convert.ToBase64String(archivoBytes);
 
-            var contenido = new StringContent($"extension={extension}&cuerpoBase64={cuerpoBase64}&direccionDirectorio={ruta}", Encoding.UTF8, "application/x-www-form-urlencoded");
+            // Crear el contenido para enviar al servidor
+            var contenido = new StringContent($"extension={extension}&cuerpoBase64={cuerpoBase64}&direccionDirectorio={direccionDirectorio}", Encoding.UTF8, "application/x-www-form-urlencoded");
 
             return contenido.ReadAsStringAsync().Result;
-
         }
     }
 }

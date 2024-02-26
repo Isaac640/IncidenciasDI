@@ -43,13 +43,23 @@ namespace Grupo_1_DI
         // Obtener el personal por el id de perfil
         private async void ObtenerPersonalAsync(long personalId)
         {
-            this.personal = await Administracion.ObtenerPersonalByPerfil(personalId);
+            this.personal = await Administracion.ObtenerPersonalByID(personalId);
 
             if (personal != null)
             {
-                lblNombre.Text = this.personal.nombre;
-                lblApellidos.Text = this.personal.apellido1 + " " + this.personal.apellido2;
-                cargarInformesProfesor();
+                if (personal.activo == 0)
+                {
+                    MessageBox.Show("Este usuario no esta dado de alta, por favor contacte con el administrador del dominio", "Error de acceso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Application.Exit();
+                }
+                else
+                {
+                    lblNombre.Text = this.personal.nombre;
+                    lblApellidos.Text = this.personal.apellido1 + " " + this.personal.apellido2;
+                    lblCorreo.Text = this.perfil.educantabria;
+                    cargarInformesProfesor();
+                }
+
             }
         }
 
@@ -70,6 +80,7 @@ namespace Grupo_1_DI
 
         private async void modelarTabla(List<Incidencias> lst)
         {
+            dgvIncidencias.Rows.Clear();
             dgvIncidencias.AutoGenerateColumns = false;
 
             // Crear columnas manualmente para el DataGridView
@@ -118,7 +129,7 @@ namespace Grupo_1_DI
                 if (responsable.responsable_id != null) // Verificar si responsable_id no es null
                 {
                     // Obtener los detalles del personal por su ID
-                    var personal = await Administracion.ObtenerPersonalByPerfil(responsable.responsable_id.id);
+                    var personal = await Administracion.ObtenerPersonalByID(responsable.responsable_id.id);
 
                     if (personal != null)
                     {
@@ -199,7 +210,7 @@ namespace Grupo_1_DI
             List<Incidencias> listaAux = new List<Incidencias>();
             foreach (Incidencias inc in listaInc)
             {
-                if (cmbEstadoFiltro.Text.Equals(inc.estado) || dtpFechaFiltro.Value.Equals(inc.fecha_creacion) || 
+                if (cmbEstadoFiltro.Text.Equals(inc.estado) || dtpFechaFiltro.Value.Equals(inc.fecha_creacion) ||
                     (cmbEstadoFiltro.Text.Equals(inc.estado) && dtpFechaFiltro.Value.Equals(inc.fecha_creacion)))
                 {
                     listaAux.Add(inc);

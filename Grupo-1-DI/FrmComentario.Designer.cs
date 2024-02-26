@@ -123,7 +123,7 @@
             this.btnSubir.Text = "Subir Comentario";
             this.btnSubir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSubir.UseVisualStyleBackColor = false;
-            this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
+            this.btnSubir.Click += new System.EventHandler(this.btnSubir_ClickAsync);
             // 
             // btnSalir
             // 

@@ -15,6 +15,9 @@ using System.Collections.Generic;
 
 namespace Grupo_3_Intermodular
 {
+    /// <summary>
+    /// Clase para consumir una API web.
+    /// </summary>
     public class WebConsumer
     {
         private string host;
@@ -22,6 +25,10 @@ namespace Grupo_3_Intermodular
         private HttpClient client;
         private JsonSerializerOptions serializerOptions;
 
+        /// <summary>
+        /// Constructor de la clase WebConsumer.
+        /// </summary>
+        /// <param name="host">La URL base del host de la API.</param>
         public WebConsumer(string host)
         {
             client = new HttpClient();
@@ -33,6 +40,7 @@ namespace Grupo_3_Intermodular
 
             this.host = host;
         }
+        // Métodos para realizar peticiones GET a la API
 
         public async Task<T> GetAsync<T>(string endpoint)
         {
@@ -66,7 +74,7 @@ namespace Grupo_3_Intermodular
                 return null;
             }
         }
-        public async Task<Personal> GetAsyncPersonalByPerfil<T>(string endpoint, long id)
+        public async Task<Personal> GetAsyncPersonalByID<T>(string endpoint, long id)
         {
             string url = $"{endpoint}/{id}";
             HttpResponseMessage response = await client.GetAsync(host + url);
@@ -173,55 +181,30 @@ namespace Grupo_3_Intermodular
             }
         }
 
+        // Métodos para realizar peticiones PUT a la API
 
-
-        public async Task<T> PostAsync<T>(string endpoint, object data)
-        {
-            string x = System.Text.Json.JsonSerializer.Serialize(data);
-            StringContent stringContent = new StringContent(x, Encoding.UTF8, "application/json");
-
-            HttpResponseMessage response = await client.PostAsync(host + endpoint, stringContent);
-            if (response.IsSuccessStatusCode)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-                T result = System.Text.Json.JsonSerializer.Deserialize<T>(content, serializerOptions);
-                return result;
-            }
-            else
-            {
-                throw new ApplicationException($"Error al obtener el recurso: {response.StatusCode}");
-            }
-        }
-
-        public async Task<bool> PostAsyncComentario(Comentarios comentario)
+        public async Task<bool> PutPersonalAsync(string endpoint, long id, Personal PersonalActualizado)
         {
             try
             {
-                // Serializar el objeto a JSON
-                string json = JsonConvert.SerializeObject(comentario);
+                string jsonIncidencia = JsonConvert.SerializeObject(PersonalActualizado);
+                string apiUrl = host + $"{endpoint}/{id}";
 
-                // Crear un HttpClient
-                using (HttpClient client = new HttpClient())
+                string url = apiUrl.Replace("{id}", id.ToString());
+
+                var request = new HttpRequestMessage(HttpMethod.Put, url);
+                request.Content = new StringContent(jsonIncidencia, Encoding.UTF8, "application/json");
+
+                var response = await client.SendAsync(request);
+
+                if (response.IsSuccessStatusCode)
                 {
-                    // URL de tu API
-                    string url = "/comentarios";
-
-                    // Convertir el objeto JSON en un StringContent
-                    StringContent content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-
-                    HttpResponseMessage response = await client.PostAsync(host + url, content);
-
-                    // Verificar si la solicitud fue exitosa
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // La solicitud fue exitosa
-                        return true;
-                    }
-                    else
-                    {
-                        // La solicitud falló
-                        return false;
-                    }
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine($"Error al dar de baja. Código de estado: {response.StatusCode}");
+                    return false;
                 }
             }
             catch (Exception ex)
@@ -231,6 +214,46 @@ namespace Grupo_3_Intermodular
                 return false;
             }
         }
+
+        // Métodos para realizar peticiones POST a la API
+
+        public async Task<bool> PostAsyncComentario(Comentarios_DTO comentario)
+        {
+            try
+            {
+                // Serializar el objeto a JSON
+                string json = JsonConvert.SerializeObject(comentario);
+
+                // Crear un HttpClient
+
+                // URL de tu API
+                string url = "/guardarComentarioConAdjunto";
+
+                // Convertir el objeto JSON en un StringContent
+                StringContent content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PostAsync(host + url, content);
+
+                // Verificar si la solicitud fue exitosa
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+        }
+
+        // Métodos para realizar peticiones DELETE a la API
 
         public async Task<bool> DeleteAsyncIncidencia(string endpoint, long id)
         {
@@ -254,8 +277,6 @@ namespace Grupo_3_Intermodular
                 return false;
             }
         }
-
-
 
 
     }
