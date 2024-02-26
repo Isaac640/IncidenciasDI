@@ -19,7 +19,7 @@ class TicketTrackerUI:
         self.tracker = tracker
         self.root = ctk.CTk()
         self.root.title("Ticket Tracker")
-        self.root.geometry("500x350")
+        self.root.geometry("700x460")
         self.root.resizable(False, False)
         
         frame = ctk.CTkFrame(master=self.root)
@@ -40,6 +40,8 @@ class TicketTrackerUI:
         #self.ticket_listbox.pack()
 
         for ticket in tracker.tickets:
+            if(ticket.status == 'en proceso'):
+                ticket.status = 'pausada'
             self.ticket_listbox.insert(tk.END, f"{ticket.id}: {ticket.description} ({ticket.status})")
 
         # Create the listbox and associate it with the scrollbar
@@ -69,28 +71,34 @@ class TicketTrackerUI:
         self.description_entry.pack(padx=5, pady=5)
 
         # Use customtkinter's CTkButton for the buttons
-        self.add_button = ctk.CTkButton(master=frame, text="Add Ticket", command=self.add_ticket)
+        self.add_button = ctk.CTkButton(master=frame, text="Crear Incidencia", command=self.add_ticket)
         self.add_button.pack(padx=5, pady=5)
 
-        self.delete_button = ctk.CTkButton(master=frame, text="Delete Ticket", command=self.delete_ticket)
-        self.delete_button.pack(padx=5, pady=5)
-
-        self.start_button = ctk.CTkButton(master=frame, text="Start Ticket", command=self.start_ticket)
+        self.start_button = ctk.CTkButton(master=frame, text="Iniciar incidencia", command=self.start_ticket)
         self.start_button.pack(padx=5, pady=5)
 
-        self.pause_button = ctk.CTkButton(master=frame, text="Pause Ticket", command=self.pause_ticket)
+        self.pause_button = ctk.CTkButton(master=frame, text="Pausar incidencia", command=self.pause_ticket)
         self.pause_button.pack(padx=5, pady=5)
 
-        self.resume_button = ctk.CTkButton(master=frame, text="Resume Ticket", command=self.resume_ticket)
+        self.resume_button = ctk.CTkButton(master=frame, text="Resumir Incidencia", command=self.resume_ticket)
         self.resume_button.pack(padx=5, pady=5)
 
-        self.finish_button = ctk.CTkButton(master=frame, text="Finish Ticket", command=self.finish_ticket)
+        self.finish_button = ctk.CTkButton(master=frame, text="Finalizar Incidencia", command=self.finish_ticket)
         self.finish_button.pack(padx=5, pady=5)
-        
+
+        self.delete_button = ctk.CTkButton(master=frame, text="Borrar Incidencia", command=self.delete_ticket)
+        self.delete_button.pack(padx=5, pady=5)
+
         self.change_responsible_button = ctk.CTkButton(master=frame, text="Cambiar Responsable", command=self.change_responsible)
         self.change_responsible_button.pack(padx=5, pady=5)
 
-        self.export_button = ctk.CTkButton(master=frame, text="Export Tickets", command=self.export_tickets)
+        self.update_button = ctk.CTkButton(master=frame, text="Actualizar BBDD", command=self.update_ticket_list)
+        self.update_button.pack(padx=5, pady=5)
+
+        self.updateTickets_button = ctk.CTkButton(master=frame, text="Actualizar Incidencias", command=self.update_ticket_list)
+        self.updateTickets_button.pack(padx=5, pady=5)
+
+        self.export_button = ctk.CTkButton(master=frame, text="Exportar Incidencias", command=self.export_tickets)
         self.export_button.pack(padx=5, pady=5)
 
         self.update_ticket_list()
@@ -114,6 +122,7 @@ class TicketTrackerUI:
         selected_id = self.ticket_listbox.curselection()
         if selected_id:
             ticket = self.tracker.get_ticket(selected_id[0] +  1)
+            print(ticket)
             if ticket:
                 ticket.resume()
                 ticket.current_session_start = time.time()  # Record the start of the current session
@@ -124,7 +133,7 @@ class TicketTrackerUI:
         while not stop_event.is_set():
             # Update the time elapsed for each ticket
             for ticket in self.tracker.tickets:
-                if ticket.status == 'started':
+                if ticket.status == 'en proceso':
                     elapsed_time = time.time() - ticket.current_session_start  # Calculate elapsed time for the current session
                     ticket.total_time += elapsed_time
                     ticket.current_session_start = time.time()  # Reset the start of the current session for the next update
@@ -150,10 +159,10 @@ class TicketTrackerUI:
         # Calculate the elapsed time
             elapsed_time = ticket.total_time
         # Format the elapsed time as a string
-            elapsed_time_str = str(elapsed_time).split('.')[0]  # Remove the microseconds
+            elapsed_time_str = str(datetime.timedelta(seconds=int(elapsed_time)))  # Remove the microseconds
 
         # Add the ticket information and elapsed time to the listbox
-            self.ticket_listbox.insert(tk.END, f"{ticket.id}: {ticket.description} ({ticket.status}, {elapsed_time_str} elapsed)")
+            self.ticket_listbox.insert(tk.END, f"{ticket.id}: {ticket.description} ({ticket.status}, {elapsed_time_str} en proceso)")
 
     # Reselect the previously selected item, if any
         if current_selection:
@@ -214,11 +223,14 @@ class TicketTrackerUI:
     def export_tickets(self):
         filename = filedialog.asksaveasfilename(defaultextension=".json", filetypes=[("JSON files", "*.json")])
         if filename:
+            for ticket in self.tracker.tickets:
+                if ticket.status == 'en proceso':
+                    ticket.status = 'pausada'
             self.tracker.export_tickets(filename)
             messagebox.showinfo("Export Successful", f"Tickets exported to {filename}")
             
     def change_responsible(self):
-        # Get the currently selected ticket
+    # Get the currently selected ticket
         current_selection = self.ticket_listbox.curselection()
         if not current_selection:
             return  # No ticket is selected
@@ -226,14 +238,20 @@ class TicketTrackerUI:
         ticket_index = current_selection[0]
         ticket = self.tracker.tickets[ticket_index]
 
-        # Ask the user for the new responsible person's ID
+    # Ask the user for the new responsible person's ID
         new_responsible_id = simpledialog.askstring("Change Responsible", "Enter the new responsible person's ID:")
         if new_responsible_id is not None:
-            # Update the responsible person
-            ticket.responsible_id = new_responsible_id
+        # Update the responsible person
+            ticket.responsable_id = new_responsible_id
 
-            # Update the listbox
-            self.update_ticket_list()
+        # Update the ticket in the tracker
+            self.tracker.tickets[ticket_index] = ticket
+
+        # Save the tickets
+            self.tracker.save_tickets()
+
+    # Update the listbox
+        self.update_ticket_list()
 
     def run(self):
         self.root.mainloop()

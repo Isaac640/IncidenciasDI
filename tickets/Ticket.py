@@ -9,9 +9,10 @@ def seconds_to_hms(seconds):
 
 class Ticket:
     def __init__(self, id, description):
+        self.local_id = None
         self.id = id
         self.description = description
-        self.status = 'not-started'
+        self.status = 'abierta'
         self.start_time = None
         self.end_time = None
         self.total_time =  0.0
@@ -19,50 +20,56 @@ class Ticket:
         self.responsable_id = None
 
     def start(self):
-        if self.status == 'not-started':
-            self.status = 'started'
+        print(self.status)
+        if self.status == 'abierta':
+            self.status = 'en proceso'
             self.current_session_start = time.time()  # Set the start of the current session
             self.start_time = time.time()  # Set the start time of the ticket
 
     def resume(self):
-        if self.status == 'paused':
-            self.status = 'started'
+        print(self.status)
+        if self.status == 'pausada':
+            self.status = 'en proceso'
             self.current_session_start = time.time()  # Set the start of the current session
 
     def pause(self):
-        if self.status == 'started':
-            self.status = 'paused'
+        print(self.status)
+        if self.status == 'en proceso':
+            self.status = 'pausada'
             self.current_session_start = None  # Reset the start of the current session
 
     def finish(self):
-        if self.status == 'started' or self.status == 'paused':
-            self.status = 'finished'
+        print(self.status)
+        if self.status == 'en proceso' or self.status == 'pausada':
+            self.status = 'resuelta'
             self.current_session_start = None
             self.end_time = time.time()  # Set the end time of the ticket
 
     def to_dict(self):
         return {
-            'id': self.id,
-            'description': self.description,
-            'status': self.status,
-            'start_time': datetime.fromtimestamp(self.start_time).strftime('%d/%m/%Y %H:%M:%S') if self.start_time else None,
-            'end_time': datetime.fromtimestamp(self.end_time).strftime('%d/%m/%Y %H:%M:%S') if self.end_time else None,
-            'total_time': seconds_to_hms(self.total_time)
+            'num': self.id,
+            'descripcion': self.description,
+            'estado': self.status,
+            'fecha_creacion': datetime.fromtimestamp(self.start_time).strftime('%d/%m/%Y %H:%M:%S') if self.start_time else None,
+            'fecha_cierre': datetime.fromtimestamp(self.end_time).strftime('%d/%m/%Y %H:%M:%S') if self.end_time else None,
+            'tiempo': seconds_to_hms(self.total_time),
+            'responsable_id': self.responsable_id
         }
 
     @classmethod
     def from_dict(cls, data):
-        ticket = cls(data['id'], data['description'])
-        ticket.status = data['status']
-        ticket.start_time = cls.parse_time(data['start_time'])
-        ticket.end_time = cls.parse_time(data['end_time'])
-        ticket.total_time = cls.time_string_to_seconds(data['total_time'])
+        ticket = cls(data['num'], data['descripcion'])
+        ticket.status = data['estado']
+        ticket.start_time = cls.parse_time(data['fecha_creacion'])
+        ticket.end_time = cls.parse_time(data['fecha_cierre'])
+        ticket.total_time = cls.time_string_to_seconds(data['tiempo'])
+        ticket.responsable_id = data['responsable_id']
         return ticket
 
     @staticmethod
     def parse_time(time_str):
         if time_str:
-            return datetime.strptime(time_str, '%d/%m/%Y %H:%M:%S').timestamp()
+            return datetime.strptime(time_str, '%Y-%m-%d').timestamp()
         return None
 
     @staticmethod

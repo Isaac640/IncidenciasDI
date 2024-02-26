@@ -4,6 +4,8 @@ from tkinter import messagebox
 from PIL import Image
 import os
 
+from tickets.TicketAPI import TicketAPI
+
 ctk.set_appearance_mode("system")
 ctk.set_default_color_theme("green")
 
@@ -50,6 +52,8 @@ class LoginUI:
         entered_password = self.password_entry.get()
 
         if entered_username == self.admin_username and entered_password == self.admin_password:
+            ticket_api = TicketAPI()
+            ticket_api.load_tickets_to_file()
             # Close the login window
             self.root.destroy()
 
