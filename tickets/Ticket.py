@@ -8,16 +8,20 @@ def seconds_to_hms(seconds):
     return "{:02}:{:02}:{:02}".format(int(hours), int(minutes), int(seconds))
 
 class Ticket:
-    def __init__(self, id, description):
+    def __init__(self, id, descripcion, tipo, subtipo_id, creator_id):
         self.local_id = None
         self.id = id
-        self.description = description
+        self.description = descripcion
         self.status = 'abierta'
         self.start_time = None
         self.end_time = None
         self.total_time =  0.0
         self.current_session_start = None
         self.responsable_id = None
+        self.tipo = tipo
+        self.subtipo_id = subtipo_id
+        self.creador_id = creator_id
+        self.equipoId = None
 
     def start(self):
         print(self.status)
@@ -48,22 +52,30 @@ class Ticket:
     def to_dict(self):
         return {
             'num': self.id,
+            'tipo': self.tipo,
             'descripcion': self.description,
             'estado': self.status,
+            'equipoId': self.equipoId,
+            'responsable_id': self.responsable_id,
+            'subtipo_id': self.subtipo_id,
+            'tiempo': seconds_to_hms(self.total_time),
             'fecha_creacion': datetime.fromtimestamp(self.start_time).strftime('%d/%m/%Y %H:%M:%S') if self.start_time else None,
             'fecha_cierre': datetime.fromtimestamp(self.end_time).strftime('%d/%m/%Y %H:%M:%S') if self.end_time else None,
-            'tiempo': seconds_to_hms(self.total_time),
-            'responsable_id': self.responsable_id
+            'creador_id': self.creador_id,
         }
 
     @classmethod
     def from_dict(cls, data):
-        ticket = cls(data['num'], data['descripcion'])
+        ticket = cls(data['num'], data['descripcion'], data['tipo'], data['subtipo_id'], data['creador_id'])
         ticket.status = data['estado']
         ticket.start_time = cls.parse_time(data['fecha_creacion'])
         ticket.end_time = cls.parse_time(data['fecha_cierre'])
         ticket.total_time = cls.time_string_to_seconds(data['tiempo'])
         ticket.responsable_id = data['responsable_id']
+        #ticket.tipo = data['tipo']
+        #ticket.subtipo_id = data['subtipo_id']
+        #ticket.creador_id = data['creador_id']
+        ticket.equipoId = data['equipoId']
         return ticket
 
     @staticmethod

@@ -1,5 +1,6 @@
 # ticket_tracker.py
 
+import datetime
 import json
 from .Ticket import Ticket
 
@@ -17,14 +18,13 @@ class TicketTracker:
         return tickets
 
     def save_tickets(self):
-        ticket_dicts = [ticket.to_dict() for ticket in self.tickets]
-        print(f"Ticket dicts before saving: {ticket_dicts}")  # Debug print
         with open(self.filename, 'w') as f:
             json.dump([ticket.to_dict() for ticket in self.tickets], f, indent=4)
 
-    def add_ticket(self, description):
-        id = len(self.tickets) +   1
-        self.tickets.append(Ticket(id, description))
+    def add_ticket(self, ticket):
+        # Set the fecha_creacion to the current time
+        ticket.start_time = datetime.datetime.now().timestamp()
+        self.tickets.append(ticket)
         self.save_tickets()
 
     def delete_ticket(self, local_id):

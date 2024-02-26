@@ -1,11 +1,14 @@
-import datetime
+from datetime import datetime, timedelta
 from tkinter import simpledialog
 import customtkinter as ctk
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from threading import Thread, Event
 
-from tickets.Ticket import seconds_to_hms
+import requests
+
+from tickets.Ticket import Ticket, seconds_to_hms
+from tickets.TicketAPI import TicketAPI
 from .TicketTracker import TicketTracker
 import time
 # ticket_tracker_ui.py
@@ -15,7 +18,12 @@ ctk.set_default_color_theme("dark-blue")
 
 
 class TicketTrackerUI:
-    def __init__(self, tracker):
+    
+    def __init__(self, tracker, creator_id):
+        print("Creator id en init de TicketTrackerUI")
+        
+        creator_id = creator_id
+        print(creator_id)
         self.tracker = tracker
         self.root = ctk.CTk()
         self.root.title("Ticket Tracker")
@@ -45,9 +53,6 @@ class TicketTrackerUI:
             self.ticket_listbox.insert(tk.END, f"{ticket.id}: {ticket.description} ({ticket.status})")
 
         # Create the listbox and associate it with the scrollbar
-        
-
-
             
         self.selected_index = tk.IntVar(value=-1)
         
@@ -71,7 +76,7 @@ class TicketTrackerUI:
         self.description_entry.pack(padx=5, pady=5)
 
         # Use customtkinter's CTkButton for the buttons
-        self.add_button = ctk.CTkButton(master=frame, text="Crear Incidencia", command=self.add_ticket)
+        self.add_button = ctk.CTkButton(master=frame, text="Crear Incidencia", command=lambda: self.add_ticket(creator_id))
         self.add_button.pack(padx=5, pady=5)
 
         self.start_button = ctk.CTkButton(master=frame, text="Iniciar incidencia", command=self.start_ticket)
@@ -92,10 +97,10 @@ class TicketTrackerUI:
         self.change_responsible_button = ctk.CTkButton(master=frame, text="Cambiar Responsable", command=self.change_responsible)
         self.change_responsible_button.pack(padx=5, pady=5)
 
-        self.update_button = ctk.CTkButton(master=frame, text="Actualizar BBDD", command=self.update_ticket_list)
+        self.update_button = ctk.CTkButton(master=frame, text="Actualizar BBDD", command=lambda: self.update_tickets_to_API(creator_id))
         self.update_button.pack(padx=5, pady=5)
 
-        self.updateTickets_button = ctk.CTkButton(master=frame, text="Actualizar Incidencias", command=self.update_ticket_list)
+        self.updateTickets_button = ctk.CTkButton(master=frame, text="Actualizar Incidencias", command=lambda: self.updateTickets(creator_id))
         self.updateTickets_button.pack(padx=5, pady=5)
 
         self.export_button = ctk.CTkButton(master=frame, text="Exportar Incidencias", command=self.export_tickets)
@@ -134,7 +139,10 @@ class TicketTrackerUI:
             # Update the time elapsed for each ticket
             for ticket in self.tracker.tickets:
                 if ticket.status == 'en proceso':
-                    elapsed_time = time.time() - ticket.current_session_start  # Calculate elapsed time for the current session
+                    if ticket.current_session_start is not None:
+                        elapsed_time = time.time() - ticket.current_session_start  # Calculate elapsed time for the current session
+                    else:
+                        elapsed_time = 0
                     ticket.total_time += elapsed_time
                     ticket.current_session_start = time.time()  # Reset the start of the current session for the next update
             # Schedule the UI update on the main thread
@@ -159,7 +167,7 @@ class TicketTrackerUI:
         # Calculate the elapsed time
             elapsed_time = ticket.total_time
         # Format the elapsed time as a string
-            elapsed_time_str = str(datetime.timedelta(seconds=int(elapsed_time)))  # Remove the microseconds
+            elapsed_time_str = str(timedelta(seconds=int(elapsed_time)))  # Remove the microseconds
 
         # Add the ticket information and elapsed time to the listbox
             self.ticket_listbox.insert(tk.END, f"{ticket.id}: {ticket.description} ({ticket.status}, {elapsed_time_str} en proceso)")
@@ -171,12 +179,31 @@ class TicketTrackerUI:
     # Restore the scrollbar position
         self.ticket_listbox.yview_moveto(scrollbar_position[0])
 
-    def add_ticket(self):
-        description = self.description_entry.get()
-        if description:
-            self.tracker.add_ticket(description)
-            self.description_entry.delete(0, tk.END)
-            self.update_ticket_list()
+    def add_ticket(self, creator_id):
+    # Ask the user for the ticket information
+        tipo = simpledialog.askstring("New Ticket", "Introduce el tipo (EQUIPOS, CUENTAS, WIFI, INTERNET, SOFTWARE):")
+        subtipo_id = simpledialog.askinteger("New Ticket", "Introduce el subtipo del ID:")
+        descripcion = simpledialog.askstring("New Ticket", "Introduce la descripcion:")
+
+    # Check if the user entered all the information
+        if tipo is None or subtipo_id is None or descripcion is None:
+            messagebox.showerror("Error", "Debes introducir toda la informacion.")
+            return
+
+    # Get the last ticket's num and add 1 to it
+        if self.tracker.tickets:
+            id = self.tracker.tickets[-1].id + 1
+        else:
+            id = 1
+
+    # Create the new ticket
+        ticket = Ticket(id=id, tipo=tipo, subtipo_id=subtipo_id, descripcion=descripcion, creator_id=creator_id)
+
+    # Add the ticket to the tracker
+        self.tracker.add_ticket(ticket)
+
+    # Update the ticket list
+        self.update_ticket_list()
 
     def delete_ticket(self):
         selected_id = self.ticket_listbox.curselection()
@@ -252,6 +279,65 @@ class TicketTrackerUI:
 
     # Update the listbox
         self.update_ticket_list()
+
+    def updateTickets(self, creator_id):
+    # Create an instance of TicketAPI
+        api = TicketAPI()
+
+    # Get the tickets from the API
+        tickets_data = api.get_tickets(creator_id)
+
+    # Convert the ticket data to Ticket objects
+        tickets = [Ticket.from_dict(ticket_data) for ticket_data in tickets_data]
+
+    # Change the status of the tickets that are "en proceso" to "pausada"
+        for ticket in tickets:
+            if ticket.status == "en proceso":
+                ticket.status = "pausada"
+
+    # Save the tickets to the file
+        self.tracker.tickets = tickets
+        self.tracker.save_tickets()
+
+    # Update the listbox
+        self.update_ticket_list()
+
+    def update_tickets_to_API(self, creator_id):
+    # Ask the user if they are sure they want to upload the information
+        if not messagebox.askyesno("Confirm", "Are you sure you want to upload the information?"):
+            return  # The user is not sure, so don't upload the information
+
+    # Loop through all the tickets
+        for ticket in self.tracker.tickets:
+        # Convert the ticket to a dictionary
+            ticket_data = ticket.to_dict()
+
+        # Convert the date to the correct format
+            date_str = ticket_data["fecha_creacion"]  # Replace "date" with the actual key for the date
+            date_obj = datetime.strptime(date_str, "%d/%m/%Y %H:%M:%S")
+            ticket_data["fecha_creacion"] = date_obj.strftime("%Y-%m-%dT%H:%M:%S.%f")
+            date_str = ticket_data["fecha_cierre"]  # Replace "date" with the actual key for the date
+            if date_str is not None:
+                date_obj = datetime.strptime(date_str, "%d/%m/%Y %H:%M:%S")
+                ticket_data["fecha_cierre"] = date_obj.strftime("%Y-%m-%dT%H:%M:%S.%f")
+
+            # Make a GET request to the API to check if the ticket already exists
+            response = requests.get(f'http://localhost:8089/api/incidencias/{ticket.id}')
+
+            if response.status_code == 200:
+                # The ticket already exists, so update it
+                response = requests.put(f'http://localhost:8089/api/incidencias/{ticket.id}', json=ticket_data)
+            else:
+                # The ticket doesn't exist, so create a new one
+                response = requests.post('http://localhost:8089/api/incidencias', json=ticket_data)
+
+        # Check if the request was successful
+            if response.status_code not in (200, 201):
+                print(f"Failed to update ticket: {response.status_code}")
+                return
+
+        # Update the tickets
+        self.updateTickets(creator_id)
 
     def run(self):
         self.root.mainloop()
