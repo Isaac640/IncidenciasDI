@@ -139,11 +139,10 @@ class TicketTrackerUI:
             # Update the time elapsed for each ticket
             for ticket in self.tracker.tickets:
                 if ticket.status == 'en proceso':
-                    if ticket.current_session_start is not None:
-                        elapsed_time = time.time() - ticket.current_session_start  # Calculate elapsed time for the current session
+                    if ticket.total_time is None:
+                        ticket.total_time = 0
                     else:
-                        elapsed_time = 0
-                    ticket.total_time += elapsed_time
+                        ticket.total_time += 1
                     ticket.current_session_start = time.time()  # Reset the start of the current session for the next update
             # Schedule the UI update on the main thread
             self.root.after(1000, self.update_ticket_list)
@@ -167,7 +166,10 @@ class TicketTrackerUI:
         # Calculate the elapsed time
             elapsed_time = ticket.total_time
         # Format the elapsed time as a string
-            elapsed_time_str = str(timedelta(seconds=int(elapsed_time)))  # Remove the microseconds
+            if elapsed_time is not None:
+                elapsed_time_str = str(timedelta(seconds=int(elapsed_time)))  # Remove the microseconds
+            else:
+                elapsed_time_str = "00:00:00"  # Remove the microseconds
 
         # Add the ticket information and elapsed time to the listbox
             self.ticket_listbox.insert(tk.END, f"{ticket.id}: {ticket.description} ({ticket.status}, {elapsed_time_str} en proceso)")
@@ -197,7 +199,7 @@ class TicketTrackerUI:
             id = 1
 
     # Create the new ticket
-        ticket = Ticket(id=id, tipo=tipo, subtipo_id=subtipo_id, descripcion=descripcion, creator_id=creator_id)
+        ticket = Ticket(id=id, tipo=tipo, subtipo_id=subtipo_id, descripcion=descripcion, creator_id=creator_id, tiempo="00:00:00")
 
     # Add the ticket to the tracker
         self.tracker.add_ticket(ticket)
@@ -208,6 +210,14 @@ class TicketTrackerUI:
     def delete_ticket(self):
         selected_id = self.ticket_listbox.curselection()
         if selected_id:
+            ticket = self.tracker.get_ticket(selected_id[0] +  1)
+            # Make a GET request to the API to check if the ticket already exists
+            response = requests.get(f'http://localhost:8089/api/incidencias/{ticket.id}')
+
+            if response.status_code == 200:
+                print(f"Ticket {ticket.id} exists in database, deleting it...")
+                # The ticket already exists, so delete it
+                response = requests.delete(f'http://localhost:8089/api/incidencias/{ticket.id}')
             self.tracker.delete_ticket(selected_id[0] +   1)
             self.update_ticket_list()
 
@@ -325,10 +335,15 @@ class TicketTrackerUI:
             response = requests.get(f'http://localhost:8089/api/incidencias/{ticket.id}')
 
             if response.status_code == 200:
+                print(f"Ticket {ticket.id} already exists, updating it...")
                 # The ticket already exists, so update it
+                print(ticket_data)
                 response = requests.put(f'http://localhost:8089/api/incidencias/{ticket.id}', json=ticket_data)
+                print(response.status_code)
             else:
+                print(f"Ticket {ticket.id} doesn't exist, creating it...")
                 # The ticket doesn't exist, so create a new one
+                print(ticket_data)
                 response = requests.post('http://localhost:8089/api/incidencias', json=ticket_data)
 
         # Check if the request was successful

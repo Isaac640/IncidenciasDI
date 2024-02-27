@@ -45,8 +45,8 @@ class LoginUI:
         self.login_button = ctk.CTkButton(master=frame, text="Login", command=self.login)
         self.login_button.pack(pady=12, padx=10)
         
-        self.checkbox = ctk.CTkCheckBox(master=frame, text="Remember me")
-        self.checkbox.pack(pady=12, padx=10)
+        #self.checkbox = ctk.CTkCheckBox(master=frame, text="Remember me")
+        #self.checkbox.pack(pady=12, padx=10)
 
     def login(self):
         password_md5 = hashlib.md5(self.password_entry.get().encode()).hexdigest()

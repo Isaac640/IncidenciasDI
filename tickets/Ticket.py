@@ -7,15 +7,29 @@ def seconds_to_hms(seconds):
     minutes, seconds = divmod(remainder,  60)
     return "{:02}:{:02}:{:02}".format(int(hours), int(minutes), int(seconds))
 
+    
+def time_string_to_seconds(time_string):
+    if time_string:
+        try:
+        # Try to parse time_string as "YYYY-MM-DDTHH:MM:SS.ZZZZ"
+            dt = datetime.strptime(time_string, "%Y-%m-%dT%H:%M:%S.%fZ")
+            return (dt - datetime(1970, 1, 1)).total_seconds()
+        except ValueError:
+        # If that fails, try to parse time_string as "HH:MM:SS"
+            t = datetime.strptime(time_string, "%H:%M:%S")
+            return t.hour*3600 + t.minute*60 + t.second
+    else:
+        return None
+        
 class Ticket:
-    def __init__(self, id, descripcion, tipo, subtipo_id, creator_id):
+    def __init__(self, id, descripcion, tipo, subtipo_id, creator_id, tiempo):
         self.local_id = None
         self.id = id
         self.description = descripcion
         self.status = 'abierta'
         self.start_time = None
         self.end_time = None
-        self.total_time =  0.0
+        self.total_time =  time_string_to_seconds(tiempo)
         self.current_session_start = None
         self.responsable_id = None
         self.tipo = tipo
@@ -58,7 +72,7 @@ class Ticket:
             'equipoId': self.equipoId,
             'responsable_id': self.responsable_id,
             'subtipo_id': self.subtipo_id,
-            'tiempo': seconds_to_hms(self.total_time),
+            'tiempo': seconds_to_hms(self.total_time) if self.total_time else None,
             'fecha_creacion': datetime.fromtimestamp(self.start_time).strftime('%d/%m/%Y %H:%M:%S') if self.start_time else None,
             'fecha_cierre': datetime.fromtimestamp(self.end_time).strftime('%d/%m/%Y %H:%M:%S') if self.end_time else None,
             'creador_id': self.creador_id,
@@ -66,11 +80,11 @@ class Ticket:
 
     @classmethod
     def from_dict(cls, data):
-        ticket = cls(data['num'], data['descripcion'], data['tipo'], data['subtipo_id'], data['creador_id'])
+        ticket = cls(data['num'], data['descripcion'], data['tipo'], data['subtipo_id'], data['creador_id'], data['tiempo'])
         ticket.status = data['estado']
         ticket.start_time = cls.parse_time(data['fecha_creacion'])
         ticket.end_time = cls.parse_time(data['fecha_cierre'])
-        ticket.total_time = cls.time_string_to_seconds(data['tiempo'])
+        #ticket.total_time = cls.time_string_to_seconds(data['tiempo'])
         ticket.responsable_id = data['responsable_id']
         #ticket.tipo = data['tipo']
         #ticket.subtipo_id = data['subtipo_id']
@@ -84,9 +98,4 @@ class Ticket:
             return datetime.strptime(time_str, '%Y-%m-%d').timestamp()
         return None
 
-    @staticmethod
-    def time_string_to_seconds(time_str):
-        if time_str:
-            hours, minutes, seconds = map(int, time_str.split(':'))
-            return hours *  3600 + minutes *  60 + seconds
-        return  0.0
+    

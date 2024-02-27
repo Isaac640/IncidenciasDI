@@ -1,28 +1,41 @@
 [
     {
-        "num": 22,
-        "tipo": "CUENTAS",
-        "descripcion": "Prueba cuentas",
-        "estado": "abierta",
+        "num": 13,
+        "tipo": "EQUIPOS",
+        "descripcion": "Prueba2",
+        "estado": "resuelta",
         "equipoId": null,
         "responsable_id": null,
-        "subtipo_id": 11,
-        "tiempo": "00:00:00",
-        "fecha_creacion": "26/02/2024 00:00:00",
-        "fecha_cierre": null,
-        "creador_id": 11
+        "subtipo_id": 2,
+        "tiempo": "00:00:09",
+        "fecha_creacion": "27/02/2024 19:47:22",
+        "fecha_cierre": "27/02/2024 19:47:32",
+        "creador_id": 13
     },
     {
-        "num": 23,
+        "num": 14,
         "tipo": "EQUIPOS",
-        "descripcion": "Prueba",
-        "estado": "abierta",
+        "descripcion": "Prueba3",
+        "estado": "pausada",
+        "equipoId": null,
+        "responsable_id": "4",
+        "subtipo_id": 2,
+        "tiempo": "00:00:11",
+        "fecha_creacion": "27/02/2024 19:47:23",
+        "fecha_cierre": null,
+        "creador_id": 13
+    },
+    {
+        "num": 15,
+        "tipo": "EQUIPOS",
+        "descripcion": "Prueba1",
+        "estado": "pausada",
         "equipoId": null,
         "responsable_id": null,
-        "subtipo_id": 3,
-        "tiempo": "00:00:00",
-        "fecha_creacion": "26/02/2024 00:00:00",
-        "fecha_cierre": null,
-        "creador_id": 11
+        "subtipo_id": 2,
+        "tiempo": "00:00:15",
+        "fecha_creacion": "27/02/2024 19:47:24",
+        "fecha_cierre": "27/02/2024 00:00:00",
+        "creador_id": 13
     }
 ]
