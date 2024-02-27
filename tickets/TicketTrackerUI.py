@@ -26,7 +26,7 @@ class TicketTrackerUI:
         self.tracker = tracker
         self.root = ctk.CTk()
         self.root.title("Ticket Tracker")
-        self.root.geometry("700x460")
+        self.root.geometry("700x420")
         self.root.resizable(False, False)
 
         frame = ctk.CTkFrame(master=self.root)
@@ -51,10 +51,6 @@ class TicketTrackerUI:
         # Create the listbox and associate it with the scrollbar
 
         self.selected_index = tk.IntVar(value=-1)
-
-        # Use customtkinter's CTkEntry for the description entry
-        self.description_entry = ctk.CTkEntry(master=frame)
-        self.description_entry.pack(padx=5, pady=5)
 
         # Use customtkinter's CTkButton for the buttons
         self.add_button = ctk.CTkButton(master=frame, text="Crear Incidencia",
@@ -81,7 +77,7 @@ class TicketTrackerUI:
         self.change_responsible_button.pack(padx=5, pady=5)
 
         self.update_button = ctk.CTkButton(master=frame, text="Actualizar BBDD",
-                                           command=lambda: self.update_tickets_to_api(creator_id))
+                                           command=lambda: self.update_tickets_to_api(creator_id, False))
         self.update_button.pack(padx=5, pady=5)
 
         self.updateTickets_button = ctk.CTkButton(master=frame, text="Actualizar Incidencias",
@@ -158,7 +154,8 @@ class TicketTrackerUI:
                 elapsed_time_str = "00:00:00"  # Remove the microseconds
 
             # Add the ticket information and elapsed time to the listbox
-            self.ticket_listbox.insert(tk.END, f"{ticket.id}: {ticket.description} ({ticket.status}, {elapsed_time_str} en proceso)")
+            self.ticket_listbox.insert(tk.END,
+                                       f"{ticket.id}: {ticket.description} ({ticket.status}, {elapsed_time_str} en proceso)")
 
         # Reselect the previously selected item, if any
         if current_selection:
@@ -168,14 +165,49 @@ class TicketTrackerUI:
         self.ticket_listbox.yview_moveto(scrollbar_position[0])
 
     def add_ticket(self, creator_id):
-        # Ask the user for the ticket information
-        tipo = simpledialog.askstring("Nuevo Ticket", "Introduce el tipo (EQUIPOS, CUENTAS, WIFI, INTERNET, SOFTWARE):")
-        subtipo_id = simpledialog.askinteger("Nuevo Ticket", "Introduce el subtipo del ID:")
-        descripcion = simpledialog.askstring("Nuevo Ticket", "Introduce la descripcion:")
+        # Define the valid tipo and subtipo_id options
+        tipo_options = {
+            'EQUIPOS': range(1, 11),
+            'CUENTAS': range(11, 15),
+            'WIFI': range(15, 17),
+            'INTERNET': range(17, 19),
+            'SOFTWARE': lambda x: x >= 19  # Any number >= 19
+        }
 
-        # Check if the user entered all the information
-        if tipo is None or subtipo_id is None or descripcion is None:
-            messagebox.showerror("Error", "Debes introducir toda la informacion.")
+        # Ask the user for the tipo
+        while True:
+            tipo = simpledialog.askstring("Nuevo Ticket",
+                                          "Introduce el tipo (EQUIPOS, CUENTAS, WIFI, INTERNET, SOFTWARE):")
+            if tipo is None:
+                messagebox.showerror("Error", "Debes introducir el tipo.")
+                continue
+            tipo = tipo.upper()  # Convert to lowercase for comparison
+            if tipo not in tipo_options:
+                messagebox.showerror("Error",
+                                     "Tipo invalido. Debe ser uno de los siguientes: EQUIPOS, CUENTAS, WIFI, INTERNET, SOFTWARE.")
+                continue
+            break
+
+        # Ask the user for the subtipo_id
+        while True:
+            subtipo_id = simpledialog.askinteger("Nuevo Ticket", "Introduce el subtipo del ID:")
+            if subtipo_id is None:
+                messagebox.showerror("Error", "Debes introducir el subtipo del ID.")
+                continue
+            if isinstance(tipo_options[tipo], range):
+                if subtipo_id not in tipo_options[tipo]:
+                    messagebox.showerror("Error", f"Subtipo_id invalido para el tipo {tipo.upper()}.")
+                    continue
+            else:  # It's a function
+                if not tipo_options[tipo](subtipo_id):
+                    messagebox.showerror("Error", f"Subtipo_id invalido para el tipo {tipo.upper()}.")
+                    continue
+            break
+
+        # Ask the user for the descripcion
+        descripcion = simpledialog.askstring("Nuevo Ticket", "Introduce la descripcion:")
+        if descripcion is None:
+            messagebox.showerror("Error", "Debes introducir la descripcion.")
             return
 
         # Get the last ticket's num and add 1 to it
@@ -281,11 +313,12 @@ class TicketTrackerUI:
         # Update the listbox
         self.update_ticket_list()
 
-    def update_tickets_to_api(self, creator_id):
+    def update_tickets_to_api(self, creator_id, silent):
         # Ask the user if they are sure they want to upload the information
-        if not messagebox.askyesno("Confirmacion",
-                                   "Estas seguro de que quieres actualizar los tickets a la base de datos?"):
-            return  # The user is not sure, so don't upload the information
+        if not silent:
+            if not messagebox.askyesno("Confirmacion",
+                                       "Estas seguro de que quieres actualizar los tickets a la base de datos?"):
+                return  # The user is not sure, so don't upload the information
 
         # Loop through all the tickets
         for ticket in self.tracker.tickets:
@@ -297,7 +330,6 @@ class TicketTrackerUI:
                 ticket_data['estado'] = 'en proceso'
 
             # Convert the date to the correct format
-            date_str = ticket_data["fecha_creacion"]
             date_obj = datetime.fromtimestamp(ticket.start_time)
             ticket_data["fecha_creacion"] = date_obj.strftime("%Y-%m-%dT%H:%M:%S.%f")
             print(ticket_data["fecha_creacion"])
