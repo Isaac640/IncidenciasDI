@@ -81,7 +81,7 @@ namespace Grupo_1_DI
 
             if (lst != null)
             {
-                lblNombre.Text = personal.nombre;
+                lblNombre.Text = this.personal.nombre;
                 lblApellidos.Text = this.personal.apellido1 + " " + this.personal.apellido2;
                 modelarTabla(lst);
                 lblRegistros.Text = "Registros: " + dgvIncidencias.RowCount.ToString();

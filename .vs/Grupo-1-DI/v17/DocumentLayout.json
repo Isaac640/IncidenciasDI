@@ -1,94 +1,94 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\",
+  "WorkspaceRootPath": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\base_datos\\incidencias_sin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\incidencias_sin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|c:\\users\\alumno\\desktop\\incidenciasdi-debug\\grupo-1-di\\frmincidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmincidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmincidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\frmincidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmincidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\base_datos\\incidencias_subtipos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\incidencias_subtipos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\base_datos\\incidencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\incidencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\base_datos\\comentarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\comentarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\frmcomentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmcomentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|c:\\users\\alumno\\desktop\\incidenciasdi-debug\\grupo-1-di\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\webconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\webconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\webconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\administracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\administracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\frmprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\frmadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\base_datos\\perfiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\base_datos\\perfiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\perfiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\frmcomentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmcomentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\base_datos\\personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\base_datos\\equipos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\equipos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\administracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\administracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\frmpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\frmpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\frmadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\frmprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmcomentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmcomentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\grupo-1-di\\base_datos\\personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmincidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmincidencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|c:\\users\\alumno\\desktop\\github\\incidenciasdi\\grupo-1-di\\base_datos\\incidencias_sin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\incidencias_sin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\base_datos\\incidencias_subtipos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\incidencias_subtipos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\base_datos\\incidencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\incidencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\base_datos\\comentarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\comentarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmcomentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmcomentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\base_datos\\equipos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\base_datos\\equipos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmpersonal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\grupo-1-di\\frmprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F1F8A23-8404-4575-BA7C-1D3A465C6894}|Grupo-1-DI\\Grupo-1-DI.csproj|solutionrelative:grupo-1-di\\frmprofesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -98,15 +98,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 21,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "FrmComentario.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmComentario.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmComentario.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmComentario.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmComentario.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmComentario.cs",
               "RelativeToolTip": "Grupo-1-DI\\FrmComentario.cs",
               "ViewState": "AQIAAEAAAAAAAAAAAAAgwEwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -115,68 +115,65 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FrmLogin.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmLogin.cs",
-              "RelativeDocumentMoniker": "Grupo-1-DI\\FrmLogin.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmLogin.cs",
-              "RelativeToolTip": "Grupo-1-DI\\FrmLogin.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAjwEwAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-27T20:08:55.467Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "FrmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmLogin.cs",
+              "RelativeDocumentMoniker": "Grupo-1-DI\\FrmLogin.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmLogin.cs",
+              "RelativeToolTip": "Grupo-1-DI\\FrmLogin.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAnwDQAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T20:08:55.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Incidencias_Subtipos.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Incidencias_Subtipos.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Incidencias_Subtipos.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\Base_Datos\\Incidencias_Subtipos.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Incidencias_Subtipos.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Incidencias_Subtipos.cs",
               "RelativeToolTip": "Grupo-1-DI\\Base_Datos\\Incidencias_Subtipos.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAqwA4AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-27T18:38:47.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-27T18:38:47.128Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Program.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\Program.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Program.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Program.cs",
               "RelativeToolTip": "Grupo-1-DI\\Program.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-27T18:40:27.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-27T18:40:27.523Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "Comentarios.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Comentarios.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Comentarios.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\Base_Datos\\Comentarios.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Comentarios.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Comentarios.cs",
               "RelativeToolTip": "Grupo-1-DI\\Base_Datos\\Comentarios.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T15:55:35.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-26T15:55:35.982Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "FrmPersonal.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmPersonal.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmPersonal.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmPersonal.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmPersonal.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmPersonal.cs",
               "RelativeToolTip": "Grupo-1-DI\\FrmPersonal.cs",
               "ViewState": "AQIAAIAAAAAAAAAAAAAIwJQAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -184,35 +181,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "FrmPersonal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmPersonal.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmPersonal.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmPersonal.cs",
               "ToolTip": "C:\\Users\\Alumno\\Desktop\\Grupo-1-DI\\IncidenciasDI\\IncidenciasDI\\Grupo-1-DI\\FrmPersonal.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\Grupo-1-DI\\IncidenciasDI\\IncidenciasDI\\Grupo-1-DI\\FrmPersonal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\Grupo-1-DI\\IncidenciasDI\\IncidenciasDI\\Grupo-1-DI\\FrmPersonal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-23T18:22:19.978Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "FrmIncidencia.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmIncidencia.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmIncidencia.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmIncidencia.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmIncidencia.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmIncidencia.cs",
               "RelativeToolTip": "Grupo-1-DI\\FrmIncidencia.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAQwFkAAABPAAAA",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAewGYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T15:39:50.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "FrmIncidencia.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmIncidencia.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmIncidencia.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmIncidencia.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmIncidencia.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmIncidencia.cs [Dise\u00F1o]",
               "RelativeToolTip": "Grupo-1-DI\\FrmIncidencia.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-23T17:16:45.936Z",
@@ -220,62 +217,62 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
               "Title": "Perfiles.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Perfiles.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Perfiles.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\Base_Datos\\Perfiles.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Perfiles.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Perfiles.cs",
               "RelativeToolTip": "Grupo-1-DI\\Base_Datos\\Perfiles.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-23T16:46:16.729Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 5,
               "Title": "Personal.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Personal.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Personal.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\Base_Datos\\Personal.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Personal.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Personal.cs",
               "RelativeToolTip": "Grupo-1-DI\\Base_Datos\\Personal.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAAAABUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T16:39:17.905Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Incidencias.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Incidencias.cs",
-              "RelativeDocumentMoniker": "Grupo-1-DI\\Base_Datos\\Incidencias.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Incidencias.cs",
-              "RelativeToolTip": "Grupo-1-DI\\Base_Datos\\Incidencias.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAswBUAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T16:29:18.464Z",
+              "WhenOpened": "2024-02-23T16:39:17.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
+              "Title": "Incidencias.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Incidencias.cs",
+              "RelativeDocumentMoniker": "Grupo-1-DI\\Base_Datos\\Incidencias.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Incidencias.cs",
+              "RelativeToolTip": "Grupo-1-DI\\Base_Datos\\Incidencias.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAswBUAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T16:29:18.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "FrmProfesor.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmProfesor.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmProfesor.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmProfesor.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmProfesor.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmProfesor.cs",
               "RelativeToolTip": "Grupo-1-DI\\FrmProfesor.cs",
-              "ViewState": "AQIAAI8AAAAAAAAAAAAYwJ4AAABNAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAuwB8AAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-06T18:03:11.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "FrmProfesor.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmProfesor.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmProfesor.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmProfesor.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmProfesor.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmProfesor.cs [Dise\u00F1o]",
               "RelativeToolTip": "Grupo-1-DI\\FrmProfesor.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-06T17:15:57.774Z",
@@ -283,24 +280,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 2,
               "Title": "FrmAdmin.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmAdmin.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmAdmin.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmAdmin.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmAdmin.cs",
               "RelativeToolTip": "Grupo-1-DI\\FrmAdmin.cs",
-              "ViewState": "AQIAAKYAAAAAAAAAAAAuwLQAAABNAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAIAwwCcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T15:18:07.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 8,
               "Title": "FrmAdmin.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmAdmin.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmAdmin.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmAdmin.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmAdmin.cs [Dise\u00F1o]",
               "RelativeToolTip": "Grupo-1-DI\\FrmAdmin.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T14:21:11Z",
@@ -308,11 +305,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 9,
               "Title": "FrmComentario.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmComentario.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmComentario.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmComentario.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmComentario.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmComentario.cs [Dise\u00F1o]",
               "RelativeToolTip": "Grupo-1-DI\\FrmComentario.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-22T16:58:13.402Z",
@@ -320,11 +317,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Equipos.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Equipos.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Equipos.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\Base_Datos\\Equipos.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Equipos.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Equipos.cs",
               "RelativeToolTip": "Grupo-1-DI\\Base_Datos\\Equipos.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAUwA8AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -332,37 +329,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "Administracion.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Administracion.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Administracion.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\Administracion.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Administracion.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Administracion.cs",
               "RelativeToolTip": "Grupo-1-DI\\Administracion.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAD4v1sAAAAwAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAIwCEAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-09T18:20:15.553Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "WebConsumer.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\WebConsumer.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\WebConsumer.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\WebConsumer.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\WebConsumer.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\WebConsumer.cs",
               "RelativeToolTip": "Grupo-1-DI\\WebConsumer.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAD4vz0AAAAMAAAA",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAMwHYAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-09T14:10:35.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 11,
               "Title": "Incidencias_Sin.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Incidencias_Sin.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Incidencias_Sin.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\Base_Datos\\Incidencias_Sin.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\Base_Datos\\Incidencias_Sin.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\Base_Datos\\Incidencias_Sin.cs",
               "RelativeToolTip": "Grupo-1-DI\\Base_Datos\\Incidencias_Sin.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAABcAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -371,11 +368,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "FrmLogin.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmLogin.cs",
               "RelativeDocumentMoniker": "Grupo-1-DI\\FrmLogin.cs",
-              "ToolTip": "C:\\Users\\Alumno\\Desktop\\IncidenciasDI-debug\\Grupo-1-DI\\FrmLogin.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\Github\\IncidenciasDI\\Grupo-1-DI\\FrmLogin.cs [Dise\u00F1o]",
               "RelativeToolTip": "Grupo-1-DI\\FrmLogin.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-07T17:39:47.48Z",

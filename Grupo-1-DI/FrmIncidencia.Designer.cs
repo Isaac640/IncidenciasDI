@@ -113,7 +113,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(8, 178);
+            this.label4.Location = new System.Drawing.Point(8, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 19);
             this.label4.TabIndex = 16;
@@ -161,7 +161,7 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(12, 200);
+            this.txtDesc.Location = new System.Drawing.Point(12, 208);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(305, 112);
@@ -179,7 +179,7 @@
             this.btnRegIncidencia.ForeColor = System.Drawing.Color.Silver;
             this.btnRegIncidencia.Image = global::Grupo_1_DI.Properties.Resources.register_icon;
             this.btnRegIncidencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegIncidencia.Location = new System.Drawing.Point(199, 404);
+            this.btnRegIncidencia.Location = new System.Drawing.Point(199, 406);
             this.btnRegIncidencia.Name = "btnRegIncidencia";
             this.btnRegIncidencia.Size = new System.Drawing.Size(118, 43);
             this.btnRegIncidencia.TabIndex = 26;
@@ -201,7 +201,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.Silver;
             this.btnCancelar.Image = global::Grupo_1_DI.Properties.Resources.cancel_Icon;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(78, 404);
+            this.btnCancelar.Location = new System.Drawing.Point(78, 406);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(115, 43);
             this.btnCancelar.TabIndex = 27;
@@ -215,7 +215,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(8, 344);
+            this.label5.Location = new System.Drawing.Point(8, 352);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 19);
             this.label5.TabIndex = 28;
@@ -235,7 +235,7 @@
             this.btnAdjunto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAdjunto.Image = global::Grupo_1_DI.Properties.Resources.file_Icon;
             this.btnAdjunto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdjunto.Location = new System.Drawing.Point(121, 332);
+            this.btnAdjunto.Location = new System.Drawing.Point(154, 340);
             this.btnAdjunto.Name = "btnAdjunto";
             this.btnAdjunto.Size = new System.Drawing.Size(163, 45);
             this.btnAdjunto.TabIndex = 31;
@@ -270,7 +270,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(332, 459);
+            this.ClientSize = new System.Drawing.Size(332, 460);
             this.Controls.Add(this.cmbSubSubtipo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAdjunto);
