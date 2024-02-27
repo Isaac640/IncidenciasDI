@@ -180,6 +180,24 @@ namespace Grupo_3_Intermodular
                 return null;
             }
         }
+        public async Task<List<Incidencias_Subtipos>> GetAsyncTipo<T>(string endpoint)
+        {
+            string url = $"{endpoint}";
+            HttpResponseMessage response = await client.GetAsync(host + url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+
+                List<Incidencias_Subtipos> subtipos = System.Text.Json.JsonSerializer.Deserialize<List<Incidencias_Subtipos>>(content, serializerOptions);
+                return subtipos;
+            }
+            else
+            {
+                MessageBox.Show("Error al obtener los comentarios de la incidencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
 
         // Métodos para realizar peticiones PUT a la API
 
@@ -217,7 +235,7 @@ namespace Grupo_3_Intermodular
 
         // Métodos para realizar peticiones POST a la API
 
-        public async Task<bool> PostAsyncComentario(Comentarios_DTO comentario)
+        public async Task<bool> PostAsyncComentario(Comentarios comentario)
         {
             try
             {
@@ -227,7 +245,7 @@ namespace Grupo_3_Intermodular
                 // Crear un HttpClient
 
                 // URL de tu API
-                string url = "/guardarComentarioConAdjunto";
+                string url = "/comentarios/guardarComentario";
 
                 // Convertir el objeto JSON en un StringContent
                 StringContent content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");

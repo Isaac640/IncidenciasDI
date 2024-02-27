@@ -65,6 +65,15 @@ namespace Grupo_1_DI
         }
 
         /// <summary>
+        /// Obtiene información de Los subtipos
+        /// </summary>
+        /// <returns>Los datos de los tipos.</returns>
+        public async static Task<List<Incidencias_Subtipos>> ObtenerTipos()
+        {
+            return await consumer.GetAsyncTipo <List<Incidencias_Subtipos>>("/incidenciasSubtipos");
+        }
+
+        /// <summary>
         /// Obtiene toda la lista de personal desde la API.
         /// </summary>
         /// <returns>Una lista de personal.</returns>
@@ -88,7 +97,7 @@ namespace Grupo_1_DI
         /// </summary>
         /// <param name="id">El ID de la incidencia.</param>
         /// <returns>Una lista de comentarios.</returns>
-        public async static Task<List<Comentarios>> ObtenerComentariosByIncidenciasId(int id)
+        public async static Task<List<Comentarios>> ObtenerComentariosByIncidenciasId(long id)
         {
             return await consumer.GetAsyncComentariosList<List<Comentarios>>("/comentarios/incidencia", id);
         }
@@ -98,7 +107,7 @@ namespace Grupo_1_DI
         /// </summary>
         /// <param name="com">El comentario a publicar.</param>
         /// <returns>True si se publica correctamente, false en caso contrario.</returns>
-        public async static Task<bool> PublicarComentario(Comentarios_DTO com)
+        public async static Task<bool> PublicarComentario(Comentarios com)
         {
             return await consumer.PostAsyncComentario(com);
         }

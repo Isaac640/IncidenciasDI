@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmComentario));
             this.dgvComentarios = new System.Windows.Forms.DataGridView();
+            this.persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechahora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adjunto_url = new System.Windows.Forms.DataGridViewLinkColumn();
             this.lblComentarios = new System.Windows.Forms.Label();
             this.lblAgregar = new System.Windows.Forms.Label();
             this.txtComentario = new System.Windows.Forms.TextBox();
@@ -39,10 +43,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnAdjunto = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechahora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adjunto_url = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComentarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,36 @@
             this.dgvComentarios.ReadOnly = true;
             this.dgvComentarios.Size = new System.Drawing.Size(526, 210);
             this.dgvComentarios.TabIndex = 0;
+            // 
+            // persona
+            // 
+            this.persona.HeaderText = "Persona";
+            this.persona.Name = "persona";
+            this.persona.ReadOnly = true;
+            // 
+            // texto
+            // 
+            this.texto.DataPropertyName = "texto";
+            this.texto.HeaderText = "Comentarios";
+            this.texto.Name = "texto";
+            this.texto.ReadOnly = true;
+            this.texto.Width = 250;
+            // 
+            // fechahora
+            // 
+            this.fechahora.DataPropertyName = "fechahora";
+            this.fechahora.HeaderText = "Fecha";
+            this.fechahora.Name = "fechahora";
+            this.fechahora.ReadOnly = true;
+            // 
+            // adjunto_url
+            // 
+            this.adjunto_url.DataPropertyName = "adjunto_url";
+            this.adjunto_url.HeaderText = "Adjunto";
+            this.adjunto_url.Name = "adjunto_url";
+            this.adjunto_url.ReadOnly = true;
+            this.adjunto_url.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.adjunto_url.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // lblComentarios
             // 
@@ -153,6 +183,7 @@
             this.btnAdjunto.BackColor = System.Drawing.Color.Transparent;
             this.btnAdjunto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdjunto.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAdjunto.Enabled = false;
             this.btnAdjunto.FlatAppearance.BorderSize = 3;
             this.btnAdjunto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnAdjunto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
@@ -165,40 +196,10 @@
             this.btnAdjunto.Name = "btnAdjunto";
             this.btnAdjunto.Size = new System.Drawing.Size(163, 75);
             this.btnAdjunto.TabIndex = 30;
-            this.btnAdjunto.Text = "  Subir Archivo";
+            this.btnAdjunto.Text = "  No Disponible";
             this.btnAdjunto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdjunto.UseVisualStyleBackColor = false;
             this.btnAdjunto.Click += new System.EventHandler(this.btnAdjunto_Click);
-            // 
-            // persona
-            // 
-            this.persona.HeaderText = "Persona";
-            this.persona.Name = "persona";
-            this.persona.ReadOnly = true;
-            // 
-            // texto
-            // 
-            this.texto.DataPropertyName = "texto";
-            this.texto.HeaderText = "Comentarios";
-            this.texto.Name = "texto";
-            this.texto.ReadOnly = true;
-            this.texto.Width = 250;
-            // 
-            // fechahora
-            // 
-            this.fechahora.DataPropertyName = "fechahora";
-            this.fechahora.HeaderText = "Fecha";
-            this.fechahora.Name = "fechahora";
-            this.fechahora.ReadOnly = true;
-            // 
-            // adjunto_url
-            // 
-            this.adjunto_url.DataPropertyName = "adjunto_url";
-            this.adjunto_url.HeaderText = "Adjunto";
-            this.adjunto_url.Name = "adjunto_url";
-            this.adjunto_url.ReadOnly = true;
-            this.adjunto_url.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.adjunto_url.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FrmComentario
             // 

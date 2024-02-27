@@ -53,6 +53,7 @@
             this.responsable_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblCorreo = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.pbUser = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblCorreo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel3.SuspendLayout();
@@ -404,6 +404,17 @@
             this.panel4.Size = new System.Drawing.Size(679, 115);
             this.panel4.TabIndex = 2;
             // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.ForeColor = System.Drawing.Color.White;
+            this.lblCorreo.Location = new System.Drawing.Point(132, 75);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(187, 19);
+            this.lblCorreo.TabIndex = 38;
+            this.lblCorreo.Text = "isaac@educantabria.es";
+            // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
@@ -447,9 +458,9 @@
             this.lblApellidos.ForeColor = System.Drawing.Color.White;
             this.lblApellidos.Location = new System.Drawing.Point(132, 41);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(97, 19);
+            this.lblApellidos.Size = new System.Drawing.Size(80, 19);
             this.lblApellidos.TabIndex = 34;
-            this.lblApellidos.Text = "Cabria Diez";
+            this.lblApellidos.Text = "Apellidos";
             // 
             // lblNombre
             // 
@@ -458,9 +469,9 @@
             this.lblNombre.ForeColor = System.Drawing.Color.White;
             this.lblNombre.Location = new System.Drawing.Point(132, 19);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(49, 19);
+            this.lblNombre.Size = new System.Drawing.Size(70, 19);
             this.lblNombre.TabIndex = 33;
-            this.lblNombre.Text = "Isaac";
+            this.lblNombre.Text = "Nombre";
             // 
             // pbUser
             // 
@@ -471,17 +482,6 @@
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUser.TabIndex = 32;
             this.pbUser.TabStop = false;
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.ForeColor = System.Drawing.Color.White;
-            this.lblCorreo.Location = new System.Drawing.Point(132, 75);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(187, 19);
-            this.lblCorreo.TabIndex = 38;
-            this.lblCorreo.Text = "isaac@educantabria.es";
             // 
             // FrmAdmin
             // 

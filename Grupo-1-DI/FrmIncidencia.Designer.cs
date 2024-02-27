@@ -45,6 +45,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAdjunto = new System.Windows.Forms.Button();
+            this.cmbSubSubtipo = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -89,7 +91,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(8, 92);
+            this.label2.Location = new System.Drawing.Point(8, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 19);
             this.label2.TabIndex = 14;
@@ -100,7 +102,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(8, 67);
+            this.label3.Location = new System.Drawing.Point(8, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 19);
             this.label3.TabIndex = 15;
@@ -111,7 +113,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(8, 151);
+            this.label4.Location = new System.Drawing.Point(8, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 19);
             this.label4.TabIndex = 16;
@@ -119,7 +121,7 @@
             // 
             // txtAula
             // 
-            this.txtAula.Location = new System.Drawing.Point(107, 65);
+            this.txtAula.Location = new System.Drawing.Point(107, 92);
             this.txtAula.Name = "txtAula";
             this.txtAula.Size = new System.Drawing.Size(210, 20);
             this.txtAula.TabIndex = 18;
@@ -134,7 +136,7 @@
             // 
             // txtPuesto
             // 
-            this.txtPuesto.Location = new System.Drawing.Point(107, 117);
+            this.txtPuesto.Location = new System.Drawing.Point(107, 144);
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(210, 20);
             this.txtPuesto.TabIndex = 20;
@@ -144,7 +146,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(8, 118);
+            this.label6.Location = new System.Drawing.Point(8, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 19);
             this.label6.TabIndex = 21;
@@ -152,14 +154,14 @@
             // 
             // txtEtiqueta
             // 
-            this.txtEtiqueta.Location = new System.Drawing.Point(107, 91);
+            this.txtEtiqueta.Location = new System.Drawing.Point(107, 118);
             this.txtEtiqueta.Name = "txtEtiqueta";
             this.txtEtiqueta.Size = new System.Drawing.Size(210, 20);
             this.txtEtiqueta.TabIndex = 22;
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(12, 173);
+            this.txtDesc.Location = new System.Drawing.Point(12, 200);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(305, 112);
@@ -177,7 +179,7 @@
             this.btnRegIncidencia.ForeColor = System.Drawing.Color.Silver;
             this.btnRegIncidencia.Image = global::Grupo_1_DI.Properties.Resources.register_icon;
             this.btnRegIncidencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegIncidencia.Location = new System.Drawing.Point(199, 381);
+            this.btnRegIncidencia.Location = new System.Drawing.Point(199, 404);
             this.btnRegIncidencia.Name = "btnRegIncidencia";
             this.btnRegIncidencia.Size = new System.Drawing.Size(118, 43);
             this.btnRegIncidencia.TabIndex = 26;
@@ -199,7 +201,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.Silver;
             this.btnCancelar.Image = global::Grupo_1_DI.Properties.Resources.cancel_Icon;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(78, 381);
+            this.btnCancelar.Location = new System.Drawing.Point(78, 404);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(115, 43);
             this.btnCancelar.TabIndex = 27;
@@ -213,7 +215,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(8, 317);
+            this.label5.Location = new System.Drawing.Point(8, 344);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 19);
             this.label5.TabIndex = 28;
@@ -224,6 +226,7 @@
             this.btnAdjunto.BackColor = System.Drawing.Color.Transparent;
             this.btnAdjunto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdjunto.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAdjunto.Enabled = false;
             this.btnAdjunto.FlatAppearance.BorderSize = 3;
             this.btnAdjunto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnAdjunto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
@@ -232,14 +235,33 @@
             this.btnAdjunto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAdjunto.Image = global::Grupo_1_DI.Properties.Resources.file_Icon;
             this.btnAdjunto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdjunto.Location = new System.Drawing.Point(121, 305);
+            this.btnAdjunto.Location = new System.Drawing.Point(121, 332);
             this.btnAdjunto.Name = "btnAdjunto";
             this.btnAdjunto.Size = new System.Drawing.Size(163, 45);
             this.btnAdjunto.TabIndex = 31;
-            this.btnAdjunto.Text = "  Subir Archivo";
+            this.btnAdjunto.Text = "  No Disponible\r\n";
             this.btnAdjunto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdjunto.UseVisualStyleBackColor = false;
             this.btnAdjunto.Click += new System.EventHandler(this.btnAdjunto_Click);
+            // 
+            // cmbSubSubtipo
+            // 
+            this.cmbSubSubtipo.FormattingEnabled = true;
+            this.cmbSubSubtipo.Location = new System.Drawing.Point(107, 65);
+            this.cmbSubSubtipo.Name = "cmbSubSubtipo";
+            this.cmbSubSubtipo.Size = new System.Drawing.Size(210, 21);
+            this.cmbSubSubtipo.TabIndex = 33;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(8, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 19);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Subtipo:";
             // 
             // FrmIncidencia
             // 
@@ -248,7 +270,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(329, 436);
+            this.ClientSize = new System.Drawing.Size(332, 459);
+            this.Controls.Add(this.cmbSubSubtipo);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAdjunto);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCancelar);
@@ -268,6 +292,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmIncidencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Incidencia";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -292,5 +317,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAdjunto;
+        private System.Windows.Forms.ComboBox cmbSubSubtipo;
+        private System.Windows.Forms.Label label7;
     }
 }

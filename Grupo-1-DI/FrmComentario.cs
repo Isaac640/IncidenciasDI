@@ -18,7 +18,7 @@ namespace Grupo_1_DI
     /// </summary>
     public partial class FrmComentario : Form
     {
-        private Comentarios_DTO comentario;
+        private Comentarios comentario;
         private int num_Inc;
         private Personal personal;
         private FrmComentario()
@@ -28,7 +28,7 @@ namespace Grupo_1_DI
         public FrmComentario(int idInc, Personal per) : this()
         {
             cargarComentariosInforme(idInc);
-            comentario = new Comentarios_DTO();
+            comentario = new Comentarios();
             this.num_Inc = idInc;
             this.personal = per;
         }
@@ -72,6 +72,7 @@ namespace Grupo_1_DI
             dgvComentarios.Columns.Add(columnaAdjunto);
 
             // Asignar los datos a cada fila
+            
             foreach (var comentario in lst)
             {
                 // Obtener los detalles del personal por su ID
@@ -93,10 +94,12 @@ namespace Grupo_1_DI
 
         private async void btnSubir_ClickAsync(object sender, EventArgs e)
         {
-            comentario.fechahora = DateTime.Now;
+            DateTime now = DateTime.Now;
+            DateTime formattedTime = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
+            comentario.fechahora = formattedTime;
             comentario.personal = personal.id;
             comentario.texto = txtComentario.Text;
-            comentario.incidencia_num = this.num_Inc;
+            comentario.incidenciaNum = this.num_Inc;
 
 
             if (await Administracion.PublicarComentario(comentario))
@@ -115,7 +118,7 @@ namespace Grupo_1_DI
 
         private void btnAdjunto_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            /*using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Title = "Seleccionar archivo";
                 openFileDialog.Filter = "Libros de Excel (*.xlsx)|*.xlsx|Documentos de Word (*.docx; *.doc)|*.docx;*.doc|Archivos PDF (*.pdf)|*.pdf|Imágenes JPG (*.jpg)|*.jpg";
@@ -135,7 +138,7 @@ namespace Grupo_1_DI
                         MessageBox.Show("Error al subir archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -143,7 +146,7 @@ namespace Grupo_1_DI
         /// </summary>
         /// <param name="openFileDialog">El diálogo para seleccionar el archivo.</param>
         /// <returns>El archivo convertido a Base64.</returns>
-        private string base64(OpenFileDialog openFileDialog)
+        /*private string base64(OpenFileDialog openFileDialog)
         {
             // Verificar si se seleccionó un archivo
             if (openFileDialog.FileName != "")
@@ -158,7 +161,7 @@ namespace Grupo_1_DI
                     string cuerpoBase64 = Convert.ToBase64String(archivoBytes);
 
                     // Crear el contenido para enviar al servidor
-                    var contenido = new StringContent($"extension={extension}&cuerpoBase64={cuerpoBase64}&direccionDirectorio={openFileDialog.FileName}", Encoding.UTF8, "application/x-www-form-urlencoded");
+                    var contenido = new StringContent($"extension={extension}&cuerpoBase64={cuerpoBase64}", Encoding.UTF8, "application/x-www-form-urlencoded");
 
                     return contenido.ReadAsStringAsync().Result;
                 }
@@ -173,7 +176,7 @@ namespace Grupo_1_DI
                 MessageBox.Show("Debe seleccionar un archivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
-        }
+        }*/
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
