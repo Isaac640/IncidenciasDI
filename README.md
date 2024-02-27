@@ -11,11 +11,12 @@ El proyecto I.R.I.S (Incidencias Resueltas de forma Inteligente y Segura) es una
 * [Versiones](#versiones)
 * [Documentación API](#documentación-de-la-api)
 * [Seguridad](#seguridad)
-* [Apliación de Escritorio](#apliación-de-escritorio)
 * [IRIS móvil](#iris-móvil)
-  * [Emulación en Android Studio](#emulación-en-android-studio)
-  * [Emular en dispositivo móvil](#emular-en-dispositivo-móvil)
-  * [Instalación en dispositivo](#instalación-en-dispositivo)
+* [Aplicación Escritorio](#apliación-de-escritorio)
+  * [Características](#características)
+  * [Uso](#uso)
+    * [Gestión de incidencias](#gestión-de-incidencias)
+    * [Seguridad integrada](#seguridad-integrada)
 * [Miembros](#miembros)
 * [Contribución](#contribución)
 * [Contacto](#contacto)
@@ -31,12 +32,12 @@ Cada versión se identifica con un número de versión y puede estar acompañada
 
 ## Documentación de la API
 
-- [Documentación oficial de la API](enlace-a-la-documentacion)
-- [Ejemplos de código en diferentes lenguajes de programación](enlace-a-los-ejemplos-de-codigo)
+- [Documentación oficial de la API mediante Swagger (debe tenerse la API en ejecución)](http://localhost:8089/swagger-ui/index.html)
+- [Listado de endpoints](enlace-a-los-ejemplos-de-codigo)
 
 La documentación oficial de nuestra API proporciona una descripción detallada de los endpoints disponibles, los parámetros de solicitud, las respuestas esperadas y cualquier otra información relevante para interactuar con nuestra API.
 
-También hemos proporcionado ejemplos de código en varios lenguajes de programación para ayudar a los desarrolladores a comenzar a utilizar nuestra API en sus propias aplicaciones.
+También hemos proporcionado el enlace a la documentación de Swagger
 
 Para más información sobre nuestra API, consulte el [repositorio API](https://github.com/Isaac640/IncidenciasAPI)
 
@@ -44,56 +45,45 @@ Para más información sobre nuestra API, consulte el [repositorio API](https://
 
 En nuestro proyecto, nos tomamos muy en serio la seguridad de nuestros usuarios y sus datos. Aquí hay algunas consideraciones de seguridad importantes:
 
-- **Política de contraseñas seguras**: Todos los usuarios deben crear contraseñas seguras que cumplan con ciertos criterios de complejidad.
+- **Política de contraseñas seguras**: Todos los usuarios deben tener contraseñas seguras que cumplan con ciertos criterios de complejidad.
 - **Autenticación y autorización**: Utilizamos un sistema de autenticación robusto para garantizar que solo los usuarios autorizados puedan acceder a los recursos protegidos de nuestra aplicación.
 - **Protección de datos sensibles**: Implementamos medidas de protección para garantizar la seguridad de los datos sensibles de nuestros usuarios, como la encriptación de datos en reposo y en tránsito.
 - **Reporte de problemas de seguridad**: Si encuentras alguna vulnerabilidad en nuestra aplicación, por favor contáctanos de manera confidencial a [contacto@iris.com].
 
-## Apliación de Escritorio
-Nuestra aplicación de escritorio en Windows Form .NET es una herramienta poderosa diseñada para brindar una experiencia eficiente y conveniente en la gestión de incidencias en el entorno educativo del Instituto Miguel Herrero de Pereda. Con una interfaz intuitiva y funcionalidades robustas, nuestra aplicación permite al profesorado y al equipo administrativo registrar, gestionar y resolver problemas relacionados con equipos, conexiones o cuentas del centro de manera eficaz y oportuna. Desde la asignación de tareas hasta el seguimiento del progreso de las incidencias, nuestra aplicación de escritorio es una herramienta indispensable para mantener el funcionamiento fluido del instituto.
 
 ## IRIS Móvil
 La apliación de Iris para dispositivos móviles está diseñada para proporcionar una forma rápida y conveniente para que el profesorado del Instituto Miguel Herrero de Pereda registre incidencias y problemas relacionados con equipos, conexiones o cuentas del centro. Con una interfaz intuitiva y fácil de usar, nuestros usuarios pueden reportar incidentes desde cualquier lugar y en cualquier momento, lo que permite una gestión eficiente y oportuna de los problemas en el entorno educativo.
 
 Para más información y manual de uso de la aplicación, consulte el [ReadMe del repositorio de Iris móvil](https://github.com/Tania105/Android_Grupo1).
 
-### Emulación en Android Studio
 
-#### Requisitos previos
-      - Java Development Kit (JDK) 8 o superior
-      - Android Studio 4.0 o superior
+## Apliación de Escritorio
+Nuestra aplicación de escritorio en Windows Form .NET es una herramienta poderosa diseñada para brindar una experiencia eficiente y conveniente en la gestión de incidencias en el entorno educativo del Instituto Miguel Herrero de Pereda. Con una interfaz intuitiva y funcionalidades robustas, nuestra aplicación permite al profesorado y al equipo administrativo registrar, gestionar y resolver problemas relacionados con equipos, conexiones o cuentas del centro de manera eficaz y oportuna. Desde la asignación de tareas hasta el seguimiento del progreso de las incidencias, nuestra aplicación de escritorio es una herramienta indispensable para mantener el funcionamiento fluido del instituto.
 
-#### Pasos de instalación
+### Características
 
-1. Clona el repositorio de GitHub en tu máquina local:
+El proyecto IRIS está diseñado para proporcionar una solución completa para la gestión de incidencias en el entorno educativo del Instituto Miguel Herrero de Pereda. La aplicación móvil ofrece una serie de características que ayudan a los usuarios(profesorado)a gestionar eficazmente las incidencias y resolver los problemas de manera inteligente y segura. Algunas de las principales características incluyen:
 
-```bash
-git clone https://github.com/Tania105/Android_Grupo1.git
-```
-2. Abre el proyecto en Android Studio.
+1. Gestión avanzada de incidencias: 
+Los administradores pueden gestionar y resolver incidencias de manera centralizada desde el escritorio.
+2. Asignación de tareas: 
+Los administradores pueden asignar tareas y seguimiento a los miembros del equipo para resolver las incidencias de manera eficiente.
+3. Seguridad integrada: 
+La aplicación de escritorio ofrece características de seguridad avanzadas para proteger la información sensible y garantizar la integridad de los datos.
 
-3. Compila y ejecuta la aplicación en un emulador o dispositivo Android.
+### Uso
 
-4. ¡Listo! Ahora puedes comenzar a utilizar la aplicación.
+#### Gestión de incidencias:
 
-#### Emular en dispositivo móvil
-Si deseas emular la aplicación en un dispositivo móvil que conectes al PC desde Android Studio, sigue estos pasos:
+Abre la aplicación de escritorio IRIS en tu computadora.
+Inicia sesión con tus credenciales de administrador.
+Utiliza la interfaz de usuario para ver y gestionar las incidencias registradas por el profesorado.
+Asigna tareas y seguimiento para resolver las incidencias de manera eficiente.
 
-1. Conecta tu dispositivo móvil al PC utilizando un cable USB. Antes debes haber activado las opciones de desarrollador y el modo depuración por USB.
+#### Seguridad integrada:
 
-2. En Android Studio, asegúrate de que tu dispositivo esté detectado y configurado correctamente. Puedes verificar esto en la ventana "Dispositivos" o "ADB".
-
-3. Una vez que el dispositivo esté conectado y reconocido, selecciona tu dispositivo como destino de ejecución desde la barra de herramientas de Android Studio.
-
-4. Compila y ejecuta la aplicación en tu dispositivo móvil seleccionado.
-
-5. ¡Listo! Ahora puedes utilizar la aplicación en tu dispositivo móvil para probar su funcionalidad y rendimiento en un entorno real.
-
-#### Configuración adicional
-Si experimentas algún problema durante la instalación o configuración, asegúrate de consultar la documentación oficial de Android Studio para obtener ayuda adicional.
-
-### Instalación en dispositivo
-En desarrollo.
+La aplicación de escritorio IRIS ofrece características de seguridad avanzadas para proteger la información sensible y garantizar la integridad de los datos.
+Inicia sesión con tus credenciales de administrador para acceder a las funciones de seguridad.
 
 ## Miembros
 
@@ -155,3 +145,4 @@ La Licencia MIT es una licencia de software libre que permite a los usuarios uti
 Para obtener más detalles, consulta el [texto completo de la Licencia MIT](https://opensource.org/licenses/MIT).
 
 Agradecemos a los autores de la Licencia MIT por proporcionar una estructura legal que permita compartir nuestro trabajo con otros de manera abierta y accesible.
+
