@@ -32,12 +32,15 @@ Cada versión se identifica con un número de versión y puede estar acompañada
 
 ## Documentación de la API
 
-- [Documentación oficial de la API mediante Swagger (debe tenerse la API en ejecución)](http://localhost:8089/swagger-ui/index.html)
-- [Listado de endpoints](enlace-a-los-ejemplos-de-codigo)
+- [Documentación oficial de la API mediante Swagger](http://localhost:8089/swagger-ui/index.html)
 
-La documentación oficial de nuestra API proporciona una descripción detallada de los endpoints disponibles, los parámetros de solicitud, las respuestas esperadas y cualquier otra información relevante para interactuar con nuestra API.
+La documentación oficial de nuestra API proporciona mediante Swagger una descripción detallada de los endpoints disponibles, los parámetros de solicitud, las respuestas esperadas y cualquier otra información relevante para interactuar con nuestra API.
 
-También hemos proporcionado el enlace a la documentación de Swagger
+**Notas adicionales**:
+- Asegúrate de que la API esté en funcionamiento para acceder a la documentación.
+- Si cambias el puerto por el que la API escucha (8089), recuerda actualizar también el puerto en la dirección del enlace.
+
+- [Listado de endpoints](https://github.com/Isaac640/IncidenciasAPI/blob/main/ENDPOINTS.md)
 
 Para más información sobre nuestra API, consulte el [repositorio API](https://github.com/Isaac640/IncidenciasAPI)
 
