@@ -44,7 +44,7 @@ namespace Grupo_1_DI
             }
         }
 
-        private async void btnRegIncidencia_Click(object sender, EventArgs e)
+        private void btnRegIncidencia_Click(object sender, EventArgs e)
         {
             if (this.incidencias.equipo_id != null)
             {

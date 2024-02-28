@@ -102,7 +102,7 @@
             this.btnPersonal.TabIndex = 39;
             this.btnPersonal.Text = "  Administrar Personal";
             this.btnPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnPersonal, "Muestra los comentarios de una incidencia existente");
+            this.toolTip1.SetToolTip(this.btnPersonal, "Muestra todos los usuarios registrados");
             this.btnPersonal.UseVisualStyleBackColor = false;
             this.btnPersonal.Click += new System.EventHandler(this.btnPersonal_Click);
             // 
@@ -131,7 +131,7 @@
             // pbLogo
             // 
             this.pbLogo.Image = global::Grupo_1_DI.Properties.Resources.IRIS_logo;
-            this.pbLogo.Location = new System.Drawing.Point(81, 16);
+            this.pbLogo.Location = new System.Drawing.Point(78, 8);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(61, 55);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

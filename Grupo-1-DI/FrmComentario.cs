@@ -104,7 +104,7 @@ namespace Grupo_1_DI
 
             if (await Administracion.PublicarComentario(comentario))
             {
-                Task.Delay(500);
+                await Task.Delay(500);
                 txtComentario.Text = string.Empty;
                 btnAdjunto.Text = "Subir Archivo";
                 cargarComentariosInforme(num_Inc);

@@ -70,7 +70,7 @@ namespace Grupo_1_DI
         /// <returns>Los datos de los tipos.</returns>
         public async static Task<List<Incidencias_Subtipos>> ObtenerTipos()
         {
-            return await consumer.GetAsyncTipo <List<Incidencias_Subtipos>>("/incidenciasSubtipos");
+            return await consumer.GetAsyncTipo<List<Incidencias_Subtipos>>("/incidenciasSubtipos");
         }
 
         /// <summary>

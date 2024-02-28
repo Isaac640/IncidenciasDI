@@ -42,21 +42,6 @@ namespace Grupo_3_Intermodular
         }
         // Métodos para realizar peticiones GET a la API
 
-        public async Task<T> GetAsync<T>(string endpoint)
-        {
-            HttpResponseMessage response = await client.GetAsync(host + endpoint);
-            if (response.IsSuccessStatusCode)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-                T result = System.Text.Json.JsonSerializer.Deserialize<T>(content, serializerOptions);
-                return result;
-            }
-            else
-            {
-                throw new ApplicationException($"Error al obtener el recurso: {response.StatusCode}");
-            }
-        }
-
         public async Task<Perfiles> GetAsyncPerfil<T>(string endpoint, string username)
         {
             string url = $"{endpoint}?dominio={username}"; // Ajusta endpoint_perfil al verdadero endpoint para obtener perfiles
@@ -70,7 +55,7 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener el perfil para el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener el perfil para el usuario. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -86,7 +71,7 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener el personal del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener el personal del usuario por su ID. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -103,7 +88,7 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener el personal del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener el personal del usuario. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -121,7 +106,7 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener las incidencias", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener las incidencias. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -139,7 +124,7 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener las incidencias del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener las incidencias del usuario. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -157,7 +142,7 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener las incidencias por su ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener las incidencias por su ID. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -176,7 +161,7 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener los comentarios de la incidencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener los comentarios de la incidencia. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -194,7 +179,7 @@ namespace Grupo_3_Intermodular
             }
             else
             {
-                MessageBox.Show("Error al obtener los comentarios de la incidencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener los tipos de incidencia. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -221,7 +206,7 @@ namespace Grupo_3_Intermodular
                 }
                 else
                 {
-                    Console.WriteLine($"Error al dar de baja. Código de estado: {response.StatusCode}");
+                    MessageBox.Show($"Error al dar de baja. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -259,6 +244,7 @@ namespace Grupo_3_Intermodular
                 }
                 else
                 {
+                    MessageBox.Show($"Error al publicar un comentario. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
@@ -266,7 +252,7 @@ namespace Grupo_3_Intermodular
             catch (Exception ex)
             {
                 // Manejar cualquier excepción
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"Error al publicar un comentario. Código de estado: {ex.Message}");
                 return false;
             }
         }
@@ -285,7 +271,7 @@ namespace Grupo_3_Intermodular
                 }
                 else
                 {
-                    Console.WriteLine($"Error al eliminar la incidencia. Código de estado: {response.StatusCode}");
+                    MessageBox.Show($"Error al eliminar la incidencia. Código de estado: {response.StatusCode}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
